@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Project Excellence Pvt Ltd – Independent Client Advisory, Project Management & Cost Consultancy across Sri Lanka, Singapore and Australia." />
+  <title>@ViewData["Title"] – Project Excellence</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+  <!-- Brand CSS -->
+  <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+  @await RenderSectionAsync("Styles", required: false)
+</head>
+<body>
+
+<!-- ── NAVBAR ── -->
+<nav id="mainNav" class="navbar navbar-expand-lg">
+  <div class="nav-inner">
+
+    <!-- Logo -->
+    <a class="navbar-brand nav-brand" href="/">
+      <img src="~/images/logo-white.png" asp-append-version="true"
+           alt="Project Excellence" class="nav-logo" />
+    </a>
+
+    <!-- Desktop Links (centre) -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mx-auto align-items-center gap-1">
+        <li class="nav-item">
+          <a class="nav-link nav-link-custom" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-link-custom" href="/About">About Us</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link nav-link-custom dropdown-toggle" href="/Services"
+             id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Services
+          </a>
+          <ul class="dropdown-menu nav-dropdown" aria-labelledby="servicesDropdown">
+            <li><a class="dropdown-item nav-dd-item nav-dd-header" href="/Services">All Services</a></li>
+            <li><hr class="dropdown-divider my-1"></li>
+            <li><a class="dropdown-item nav-dd-item" href="/Services/Advisory"><i class="bi bi-shield-check"></i> Client-Side Advisory</a></li>
+            <li><a class="dropdown-item nav-dd-item" href="/Services/ProjectManagement"><i class="bi bi-diagram-3"></i> Project Management</a></li>
+            <li><a class="dropdown-item nav-dd-item" href="/Services/DesignManagement"><i class="bi bi-pencil-square"></i> Design Management</a></li>
+            <li><a class="dropdown-item nav-dd-item" href="/Services/CostConsultancy"><i class="bi bi-calculator"></i> Cost Consultancy</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-link-custom" href="/Projects">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-link-custom" href="/Contact">Contact</a>
+        </li>
+      </ul>
+
+      <!-- CTA (right) -->
+      <a href="/Contact" class="nav-cta-btn d-none d-lg-inline-flex">
+        <i class="bi bi-arrow-right-circle"></i> Get In Touch
+      </a>
+    </div>
+
+    <!-- Mobile toggle -->
+    <button class="nav-hamburger" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+
+  </div>
+</nav>
+
+<!-- ── PAGE CONTENT ── -->
+<main>
+  @RenderBody()
+</main>
+
+<!-- ── FOOTER ── -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-4">
+        <div class="footer-brand mb-3">
+          <img src="~/images/logo-white.png" asp-append-version="true"
+               alt="Project Excellence" style="height:40px;width:auto;display:block;" />
+        </div>
+        <p class="footer-desc">
+          Independent client advisory, project management, and cost consultancy — protecting your commercial interests from concept to completion.
+        </p>
+        <div class="d-flex flex-wrap gap-1">
+          <span class="footer-pillar">Excellence</span>
+          <span class="footer-pillar">Execution</span>
+          <span class="footer-pillar">Expertise</span>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-6">
+        <div class="footer-heading">Navigation</div>
+        <ul class="footer-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/About">About Us</a></li>
+          <li><a href="/Services">Services</a></li>
+          <li><a href="/Projects">Projects</a></li>
+          <li><a href="/Contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3 col-6">
+        <div class="footer-heading">Services</div>
+        <ul class="footer-links">
+          <li><a href="/Services/Advisory">Client Advisory</a></li>
+          <li><a href="/Services/ProjectManagement">Project Management</a></li>
+          <li><a href="/Services/DesignManagement">Design Management</a></li>
+          <li><a href="/Services/CostConsultancy">Cost Consultancy</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3">
+        <div class="footer-heading">Contact</div>
+        <div class="footer-ci">
+          <span class="footer-ci-icon"><i class="bi bi-geo-alt-fill"></i></span>
+          <span>Sri Lanka &bull; Singapore &bull; Australia</span>
+        </div>
+        <div class="footer-ci">
+          <span class="footer-ci-icon"><i class="bi bi-envelope-fill"></i></span>
+          <span>info@projectexcellence.lk</span>
+        </div>
+        <div class="footer-ci">
+          <span class="footer-ci-icon"><i class="bi bi-telephone-fill"></i></span>
+          <span>+94 XX XXX XXXX</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom mt-5">
+    <div class="container">
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+        <span class="footer-bottom-txt">&copy; @DateTime.Now.Year Project Excellence Pvt Ltd. All rights reserved.</span>
+        <div class="d-flex align-items-center gap-3">
+          <span class="footer-bottom-txt">Independent Advisory &bull; Intelligent Cost Insight &bull; Structured Project Delivery</span>
+          <a href="/Admin" style="font-size:.72rem;color:rgba(255,255,255,.2);font-family:var(--font-h);letter-spacing:.06em;transition:var(--transition);" onmouseover="this.style.color='rgba(255,255,255,.5)'" onmouseout="this.style.color='rgba(255,255,255,.2)'">Admin</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll to Top -->
+<button id="scrollTop" aria-label="Back to top" style="position:fixed;bottom:28px;right:28px;width:44px;height:44px;background:var(--gradient);border:none;border-radius:50%;color:#fff;font-size:1.1rem;cursor:pointer;opacity:0;transition:all .3s ease;z-index:999;box-shadow:0 4px 16px rgba(35,137,202,.4);display:flex;align-items:center;justify-content:center;">
+  <i class="bi bi-arrow-up"></i>
+</button>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Site JS -->
+<script src="~/js/site.js" asp-append-version="true"></script>
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

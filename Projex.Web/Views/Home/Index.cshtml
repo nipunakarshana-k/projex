@@ -1,0 +1,380 @@
+@model HomeViewModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<!-- HERO -->
+<section class="hero-section" style="background-image:url('/images/hero-bg.jpg');background-size:cover;background-position:center;background-blend-mode:multiply;">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+  <div class="hero-watermark">PROJEX</div>
+
+  <div class="hero-container">
+    <div class="hero-inner">
+      <!-- LEFT: Text -->
+      <div class="hero-left hero-content">
+        <h1 class="hero-title">
+          Independent Advisory.<br>
+          <span class="accent-text">Intelligent Cost Insight.</span><br>
+          Structured Project Delivery.
+        </h1>
+        <p class="hero-subtitle">
+          We help owners and investors make confident decisions, control commercial risk, and deliver successful projects with clarity, discipline, and trusted client-side leadership.
+        </p>
+        <div class="hero-pillars">
+          <span class="hero-pillar">Excellence</span>
+          <span class="hero-pillar">Execution</span>
+          <span class="hero-pillar">Expertise</span>
+        </div>
+        <div class="hero-actions">
+          <a href="/Services" class="btn-pb">
+            <i class="bi bi-grid-3x3-gap-fill"></i> Our Services
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT: Stats -->
+      <div class="hero-right">
+        <div class="stat-card fade-up">
+          <div class="stat-num"><span class="count-up" data-target="17" data-suffix="">17</span><span class="stat-plus">+</span></div>
+          <div class="stat-lbl">Years of International Experience</div>
+          <div class="stat-sub">Across three continents</div>
+        </div>
+        <div class="stat-card stat-card-accent fade-up">
+          <div class="stat-num">3</div>
+          <div class="stat-lbl">Countries of Operation</div>
+          <div class="stat-sub">Sri Lanka · Singapore · Australia</div>
+        </div>
+        <div class="stat-card fade-up">
+          <div class="stat-num">100<span class="stat-plus">%</span></div>
+          <div class="stat-lbl">Client-Side Independent Advisory</div>
+          <div class="stat-sub">Always acting in your interest</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ════ WHO WE ARE ════ -->
+<section class="section-pad bg-grey-light">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <div class="fade-up">
+          <span class="section-label">Who We Are</span>
+          <h2 class="section-title">A Trusted Partner Who Stands Firmly on Your Side</h2>
+          <div class="divider-accent"></div>
+          <p class="mb-4" style="color:var(--text-body);line-height:1.8;">
+            At Project Excellence Pvt Ltd, we specialise in <strong>client advisory, project management, and cost consultancy</strong> — a powerful combination designed to protect your interests from concept to completion.
+          </p>
+          <p class="mb-5" style="color:var(--text-muted);line-height:1.8;">
+            Our approach blends strategic insight, commercial intelligence, and structured execution to ensure your project progresses with confidence, control, and clarity. With experience across Sri Lanka, Singapore, and Australia, we bring global standards of governance and advisory thinking into every project we support.
+          </p>
+          <a href="/About" class="btn-od">
+            <i class="bi bi-arrow-right-circle"></i> Our Story
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-6 stagger-parent">
+        <div class="row g-3">
+          <div class="col-6">
+            <div class="value-card fade-up h-100">
+              <div class="value-label">Principle 01</div>
+              <div class="value-title">Excellence</div>
+              <div class="value-desc">In advisory quality, technical insight, and client service at every stage.</div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="value-card fade-up h-100">
+              <div class="value-label">Principle 02</div>
+              <div class="value-title">Execution</div>
+              <div class="value-desc">Structured, consistent, and proactive management across every project phase.</div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="value-card fade-up" style="border-left-color:var(--primary);">
+              <div class="value-label">Principle 03</div>
+              <div class="value-title">Expertise</div>
+              <div class="value-desc">Spanning commercial, technical, and delivery perspectives — backed by 17+ years of international experience.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ CORE SERVICES ════ -->
+<section class="section-pad">
+  <div class="container">
+    <div class="text-center mb-5 fade-up">
+      <span class="section-label">What We Do</span>
+      <h2 class="section-title">Our Core Services</h2>
+      <div class="divider-accent center"></div>
+      <p class="section-subtitle mx-auto">
+        We provide a powerful combination of advisory, management and cost intelligence — designed to protect your investment and deliver your project with precision.
+      </p>
+    </div>
+
+    <div class="row g-4 stagger-parent">
+      <div class="col-lg-3 col-md-6">
+        <div class="service-card fade-up">
+          <div class="service-icon-wrap">
+            <i class="bi bi-shield-check text-accent" style="font-size:1.7rem;"></i>
+          </div>
+          <div class="service-title">Client-Side Advisory</div>
+          <div class="service-desc">Strategic guidance that helps you make informed decisions, reduce risk, and align your project with your commercial goals.</div>
+          <a href="/Services/Advisory" class="service-link">
+            Learn More <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="service-card fade-up">
+          <div class="service-icon-wrap">
+            <i class="bi bi-diagram-3 text-accent" style="font-size:1.7rem;"></i>
+          </div>
+          <div class="service-title">Project Management</div>
+          <div class="service-desc">Disciplined coordination and structured execution that keeps your project delivered on time, on cost, and to the expected quality.</div>
+          <a href="/Services/ProjectManagement" class="service-link">
+            Learn More <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="service-card fade-up">
+          <div class="service-icon-wrap">
+            <i class="bi bi-pencil-square text-accent" style="font-size:1.7rem;"></i>
+          </div>
+          <div class="service-title">Design Management</div>
+          <div class="service-desc">Leading design coordination to ensure every discipline aligns with client objectives — technically sound and commercially viable.</div>
+          <a href="/Services/DesignManagement" class="service-link">
+            Learn More <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="service-card fade-up">
+          <div class="service-icon-wrap">
+            <i class="bi bi-calculator text-accent" style="font-size:1.7rem;"></i>
+          </div>
+          <div class="service-title">Cost Consultancy</div>
+          <div class="service-desc">Accurate budgeting, cost evaluation, value engineering and commercial assurance that protects your financial investment throughout the project.</div>
+          <a href="/Services/CostConsultancy" class="service-link">
+            Learn More <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ WHY CHOOSE US ════ -->
+<section class="section-pad bg-grey-light">
+  <div class="container">
+    <div class="text-center mb-5 fade-up">
+      <span class="section-label">Why Choose Us</span>
+      <h2 class="section-title">Why Clients Choose Project Excellence</h2>
+      <div class="divider-accent center"></div>
+    </div>
+
+    <div class="row g-4 stagger-parent">
+      <div class="col-lg-4 col-md-6">
+        <div class="strength-card fade-up">
+          <div class="strength-icon"><i class="bi bi-person-check-fill" style="color:var(--accent);"></i></div>
+          <div class="strength-title">A Trusted Advisor on Your Side</div>
+          <div class="strength-text">We stand firmly on the client's side — offering independent guidance, transparent insights, and strategic direction that protects your commercial interests throughout the entire project lifecycle.</div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="strength-card fade-up">
+          <div class="strength-icon"><i class="bi bi-lightbulb-fill" style="color:var(--accent);"></i></div>
+          <div class="strength-title">Strategic Advice for Confident Decisions</div>
+          <div class="strength-text">Our advisory-first approach gives clients clarity and confidence. We analyse risks, evaluate options, and provide the intelligence needed to make the right decisions at the right moments.</div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="strength-card fade-up">
+          <div class="strength-icon"><i class="bi bi-currency-dollar" style="color:var(--accent);font-size:1.6rem;"></i></div>
+          <div class="strength-title">Commercial &amp; Cost Intelligence</div>
+          <div class="strength-text">With strong cost consultancy capabilities, we help clients control budgets, validate estimates, assess variations, and unlock value through careful financial and commercial analysis.</div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="strength-card fade-up">
+          <div class="strength-icon"><i class="bi bi-kanban-fill" style="color:var(--accent);"></i></div>
+          <div class="strength-title">Structured Project Delivery</div>
+          <div class="strength-text">Our disciplined project management approach ensures progress is controlled, teams stay aligned, and the project maintains stability across time, cost, quality, and scope.</div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="strength-card fade-up">
+          <div class="strength-icon"><i class="bi bi-bar-chart-line-fill" style="color:var(--accent);"></i></div>
+          <div class="strength-title">Clear Communication &amp; Governance</div>
+          <div class="strength-text">We simplify complexity through clear reporting, early warning indicators, and structured governance frameworks that keep clients informed, empowered, and in control.</div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="strength-card fade-up">
+          <div class="strength-icon"><i class="bi bi-globe2" style="color:var(--accent);"></i></div>
+          <div class="strength-title">International Experience, Local Understanding</div>
+          <div class="strength-text">With project exposure across Sri Lanka, Singapore, and Australia, we blend global best practices with practical local insight — resulting in smarter decisions and smoother delivery.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ HOW WE WORK ════ -->
+<section class="section-pad">
+  <div class="container">
+    <div class="row align-items-start g-5">
+      <div class="col-lg-5 fade-up">
+        <span class="section-label">Our Approach</span>
+        <h2 class="section-title">Strategic. Transparent. Disciplined.</h2>
+        <div class="divider-accent"></div>
+        <p class="section-subtitle">
+          Our approach blends advisory intelligence with structured delivery methods to consistently deliver measurable value for our clients.
+        </p>
+        <a href="/Services" class="btn-pb mt-4 d-inline-flex">
+          <i class="bi bi-arrow-right-circle-fill"></i> Explore Services
+        </a>
+      </div>
+      <div class="col-lg-7">
+        <div class="process-step fade-up">
+          <div class="step-num">01</div>
+          <div>
+            <div class="step-title">Understand the Client's Vision</div>
+            <div class="step-desc">We begin by deeply understanding your objectives, constraints, risks, and expectations — ensuring our advisory is always purpose-driven.</div>
+          </div>
+        </div>
+        <div class="process-step fade-up">
+          <div class="step-num">02</div>
+          <div>
+            <div class="step-title">Inform &amp; Advise</div>
+            <div class="step-desc">We provide strategic recommendations backed by technical and commercial insight — giving you the clarity to make confident decisions.</div>
+          </div>
+        </div>
+        <div class="process-step fade-up">
+          <div class="step-num">03</div>
+          <div>
+            <div class="step-title">Plan &amp; Structure</div>
+            <div class="step-desc">We define governance frameworks, communication pathways, schedules, and cost parameters that set your project up for success.</div>
+          </div>
+        </div>
+        <div class="process-step fade-up">
+          <div class="step-num">04</div>
+          <div>
+            <div class="step-title">Coordinate &amp; Execute</div>
+            <div class="step-desc">We align consultants, manage contractors, and maintain progress with discipline — ensuring your project moves forward without disruption.</div>
+          </div>
+        </div>
+        <div class="process-step fade-up">
+          <div class="step-num">05</div>
+          <div>
+            <div class="step-title">Monitor, Control &amp; Protect Value</div>
+            <div class="step-desc">Through continuous oversight, we ensure the project stays on track commercially and operationally — protecting your investment at every stage.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+@if (Model.FeaturedProjects.Any())
+{
+<!-- ════ FEATURED PROJECTS ════ -->
+<section class="section-pad bg-grey-light">
+  <div class="container">
+    <div class="text-center mb-5 fade-up">
+      <span class="section-label">Our Work</span>
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="divider-accent center"></div>
+    </div>
+    <div class="row g-4 stagger-parent">
+      @foreach (var project in Model.FeaturedProjects)
+      {
+      <div class="col-lg-6 col-md-6">
+        <div class="project-card fade-up">
+          <div class="project-img">
+            @if (!string.IsNullOrEmpty(project.ImageUrl))
+            {
+              <img src="@project.ImageUrl" alt="@project.Name" loading="lazy" decoding="async" />
+            }
+            else
+            {
+              <i class="bi bi-building project-ph"></i>
+            }
+          </div>
+          <div class="project-body">
+            <div>
+              <span class="project-badge">@project.Category</span>
+              @if (project.Status == "Ongoing") { <span class="status-ongoing">Ongoing</span> }
+              else { <span class="status-completed">Completed</span> }
+            </div>
+            <div class="project-name">@project.Name</div>
+            <div class="project-meta">
+              @if (!string.IsNullOrEmpty(project.Location)) { <span><i class="bi bi-geo-alt"></i> @project.Location</span> }
+              @if (!string.IsNullOrEmpty(project.Client)) { <span><i class="bi bi-building"></i> @project.Client</span> }
+            </div>
+            <p class="project-desc">@project.Overview</p>
+            <a href="/Projects/Detail/@project.Id" class="service-link mt-3 d-inline-flex">
+              View Details <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+    <div class="text-center mt-5 fade-up">
+      <a href="/Projects" class="btn-od">
+        <i class="bi bi-grid-3x3-gap"></i> View All Projects
+      </a>
+    </div>
+  </div>
+</section>
+}
+
+<!-- ════ INDUSTRIES ════ -->
+<section class="section-pad">
+  <div class="container">
+    <div class="text-center mb-5 fade-up">
+      <span class="section-label">Industries We Serve</span>
+      <h2 class="section-title">Sectors We Support</h2>
+      <div class="divider-accent center"></div>
+    </div>
+    <div class="text-center stagger-parent">
+      <span class="industry-tag fade-up"><i class="bi bi-house-fill"></i> Residential Developments</span>
+      <span class="industry-tag fade-up"><i class="bi bi-building-fill"></i> Commercial Buildings</span>
+      <span class="industry-tag fade-up"><i class="bi bi-buildings-fill"></i> Mixed-Use Developments</span>
+      <span class="industry-tag fade-up"><i class="bi bi-building-up"></i> Apartment Buildings</span>
+      <span class="industry-tag fade-up"><i class="bi bi-mortarboard-fill"></i> Institutional / Educational</span>
+      <span class="industry-tag fade-up"><i class="bi bi-stars"></i> Hospitality &amp; Leisure</span>
+      <span class="industry-tag fade-up"><i class="bi bi-gear-fill"></i> Industrial Projects</span>
+      <span class="industry-tag fade-up"><i class="bi bi-graph-up-arrow"></i> Investor-Driven Projects</span>
+    </div>
+  </div>
+</section>
+
+<!-- ════ CTA ════ -->
+<section class="cta-section section-pad">
+  <div class="container position-relative">
+    <div class="row">
+      <div class="col-lg-7 fade-up">
+        <span class="section-label text-white" style="color:rgba(176,210,237,.8) !important;">Have a Project in Mind?</span>
+        <h2 class="cta-title">Let Us Guide You With Clarity, Structure and Commercially Intelligent Advice.</h2>
+        <p class="cta-subtitle">Our team is ready to provide the advisory support, project leadership and cost intelligence your project needs to succeed.</p>
+        <div class="d-flex gap-3 flex-wrap">
+          <a href="/Contact" class="btn-pb" style="background:rgba(255,255,255,.15);backdrop-filter:blur(10px);border:1.5px solid rgba(255,255,255,.4);box-shadow:none;">
+            <i class="bi bi-envelope-fill"></i> Contact Us
+          </a>
+          <a href="/Services" class="btn-ob">
+            <i class="bi bi-grid-3x3-gap-fill"></i> Our Services
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

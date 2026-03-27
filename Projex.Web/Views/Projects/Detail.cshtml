@@ -1,0 +1,87 @@
+@model Project
+@{
+    ViewData["Title"] = Model.Name;
+}
+
+<section class="page-hero">
+  <div class="container position-relative" style="z-index:2;">
+    <ul class="bc-nav">
+      <li><a href="/">Home</a></li>
+      <li class="bc-sep">/</li>
+      <li><a href="/Projects">Projects</a></li>
+      <li class="bc-sep">/</li>
+      <li class="active">@Model.Name</li>
+    </ul>
+    <h1 class="page-hero-title">@Model.Name</h1>
+    <div class="d-flex gap-3 flex-wrap align-items-center mt-2">
+      @if (!string.IsNullOrEmpty(Model.Category)) { <span class="project-badge" style="background:rgba(176,210,237,.2);color:var(--accent-light);">@Model.Category</span> }
+      @if (Model.Status == "Ongoing") { <span class="status-ongoing" style="background:rgba(35,137,202,.2);color:var(--accent-light);">Ongoing</span> }
+    </div>
+  </div>
+</section>
+
+<section class="section-pad">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-8">
+        @if (!string.IsNullOrEmpty(Model.ImageUrl))
+        {
+        <img src="@Model.ImageUrl" alt="@Model.Name" style="width:100%;border-radius:var(--radius-lg);margin-bottom:40px;"/>
+        }
+
+        @if (!string.IsNullOrEmpty(Model.Overview))
+        {
+        <div class="mb-5 fade-up">
+          <h3 style="font-size:1.2rem;font-weight:700;color:var(--primary);margin-bottom:16px;">Project Overview</h3>
+          <p style="color:var(--text-muted);line-height:1.85;font-size:1rem;">@Model.Overview</p>
+        </div>
+        }
+
+        @if (!string.IsNullOrEmpty(Model.Contribution))
+        {
+        <div class="fade-up">
+          <h3 style="font-size:1.2rem;font-weight:700;color:var(--primary);margin-bottom:16px;">Our Contribution</h3>
+          <p style="color:var(--text-muted);line-height:1.85;font-size:1rem;">@Model.Contribution</p>
+        </div>
+        }
+      </div>
+
+      <div class="col-lg-4 fade-in">
+        <div class="contact-card" style="position:sticky;top:100px;">
+          <h4 style="font-family:var(--font-h);font-size:.9rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--primary);margin-bottom:24px;padding-bottom:16px;border-bottom:2px solid var(--grey-mid);">Project Details</h4>
+          @if (!string.IsNullOrEmpty(Model.Location)) {
+          <div class="contact-info-item" style="margin-bottom:16px;">
+            <div class="contact-info-icon" style="width:36px;height:36px;"><i class="bi bi-geo-alt-fill" style="font-size:.9rem;"></i></div>
+            <div><div class="ci-label">Location</div><div class="ci-val">@Model.Location</div></div>
+          </div>
+          }
+          @if (!string.IsNullOrEmpty(Model.Client)) {
+          <div class="contact-info-item" style="margin-bottom:16px;">
+            <div class="contact-info-icon" style="width:36px;height:36px;"><i class="bi bi-building-fill" style="font-size:.9rem;"></i></div>
+            <div><div class="ci-label">Client</div><div class="ci-val">@Model.Client</div></div>
+          </div>
+          }
+          @if (!string.IsNullOrEmpty(Model.Role)) {
+          <div class="contact-info-item" style="margin-bottom:16px;">
+            <div class="contact-info-icon" style="width:36px;height:36px;"><i class="bi bi-briefcase-fill" style="font-size:.9rem;"></i></div>
+            <div><div class="ci-label">Our Role</div><div class="ci-val">@Model.Role</div></div>
+          </div>
+          }
+          @if (!string.IsNullOrEmpty(Model.Status)) {
+          <div class="contact-info-item" style="margin-bottom:24px;">
+            <div class="contact-info-icon" style="width:36px;height:36px;"><i class="bi bi-activity" style="font-size:.9rem;"></i></div>
+            <div><div class="ci-label">Status</div><div class="ci-val">@Model.Status</div></div>
+          </div>
+          }
+          <div style="border-top:1px solid var(--grey-mid);padding-top:20px;">
+            <p style="font-size:.85rem;color:var(--text-muted);margin-bottom:16px;">Have a similar project? Let us help.</p>
+            <a href="/Contact" class="btn-pb w-100" style="justify-content:center;"><i class="bi bi-envelope-fill"></i> Enquire Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-5 fade-up">
+      <a href="/Projects" class="btn-od"><i class="bi bi-arrow-left"></i> Back to Projects</a>
+    </div>
+  </div>
+</section>
