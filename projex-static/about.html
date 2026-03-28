@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- ═══════════════════════════════════════════════════════════
+       PAGE META
+       - To change the browser tab title: edit the <title> tag below
+  ═══════════════════════════════════════════════════════════ -->
+  <title>About Us – Project Excellence</title>
+  <!-- CSS libraries loaded from CDN (internet required) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+  <!-- Local stylesheets — found in the css/ folder -->
+  <link rel="stylesheet" href="css/site.css" />
+  <link rel="stylesheet" href="css/modern.css" />
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     NAVIGATION BAR
+     - To change the logo: replace images/logo-white.png
+     - The "active" class on "About Us" highlights this page in the nav
+     - To update contact email or phone in the footer, scroll to the FOOTER section
+     - This same navbar appears on every page — update all pages if changed
+═══════════════════════════════════════════════════════════ -->
+<nav id="mainNav" class="navbar navbar-expand-lg">
+  <div class="nav-inner">
+    <a class="navbar-brand nav-brand" href="index.html">
+      <img src="images/logo-white.png" alt="Project Excellence" class="nav-logo" />
+    </a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mx-auto align-items-center gap-1">
+        <li class="nav-item"><a class="nav-link nav-link-custom" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-custom active" href="about.html">About Us</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link nav-link-custom dropdown-toggle" href="services.html" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+          <ul class="dropdown-menu nav-dropdown" aria-labelledby="servicesDropdown">
+            <li><a class="dropdown-item nav-dd-item nav-dd-header" href="services.html">All Services</a></li>
+            <li><hr class="dropdown-divider my-1"></li>
+            <li><a class="dropdown-item nav-dd-item" href="services.html#advisory"><i class="bi bi-shield-check"></i> Client-Side Advisory</a></li>
+            <li><a class="dropdown-item nav-dd-item" href="services.html#pm"><i class="bi bi-diagram-3"></i> Project Management</a></li>
+            <li><a class="dropdown-item nav-dd-item" href="services.html#dm"><i class="bi bi-pencil-square"></i> Design Management</a></li>
+            <li><a class="dropdown-item nav-dd-item" href="services.html#cost"><i class="bi bi-calculator"></i> Cost Consultancy</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link nav-link-custom" href="projects.html">Projects</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-custom" href="contact.html">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="nav-cta-btn d-none d-lg-inline-flex"><i class="bi bi-arrow-right-circle"></i> Get In Touch</a>
+    </div>
+    <button class="nav-hamburger" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<main>
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE HERO (banner at top of About page)
+     - To change the background image: edit url('images/10.jpg')
+       e.g. style="background-image:url('images/NEW.jpg');"
+     - To change the breadcrumb path label: edit <li class="active">About Us</li>
+     - To change the page main title: edit <h1 class="page-hero-mm-title">
+     - To change the subtitle text below the title: edit <p class="page-hero-mm-sub">
+═══════════════════════════════════════════════════════════ -->
+<section class="page-hero-mm" style="background-image:url('images/10.jpg');">
+  <div class="page-hero-mm-overlay"></div>
+  <div class="container page-hero-mm-inner">
+    <ul class="bc-nav">
+      <li><a href="index.html">Home</a></li>
+      <li class="bc-sep">/</li>
+      <li class="active">About Us</li>
+    </ul>
+    <h1 class="page-hero-mm-title">About Project Excellence</h1>
+    <p class="page-hero-mm-sub">A trusted partner who stands firmly on your side — commercially, strategically, and technically.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     OUR STORY SECTION (company founding story — left text, right dark card)
+     LEFT COLUMN (text):
+     - To change the section heading: edit <h2 class="section-title">
+     - To change the story paragraphs: edit the <p> tag contents
+     - "Work With Us" button links to contact.html
+     ─────────────────────────────────────────────────────────
+     RIGHT COLUMN (dark promise card):
+     - To change the quote text: edit the <p> inside the dark card
+     - STAT NUMBERS on the dark card (17+, 3, 100%):
+         - These are static (not animated) — just edit the number text directly
+         - e.g. change "17" to "20" and update the label below
+     - To change a stat label: edit the small text below each number
+       (e.g. "Years Experience", "Countries", "Independent")
+     - To change the "Our Promise" label: edit the text in the top inline div
+═══════════════════════════════════════════════════════════ -->
+<section class="section-pad" style="background:#fff;">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6 fade-up">
+        <span class="section-label">Our Story</span>
+        <h2 class="section-title">Founded on a Core Belief</h2>
+        <div class="divider-accent"></div>
+        <p style="color:var(--text-body);line-height:1.85;font-size:1.02rem;margin-bottom:20px;">Project Excellence Pvt Ltd was founded on a core belief: <strong>clients deserve a trusted advisor who protects their interests</strong> — commercially, strategically, and technically — from the very beginning of a project to its final completion.</p>
+        <p style="color:var(--text-muted);line-height:1.85;margin-bottom:20px;">In a construction market where budgets shift, risks escalate, and decisions must be made quickly and confidently, we recognised a major gap: <em>the need for independent, high-calibre advisory supported by disciplined project management and robust cost consultancy.</em></p>
+        <p style="color:var(--text-muted);line-height:1.85;margin-bottom:36px;">With professional experience across Sri Lanka, Singapore, and Australia, our team brings global insight into how successful projects are planned, evaluated, governed, and delivered.</p>
+        <a href="contact.html" class="btn-pb"><i class="bi bi-arrow-right-circle-fill"></i> Work With Us</a>
+      </div>
+      <!-- Dark promise card (right column) -->
+      <div class="col-lg-6 fade-in">
+        <div style="background:#111111;border-radius:16px;padding:48px 44px;border:1px solid #222;">
+          <div style="display:inline-flex;align-items:center;gap:8px;font-family:'Inter',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#2389CA;margin-bottom:28px;">
+            <span style="width:20px;height:1px;background:#2389CA;display:inline-block;"></span>Our Promise
+          </div>
+          <!-- Company quote/promise — edit the text between the quotes -->
+          <p style="font-family:'Inter',sans-serif;font-size:1.15rem;font-weight:600;line-height:1.65;color:#fff;margin:0 0 40px;letter-spacing:-.01em;">"Clear advisory. Strong cost intelligence. Reliable project execution. A partner who stands firmly on your side."</p>
+          <div style="height:1px;background:#222;margin-bottom:36px;"></div>
+          <!-- Three key stats inside the dark card — edit numbers and labels here -->
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;">
+            <div style="text-align:center;padding:0 16px;">
+              <div style="font-family:'Inter',sans-serif;font-size:2.4rem;font-weight:800;color:#fff;line-height:1;letter-spacing:-.04em;">17<span style="font-size:1.4rem;color:#2389CA;">+</span></div>
+              <div style="font-size:.72rem;color:rgba(255,255,255,.4);margin-top:8px;letter-spacing:.1em;text-transform:uppercase;">Years Experience</div>
+            </div>
+            <div style="text-align:center;padding:0 16px;border-left:1px solid #222;border-right:1px solid #222;">
+              <div style="font-family:'Inter',sans-serif;font-size:2.4rem;font-weight:800;color:#fff;line-height:1;letter-spacing:-.04em;">3</div>
+              <div style="font-size:.72rem;color:rgba(255,255,255,.4);margin-top:8px;letter-spacing:.1em;text-transform:uppercase;">Countries</div>
+            </div>
+            <div style="text-align:center;padding:0 16px;">
+              <div style="font-family:'Inter',sans-serif;font-size:2.4rem;font-weight:800;color:#fff;line-height:1;letter-spacing:-.04em;">100<span style="font-size:1.4rem;color:#2389CA;">%</span></div>
+              <div style="font-size:.72rem;color:rgba(255,255,255,.4);margin-top:8px;letter-spacing:.1em;text-transform:uppercase;">Independent</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FULL-WIDTH IMAGE BREAK (tall banner image with overlaid quote)
+     - To change the image: replace 'images/12.jpg' in the <img src=...>
+     - To change the quote text: edit the <p> inside this block
+     - To change overlay darkness: edit rgba(0,0,0,.45) — higher value = darker
+     - The image height is fixed at 420px — change style="height:420px" to adjust
+═══════════════════════════════════════════════════════════ -->
+<div style="height:420px;overflow:hidden;position:relative;">
+  <img src="images/12.jpg" alt="Construction site team" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 60%;" />
+  <div style="position:absolute;inset:0;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;">
+    <p style="font-family:var(--font-h);font-size:clamp(1.4rem,3vw,2.4rem);font-weight:800;color:#fff;text-align:center;max-width:720px;line-height:1.3;letter-spacing:-.03em;padding:0 24px;">
+      "We bring global standards of governance and advisory thinking into every project we support."
+    </p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     VISION & MISSION SECTION (two side-by-side cards)
+     LEFT CARD (Vision — white):
+     - To change the Vision heading: edit <h3> inside the white card
+     - To change the Vision text: edit the <p> inside the white card
+     RIGHT CARD (Mission — dark):
+     - To change the Mission heading: edit <h3> inside the dark card
+     - To change the Mission text: edit the <p> inside the dark card
+═══════════════════════════════════════════════════════════ -->
+<section class="section-pad" style="background:var(--off-white,#F7F6F3);">
+  <div class="container">
+    <div class="text-center mb-5 fade-up">
+      <span class="section-label">Our Direction</span>
+      <h2 class="section-title">Vision &amp; Mission</h2>
+      <div class="divider-accent center"></div>
+    </div>
+    <div class="row g-4">
+      <!-- Vision card (white background, blue top border) -->
+      <div class="col-lg-6 fade-up">
+        <div style="background:#fff;border:1px solid var(--border,#E8E8E4);border-top:3px solid var(--accent);border-radius:14px;padding:44px 40px;height:100%;">
+          <div style="font-family:var(--font-h);font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;">Vision</div>
+          <h3 style="font-size:1.35rem;font-weight:800;color:var(--primary);margin-bottom:16px;letter-spacing:-.02em;">Setting a New Benchmark</h3>
+          <p style="color:var(--text-muted);line-height:1.85;font-size:.96rem;">To set a new benchmark in client-side project advisory — empowering owners and investors with clarity, confidence, and commercially intelligent guidance that transforms how projects are planned, governed, and delivered.</p>
+        </div>
+      </div>
+      <!-- Mission card (dark background) -->
+      <div class="col-lg-6 fade-up">
+        <div style="background:#111;border-radius:14px;padding:44px 40px;height:100%;">
+          <div style="font-family:var(--font-h);font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:14px;">Mission</div>
+          <h3 style="font-size:1.35rem;font-weight:800;color:#fff;margin-bottom:16px;letter-spacing:-.02em;">Delivering Purposeful Outcomes</h3>
+          <p style="color:rgba(255,255,255,.6);line-height:1.85;font-size:.96rem;">We strive to deliver informed decisions, proactive risk control, and transparent communication — ensuring every project moves forward with purpose, precision, and measurable value.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     THREE PRINCIPLES SECTION (Excellence / Execution / Expertise)
+     - To change the section heading: edit <h2 class="section-title">
+     Each value card has:
+     - Label (e.g. "Principle 01"): edit <div class="value-label">
+     - Title (e.g. "Excellence"): edit <div class="value-title">
+     - Description: edit <div class="value-desc">
+     - To add a fourth principle: add a new <div class="col-lg-4 fade-up"> block
+       (you may also want to change col-lg-4 to col-lg-3 to fit four across)
+═══════════════════════════════════════════════════════════ -->
+<section class="section-pad" style="background:#fff;">
+  <div class="container">
+    <div class="text-center mb-5 fade-up">
+      <span class="section-label">Our Foundation</span>
+      <h2 class="section-title">The Three Principles That Define Us</h2>
+      <div class="divider-accent center"></div>
+    </div>
+    <div class="row g-4 stagger-parent">
+      <div class="col-lg-4 fade-up"><div class="value-card h-100"><div class="value-label">Principle 01</div><div class="value-title">Excellence</div><div class="value-desc">In advisory quality, communication, and decision support. Every engagement is approached with the highest standards of technical insight and client service — no exceptions.</div></div></div>
+      <div class="col-lg-4 fade-up"><div class="value-card h-100"><div class="value-label">Principle 02</div><div class="value-title">Execution</div><div class="value-desc">Delivering consistent, structured, and proactive management across every stage. We follow through on every commitment — keeping your project on track and your team aligned.</div></div></div>
+      <div class="col-lg-4 fade-up"><div class="value-card h-100"><div class="value-label">Principle 03</div><div class="value-title">Expertise</div><div class="value-desc">Applying technical, commercial, and strategic insight to add real value. Our team's international exposure and multi-disciplinary knowledge sets us apart from the competition.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SERVICE IDENTITY SECTION (left image + right feature list)
+     LEFT COLUMN:
+     - Section heading and description: edit as normal text
+     - Image: replace 'images/7.jpg' to change it
+     RIGHT COLUMN (four service feature items):
+     Each item has:
+     - Icon: edit "bi bi-shield-check" → any Bootstrap Icon name
+     - Title: edit <div class="feature-text-title">
+     - Description: edit <div class="feature-text-desc">
+     - To add a service: copy a <div class="service-feature-item"> block
+     - To remove a service: delete that block
+═══════════════════════════════════════════════════════════ -->
+<section class="section-pad" style="background:var(--off-white,#F7F6F3);">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-5 fade-up">
+        <span class="section-label">Service Identity</span>
+        <h2 class="section-title">Three Disciplines. One Trusted Partner.</h2>
+        <div class="divider-accent"></div>
+        <p style="color:var(--text-muted);line-height:1.85;margin-bottom:32px;">Our service identity is intentionally balanced — combining advisory, management, and cost disciplines into a single, integrated offering that gives clients complete project confidence.</p>
+        <div class="split-image-block" style="aspect-ratio:4/3;border-radius:14px;">
+          <img src="images/7.jpg" alt="Architectural blueprints and plans" loading="lazy" />
+        </div>
+      </div>
+      <div class="col-lg-7 fade-up">
+        <div class="service-feature-item"><div class="feature-check"><i class="bi bi-shield-check"></i></div><div><div class="feature-text-title">Client Advisory</div><div class="feature-text-desc">Strategic guidance, risk insight, commercial positioning, decision support, and client representation throughout the project lifecycle.</div></div></div>
+        <div class="service-feature-item"><div class="feature-check"><i class="bi bi-diagram-3"></i></div><div><div class="feature-text-title">Project Management</div><div class="feature-text-desc">Coordinated execution, progress control, stakeholder alignment, and structured delivery that keeps every project moving forward with precision.</div></div></div>
+        <div class="service-feature-item"><div class="feature-check"><i class="bi bi-pencil-square"></i></div><div><div class="feature-text-title">Design Management</div><div class="feature-text-desc">Client-side design leadership ensuring every discipline aligns with objectives — technically sound and commercially viable.</div></div></div>
+        <div class="service-feature-item"><div class="feature-check"><i class="bi bi-calculator"></i></div><div><div class="feature-text-title">Cost Consultancy</div><div class="feature-text-desc">Cost planning, value engineering, estimates, commercial assessments, and claim evaluation to protect your financial investment at every stage.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     CALL TO ACTION (CTA) SECTION (dark banner at bottom)
+     - To change the heading: edit <h2 class="cta-title">
+     - To change the subtitle: edit <p class="cta-subtitle">
+     - Button 1 links to contact.html — edit href and text to change
+     - Button 2 links to services.html — edit href and text to change
+═══════════════════════════════════════════════════════════ -->
+<section class="cta-section section-pad">
+  <div class="container">
+    <div class="cta-section-inner fade-up">
+      <span class="section-label" style="color:rgba(255,255,255,.4);">Work With Us</span>
+      <h2 class="cta-title">Ready to Work With a Trusted Project Partner?</h2>
+      <p class="cta-subtitle">Let us bring clarity, structure, and commercially intelligent advisory to your next project.</p>
+      <div class="d-flex gap-3 flex-wrap justify-content-center">
+        <a href="contact.html" class="btn-pb"><i class="bi bi-envelope-fill"></i> Get In Touch</a>
+        <a href="services.html" class="btn-ob"><i class="bi bi-grid-3x3-gap-fill"></i> Our Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FOOTER
+     - To change email: replace "info@projectexcellence.lk"
+     - To change phone: replace "+94 XX XXX XXXX"
+     - To change copyright text: edit the <span class="footer-bottom-txt"> lines
+     - The footer is the same on all pages — update all pages if changed
+═══════════════════════════════════════════════════════════ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-4"><div class="footer-brand mb-3"><img src="images/logo-white.png" alt="Project Excellence" style="height:40px;width:auto;display:block;" /></div><p class="footer-desc">Independent client advisory, project management, and cost consultancy — protecting your commercial interests from concept to completion.</p><div class="d-flex flex-wrap gap-1"><span class="footer-pillar">Excellence</span><span class="footer-pillar">Execution</span><span class="footer-pillar">Expertise</span></div></div>
+      <div class="col-lg-2 col-6"><div class="footer-heading">Navigation</div><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="projects.html">Projects</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="col-lg-3 col-6"><div class="footer-heading">Services</div><ul class="footer-links"><li><a href="services.html#advisory">Client Advisory</a></li><li><a href="services.html#pm">Project Management</a></li><li><a href="services.html#dm">Design Management</a></li><li><a href="services.html#cost">Cost Consultancy</a></li></ul></div>
+      <!-- Footer contact details — update email and phone here -->
+      <div class="col-lg-3"><div class="footer-heading">Contact</div><div class="footer-ci"><span class="footer-ci-icon"><i class="bi bi-envelope-fill"></i></span><span>info@projectexcellence.lk</span></div><div class="footer-ci"><span class="footer-ci-icon"><i class="bi bi-telephone-fill"></i></span><span>+94 XX XXX XXXX</span></div></div>
+    </div>
+  </div>
+  <div class="footer-bottom mt-5"><div class="container"><div class="d-flex flex-wrap justify-content-between align-items-center gap-3"><span class="footer-bottom-txt">&copy; 2025 Project Excellence Pvt Ltd. All rights reserved.</span><span class="footer-bottom-txt">Independent Advisory &bull; Intelligent Cost Insight &bull; Structured Project Delivery</span></div></div></div>
+</footer>
+<button id="scrollTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/site.js"></script>
+<script src="js/animations.js"></script>
+</body>
+</html>

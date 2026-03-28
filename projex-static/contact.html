@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- ═══════════════════════════════════════════════════════════
+       PAGE META
+       - To change the browser tab title: edit the <title> tag below
+  ═══════════════════════════════════════════════════════════ -->
+  <title>Contact Us – Project Excellence</title>
+  <!-- CSS libraries loaded from CDN (internet required) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+  <!-- Local stylesheets — found in the css/ folder -->
+  <link rel="stylesheet" href="css/site.css" />
+  <link rel="stylesheet" href="css/modern.css" />
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     NAVIGATION BAR
+     - To change the logo: replace images/logo-white.png
+     - "active" class is on Contact to highlight the current page
+     - This same navbar appears on every page — update all pages if changed
+═══════════════════════════════════════════════════════════ -->
+<nav id="mainNav" class="navbar navbar-expand-lg">
+  <div class="nav-inner">
+    <a class="navbar-brand nav-brand" href="index.html"><img src="images/logo-white.png" alt="Project Excellence" class="nav-logo" /></a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mx-auto align-items-center gap-1">
+        <li class="nav-item"><a class="nav-link nav-link-custom" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-custom" href="about.html">About Us</a></li>
+        <li class="nav-item dropdown"><a class="nav-link nav-link-custom dropdown-toggle" href="services.html" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a><ul class="dropdown-menu nav-dropdown" aria-labelledby="servicesDropdown"><li><a class="dropdown-item nav-dd-item nav-dd-header" href="services.html">All Services</a></li><li><hr class="dropdown-divider my-1"></li><li><a class="dropdown-item nav-dd-item" href="services.html#advisory"><i class="bi bi-shield-check"></i> Client-Side Advisory</a></li><li><a class="dropdown-item nav-dd-item" href="services.html#pm"><i class="bi bi-diagram-3"></i> Project Management</a></li><li><a class="dropdown-item nav-dd-item" href="services.html#dm"><i class="bi bi-pencil-square"></i> Design Management</a></li><li><a class="dropdown-item nav-dd-item" href="services.html#cost"><i class="bi bi-calculator"></i> Cost Consultancy</a></li></ul></li>
+        <li class="nav-item"><a class="nav-link nav-link-custom" href="projects.html">Projects</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-custom active" href="contact.html">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="nav-cta-btn d-none d-lg-inline-flex"><i class="bi bi-arrow-right-circle"></i> Get In Touch</a>
+    </div>
+    <button class="nav-hamburger" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<main>
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE HERO (banner at top of Contact page)
+     - To change the background image: edit url('images/14.jpg')
+     - To change the main title: edit <h1 class="page-hero-mm-title">
+     - To change the subtitle paragraph: edit <p class="page-hero-mm-sub">
+     - To change the breadcrumb label: edit <li class="active">Contact Us</li>
+═══════════════════════════════════════════════════════════ -->
+<section class="page-hero-mm" style="background-image:url('images/14.jpg');">
+  <div class="page-hero-mm-overlay"></div>
+  <div class="container page-hero-mm-inner">
+    <ul class="bc-nav"><li><a href="index.html">Home</a></li><li class="bc-sep">/</li><li class="active">Contact Us</li></ul>
+    <h1 class="page-hero-mm-title">Get In Touch</h1>
+    <p class="page-hero-mm-sub">Have a project in mind? We'd love to hear about it. Let's start a conversation about how we can help you succeed.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     MAIN CONTENT: CONTACT FORM (left) + CONTACT INFO (right)
+═══════════════════════════════════════════════════════════ -->
+<section class="section-pad" style="background:#fff;">
+  <div class="container">
+    <div class="row g-5">
+
+      <!-- ─────────────────────────────────────────────────────────
+           CONTACT FORM (left column — 7/12 width on desktop)
+           ─────────────────────────────────────────────────────────
+           FORM FIELDS:
+           - Full Name (required)
+           - Email Address (required)
+           - Phone Number (optional)
+           - Company / Organisation (optional)
+           - Project Type (dropdown — select)
+           - Subject (required)
+           - Message (textarea, required)
+
+           HOW TO EDIT FIELDS:
+           - To change a field label: edit <label class="form-label-b"> text
+           - To change a placeholder hint: edit placeholder="..." attribute
+           - To make a field required: add the word "required" inside the <input> tag
+           - To make a field optional: remove the word "required"
+
+           TO ADD A NEW FIELD (e.g. Budget):
+           Copy an existing <div class="col-md-6"> block, change the id,
+           name, label, and placeholder to match your new field.
+
+           PROJECT TYPE DROPDOWN:
+           - To add a new option: copy <option>Option Name</option> and edit the text
+           - To remove an option: delete that <option> line
+           - Current options: Residential, Commercial, Mixed-Use, Apartment,
+             Institutional, Hospitality, Industrial, Investor-Driven, Other
+
+           FORM SUBMISSION:
+           - Currently this form does NOT send emails (pure frontend / no backend)
+           - On submit, it shows a success message (see #successMsg below)
+           - To connect real email sending, you need a backend or a service like
+             Formspree (https://formspree.io/) or EmailJS
+           ─────────────────────────────────────────────────────────
+           FORM SECTION HEADING:
+           - To change "Send a Message": edit <span class="section-label">
+           - To change "Tell Us About Your Project": edit <h2 class="section-title">
+      ───────────────────────────────────────────────────────── -->
+      <div class="col-lg-7 fade-up">
+        <div style="background:#fff;border:1px solid var(--border,#E8E8E4);border-radius:16px;padding:clamp(28px,4vw,48px);">
+          <span class="section-label">Send a Message</span>
+          <h2 class="section-title" style="font-size:1.7rem;margin:8px 0 4px;">Tell Us About Your Project</h2>
+          <div class="divider-accent"></div>
+          <form id="contactForm" onsubmit="handleSubmit(event)">
+            <div class="row g-3">
+              <!-- Full Name field -->
+              <div class="col-md-6">
+                <label class="form-label-b" for="fullName">Full Name</label>
+                <input id="fullName" name="fullName" class="form-ctrl-b" placeholder="e.g. John Smith" required />
+              </div>
+              <!-- Email field -->
+              <div class="col-md-6">
+                <label class="form-label-b" for="email">Email Address</label>
+                <input id="email" name="email" type="email" class="form-ctrl-b" placeholder="your@email.com" required />
+              </div>
+              <!-- Phone field (optional — remove "required" if you want it mandatory) -->
+              <div class="col-md-6">
+                <label class="form-label-b" for="phone">Phone Number</label>
+                <input id="phone" name="phone" type="tel" class="form-ctrl-b" placeholder="+94 XX XXX XXXX" />
+              </div>
+              <!-- Company field (optional) -->
+              <div class="col-md-6">
+                <label class="form-label-b" for="company">Company / Organisation</label>
+                <input id="company" name="company" class="form-ctrl-b" placeholder="Your company name" />
+              </div>
+              <!-- Project Type dropdown -->
+              <div class="col-md-6">
+                <label class="form-label-b" for="projectType">Project Type</label>
+                <select id="projectType" name="projectType" class="form-ctrl-b">
+                  <option value="">— Select Project Type —</option>
+                  <!-- Add or remove project type options here -->
+                  <option>Residential Development</option>
+                  <option>Commercial Building</option>
+                  <option>Mixed-Use Development</option>
+                  <option>Apartment Building</option>
+                  <option>Institutional / Educational</option>
+                  <option>Hospitality &amp; Leisure</option>
+                  <option>Industrial Project</option>
+                  <option>Investor-Driven Project</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <!-- Subject field -->
+              <div class="col-md-6">
+                <label class="form-label-b" for="subject">Subject</label>
+                <input id="subject" name="subject" class="form-ctrl-b" placeholder="Brief subject line" required />
+              </div>
+              <!-- Message textarea -->
+              <div class="col-12">
+                <label class="form-label-b" for="message">Message</label>
+                <textarea id="message" name="message" class="form-ctrl-b" rows="5" placeholder="Tell us about your project, objectives, and how we can help…" required style="resize:vertical;"></textarea>
+              </div>
+              <!-- Submit button — edit button text here -->
+              <div class="col-12 mt-2">
+                <button type="submit" class="btn-pb"><i class="bi bi-send-fill"></i> Send Message</button>
+              </div>
+            </div>
+          </form>
+          <!-- ─────────────────────────────────────────────────────
+               SUCCESS MESSAGE (shown after form is submitted)
+               - To change the success heading: edit <strong> text ("Message Sent!")
+               - To change the success body text: edit the text after </strong>
+               - This message appears automatically after submit via JavaScript below
+          ───────────────────────────────────────────────────── -->
+          <div id="successMsg" style="display:none;margin-top:20px;background:rgba(35,137,202,.08);border:1.5px solid rgba(35,137,202,.25);border-radius:8px;padding:16px 20px;display:none;align-items:flex-start;gap:12px;">
+            <i class="bi bi-check-circle-fill" style="font-size:1.3rem;color:var(--accent);flex-shrink:0;"></i>
+            <div><strong style="display:block;margin-bottom:4px;">Message Sent!</strong>Thank you for reaching out. We'll get back to you within 24 business hours.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─────────────────────────────────────────────────────────
+           CONTACT INFORMATION (right column — 5/12 width on desktop)
+           ─────────────────────────────────────────────────────────
+           To change the section heading: edit <h3> text
+           To change the intro paragraph: edit the <p> below the heading
+
+           CONTACT INFO ITEMS (4 items with icon, label, and value):
+           Each item:
+           - Icon: edit "bi bi-geo-alt-fill" → any Bootstrap Icon name
+           - Label (e.g. "Office Locations"): edit <div class="ci-label">
+           - Value (e.g. address/phone/email): edit <div class="ci-val">
+
+           ★ TO CHANGE OFFICE LOCATIONS:
+             Find: <div class="ci-val">Sri Lanka &bull; Singapore &bull; Australia</div>
+             Replace with your actual office locations
+
+           ★ TO CHANGE EMAIL ADDRESS:
+             Find: <div class="ci-val">info@projectexcellence.lk</div>
+             Replace with your real email address
+             (also update it in the footer of ALL pages)
+
+           ★ TO CHANGE PHONE NUMBER:
+             Find: <div class="ci-val">+94 XX XXX XXXX</div>
+             Replace with your real phone number
+             (also update it in the footer of ALL pages)
+
+           ★ TO CHANGE BUSINESS HOURS:
+             Find: <div class="ci-val">Monday – Friday, 9:00 AM – 5:30 PM</div>
+             Replace with your actual hours
+           ─────────────────────────────────────────────────────────
+           "WHAT TO EXPECT" CARD (3 bullet promises):
+           - To change an item text: edit the <span> after the check icon div
+           - To add an item: copy a <div style="display:flex..."> block
+           - To remove an item: delete that block
+      ───────────────────────────────────────────────────── -->
+      <div class="col-lg-5 fade-in">
+        <span class="section-label">Contact Information</span>
+        <h3 style="font-size:1.4rem;font-weight:800;color:var(--primary);margin:8px 0 4px;letter-spacing:-.02em;">We'd Love to Hear From You</h3>
+        <div class="divider-accent"></div>
+        <p style="color:var(--text-muted);line-height:1.8;margin-bottom:36px;">Reach out to discuss your project. We provide confidential, obligation-free initial consultations.</p>
+
+        <!-- Office Locations — edit the value text to change -->
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><i class="bi bi-geo-alt-fill"></i></div>
+          <div><div class="ci-label">Office Locations</div><div class="ci-val">Sri Lanka &bull; Singapore &bull; Australia</div></div>
+        </div>
+
+        <!-- Email Address — EDIT THIS to change the company email -->
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><i class="bi bi-envelope-fill"></i></div>
+          <div><div class="ci-label">Email Address</div><div class="ci-val">info@projectexcellence.lk</div></div>
+        </div>
+
+        <!-- Phone Number — EDIT THIS to change the phone number -->
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><i class="bi bi-telephone-fill"></i></div>
+          <div><div class="ci-label">Phone</div><div class="ci-val">+94 XX XXX XXXX</div></div>
+        </div>
+
+        <!-- Business Hours — EDIT THIS to change office hours -->
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><i class="bi bi-clock-fill"></i></div>
+          <div><div class="ci-label">Business Hours</div><div class="ci-val">Monday – Friday, 9:00 AM – 5:30 PM</div></div>
+        </div>
+
+        <!-- What to Expect card (3 promise bullets) -->
+        <div style="background:var(--off-white,#F7F6F3);border:1px solid var(--border,#E8E8E4);border-radius:14px;padding:28px;margin-top:8px;">
+          <div style="font-family:var(--font-h);font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;">What to Expect</div>
+          <div style="display:flex;flex-direction:column;gap:0;">
+            <!-- Promise item 1 — edit the <span> text -->
+            <div style="display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--border,#E8E8E4);"><div style="width:28px;height:28px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;font-size:.75rem;"><i class="bi bi-check"></i></div><span style="font-size:.88rem;color:var(--text-muted);">Response within 24 business hours</span></div>
+            <!-- Promise item 2 — edit the <span> text -->
+            <div style="display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--border,#E8E8E4);"><div style="width:28px;height:28px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;font-size:.75rem;"><i class="bi bi-check"></i></div><span style="font-size:.88rem;color:var(--text-muted);">Confidential initial consultation</span></div>
+            <!-- Promise item 3 — edit the <span> text -->
+            <div style="display:flex;align-items:center;gap:12px;padding:12px 0;"><div style="width:28px;height:28px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;font-size:.75rem;"><i class="bi bi-check"></i></div><span style="font-size:.88rem;color:var(--text-muted);">No-obligation project discussion</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FOOTER
+     ★ TO CHANGE EMAIL: replace "info@projectexcellence.lk" below
+     ★ TO CHANGE PHONE: replace "+94 XX XXX XXXX" below
+     - Also update these in the contact info section above and in all other pages
+     - To change copyright text: edit <span class="footer-bottom-txt">
+═══════════════════════════════════════════════════════════ -->
+<footer class="site-footer">
+  <div class="container"><div class="row g-5"><div class="col-lg-4"><div class="footer-brand mb-3"><img src="images/logo-white.png" alt="Project Excellence" style="height:40px;width:auto;display:block;" /></div><p class="footer-desc">Independent client advisory, project management, and cost consultancy — protecting your commercial interests from concept to completion.</p><div class="d-flex flex-wrap gap-1"><span class="footer-pillar">Excellence</span><span class="footer-pillar">Execution</span><span class="footer-pillar">Expertise</span></div></div><div class="col-lg-2 col-6"><div class="footer-heading">Navigation</div><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="projects.html">Projects</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="col-lg-3 col-6"><div class="footer-heading">Services</div><ul class="footer-links"><li><a href="services.html#advisory">Client Advisory</a></li><li><a href="services.html#pm">Project Management</a></li><li><a href="services.html#dm">Design Management</a></li><li><a href="services.html#cost">Cost Consultancy</a></li></ul></div>
+  <!-- Footer contact details — update email and phone here -->
+  <div class="col-lg-3"><div class="footer-heading">Contact</div><div class="footer-ci"><span class="footer-ci-icon"><i class="bi bi-envelope-fill"></i></span><span>info@projectexcellence.lk</span></div><div class="footer-ci"><span class="footer-ci-icon"><i class="bi bi-telephone-fill"></i></span><span>+94 XX XXX XXXX</span></div></div></div></div>
+  <div class="footer-bottom mt-5"><div class="container"><div class="d-flex flex-wrap justify-content-between align-items-center gap-3"><span class="footer-bottom-txt">&copy; 2025 Project Excellence Pvt Ltd. All rights reserved.</span><span class="footer-bottom-txt">Independent Advisory &bull; Intelligent Cost Insight &bull; Structured Project Delivery</span></div></div></div>
+</footer>
+<button id="scrollTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/site.js"></script>
+<script src="js/animations.js"></script>
+<!-- ═══════════════════════════════════════════════════════════
+     FORM SUBMIT HANDLER
+     - This runs when the user clicks "Send Message"
+     - It prevents the page from reloading (e.preventDefault)
+     - It shows the green success message (#successMsg)
+     - It resets all form fields
+     - It scrolls smoothly to the success message
+     NOTE: This does NOT send a real email. To send real emails,
+     integrate a service like Formspree or EmailJS.
+═══════════════════════════════════════════════════════════ -->
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  document.getElementById('successMsg').style.display = 'flex';
+  document.getElementById('contactForm').reset();
+  window.scrollTo({top: document.getElementById('successMsg').offsetTop - 100, behavior: 'smooth'});
+}
+</script>
+</body>
+</html>

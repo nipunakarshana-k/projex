@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- ═══════════════════════════════════════════════════════════
+       PAGE META
+       - To change the browser tab title: edit the <title> tag below
+  ═══════════════════════════════════════════════════════════ -->
+  <title>Services – Project Excellence</title>
+  <!-- CSS libraries loaded from CDN (internet required) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+  <!-- Local stylesheets — found in the css/ folder -->
+  <link rel="stylesheet" href="css/site.css" />
+  <link rel="stylesheet" href="css/modern.css" />
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     NAVIGATION BAR
+     - To change the logo: replace images/logo-white.png
+     - "active" class is on Services to highlight the current page
+     - On this page, the dropdown links use #advisory / #pm / #dm / #cost
+       (they scroll to anchors on THIS page instead of jumping to services.html)
+     - This same navbar appears on every page — update all pages if changed
+═══════════════════════════════════════════════════════════ -->
+<nav id="mainNav" class="navbar navbar-expand-lg">
+  <div class="nav-inner">
+    <a class="navbar-brand nav-brand" href="index.html"><img src="images/logo-white.png" alt="Project Excellence" class="nav-logo" /></a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mx-auto align-items-center gap-1">
+        <li class="nav-item"><a class="nav-link nav-link-custom" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-custom" href="about.html">About Us</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link nav-link-custom active dropdown-toggle" href="services.html" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+          <ul class="dropdown-menu nav-dropdown" aria-labelledby="servicesDropdown">
+            <li><a class="dropdown-item nav-dd-item nav-dd-header" href="services.html">All Services</a></li>
+            <li><hr class="dropdown-divider my-1"></li>
+            <!-- Dropdown links scroll to anchor IDs on this page -->
+            <li><a class="dropdown-item nav-dd-item" href="#advisory"><i class="bi bi-shield-check"></i> Client-Side Advisory</a></li>
+            <li><a class="dropdown-item nav-dd-item" href="#pm"><i class="bi bi-diagram-3"></i> Project Management</a></li>
+            <li><a class="dropdown-item nav-dd-item" href="#dm"><i class="bi bi-pencil-square"></i> Design Management</a></li>
+            <li><a class="dropdown-item nav-dd-item" href="#cost"><i class="bi bi-calculator"></i> Cost Consultancy</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link nav-link-custom" href="projects.html">Projects</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-custom" href="contact.html">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="nav-cta-btn d-none d-lg-inline-flex"><i class="bi bi-arrow-right-circle"></i> Get In Touch</a>
+    </div>
+    <button class="nav-hamburger" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<main>
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE HERO (banner at top of Services page)
+     - To change the background image: edit url('images/7.jpg')
+     - To change the main title: edit <h1 class="page-hero-mm-title">
+     - To change the subtitle paragraph: edit <p class="page-hero-mm-sub">
+     - To change the breadcrumb label: edit <li class="active">Services</li>
+═══════════════════════════════════════════════════════════ -->
+<section class="page-hero-mm" style="background-image:url('images/7.jpg');">
+  <div class="page-hero-mm-overlay"></div>
+  <div class="container page-hero-mm-inner">
+    <ul class="bc-nav"><li><a href="index.html">Home</a></li><li class="bc-sep">/</li><li class="active">Services</li></ul>
+    <h1 class="page-hero-mm-title">Our Services</h1>
+    <p class="page-hero-mm-sub">A powerful combination of advisory, project management, design management, and cost consultancy — designed to protect your commercial interests and deliver with confidence.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SERVICES GRID (four large service cards — 2 columns on desktop)
+     ─────────────────────────────────────────────────────────
+     HOW TO NAVIGATE TO A SERVICE FROM OTHER PAGES:
+     - Each card has an id="" anchor. e.g. id="advisory"
+     - From other pages, link as: href="services.html#advisory"
+     - This will jump directly to that service card when the page loads
+     ─────────────────────────────────────────────────────────
+     EACH SERVICE CARD HAS:
+     - Anchor ID: id="advisory" / id="pm" / id="dm" / id="cost"
+       (used for linking from other pages and the dropdown menu)
+     - Image: edit src="images/1.jpg" → replace with your photo
+     - Icon: edit "bi bi-shield-check" → any Bootstrap Icon
+     - Title: edit <div class="service-title">
+     - Description paragraph: edit <div class="service-desc">
+     - BULLET POINTS (what's included list):
+         To change a bullet: edit the text after </i>
+         To add a bullet: copy a <li class="d-flex gap-2 mb-2"> line
+         To remove a bullet: delete that line
+     - "Enquire Now" link: leads to contact.html (change href to change destination)
+═══════════════════════════════════════════════════════════ -->
+<section class="section-pad" style="background:#fff;">
+  <div class="container">
+    <div class="text-center mb-5 fade-up">
+      <span class="section-label">What We Offer</span>
+      <h2 class="section-title">Comprehensive Project Services</h2>
+      <div class="divider-accent center"></div>
+      <p class="section-subtitle mx-auto">Our services are structured to protect your commercial interests, reduce risk, and ensure your project moves forward with discipline, transparency, and strategic alignment.</p>
+    </div>
+    <div class="row g-4 stagger-parent">
+
+      <!-- ─── SERVICE 1: CLIENT-SIDE ADVISORY ─── -->
+      <!-- Link to this card from other pages: href="services.html#advisory" -->
+      <div class="col-lg-6 fade-up" id="advisory">
+        <div style="background:#fff;border:1px solid var(--border,#E8E8E4);border-radius:16px;overflow:hidden;height:100%;transition:all .35s ease;" onmouseover="this.style.boxShadow='0 8px 32px rgba(0,0,0,.08)';this.style.transform='translateY(-3px)'" onmouseout="this.style.boxShadow='';this.style.transform=''">
+          <!-- Service image — replace images/1.jpg to change -->
+          <div style="height:200px;overflow:hidden;position:relative;">
+            <img src="images/1.jpg" alt="Client-Side Advisory" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .5s ease;" />
+            <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.6));display:flex;align-items:flex-end;padding:20px;">
+              <div style="width:44px;height:44px;background:var(--accent);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.2rem;"><i class="bi bi-shield-check"></i></div>
+            </div>
+          </div>
+          <div style="padding:32px;">
+            <div class="service-title">Client-Side Advisory Services</div>
+            <div class="service-desc">Strategic guidance that helps you make informed decisions, reduce risk, and align your project with your commercial goals. We are your independent voice in every project conversation.</div>
+            <!-- Bullet point list — add/remove/edit items here -->
+            <ul style="list-style:none;padding:0;margin:0 0 20px;font-size:.87rem;color:var(--text-muted);">
+              <li class="d-flex gap-2 mb-2"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:2px;"></i> Strategic Advisory &amp; Project Guidance</li>
+              <li class="d-flex gap-2 mb-2"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:2px;"></i> Client Representation</li>
+              <li class="d-flex gap-2 mb-2"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:2px;"></i> Design Review &amp; Technical Advisory</li>
+              <li class="d-flex gap-2 mb-2"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:2px;"></i> Risk &amp; Opportunity Management</li>
+              <li class="d-flex gap-2"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:2px;"></i> Stakeholder Advisory &amp; Coordination</li>
+            </ul>
+            <a href="contact.html" class="service-link">Enquire Now <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── SERVICE 2: PROJECT MANAGEMENT ─── -->
+      <!-- Link to this card from other pages: href="services.html#pm" -->
+      <div class="col-lg-6 fade-up" id="pm">
+        <div style="background:#fff;border:1px solid var(--border,#E8E8E4);border-radius:16px;overflow:hidden;height:100%;transition:all .35s ease;" onmouseover="this.style.boxShadow='0 8px 32px rgba(0,0,0,.08)';this.style.transform='translateY(-3px)'" onmouseout="this.style.boxShadow='';this.style.transform=''">
+          <!-- Service image — replace images/8.jpg to change -->
+          <div style="height:200px;overflow:hidden;position:relative;">
+            <img src="images/8.jpg" alt="Project Management" loading="lazy" style="width:100%;height:100%;object-fit:cover;" />
+            <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.6));display:flex;align-items:flex-end;padding:20px;">
+              <div style="width:44px;height:44px;background:var(--accent);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.2rem;"><i class="bi bi-diagram-3"></i></div>
+            </div>
+          </div>
+          <div style="padding:32px;">
+            <div class="service-title">Project Management Services</div>
+            <div class="service-desc">Disciplined coordination, progress control, and structured execution that keeps your project delivered on time, on cost, and to the expected quality.</div>
+            <ul style="list-style:none;padding:0;margin:0 0 20px;font-size:.87rem;color:var(--text-muted);">
+              <li class="d-flex gap-2 mb-2"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:2px;"></i> End-to-End Project Delivery Management</li>
+              <li class="d-flex gap-2 mb-2"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:2px;"></i> Progress Monitoring &amp; Reporting</li>
+              <li class="d-flex gap-2 mb-2"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:2px;"></i> Construction Oversight &amp; Quality Monitoring</li>
+              <li class="d-flex gap-2 mb-2"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:2px;"></i> Procurement, Tender Support &amp; Contract Administration</li>
+              <li class="d-flex gap-2"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:2px;"></i> Program &amp; Schedule Control</li>
+            </ul>
+            <a href="contact.html" class="service-link">Enquire Now <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── SERVICE 3: DESIGN MANAGEMENT ─── -->
+      <!-- Link to this card from other pages: href="services.html#dm" -->
+      <div class="col-lg-6 fade-up" id="dm">
+        <div style="background:#fff;border:1px solid var(--border,#E8E8E4);border-radius:16px;overflow:hidden;height:100%;transition:all .35s ease;" onmouseover="this.style.boxShadow='0 8px 32px rgba(0,0,0,.08)';this.style.transform='translateY(-3px)'" onmouseout="this.style.boxShadow='';this.style.transform=''">
+          <!-- Service image — replace images/7.jpg to change -->
+          <div style="height:200px;overflow:hidden;position:relative;">
+            <img src="images/7.jpg" alt="Design Management" loading="lazy" style="width:100%;height:100%;object-fit:cover;" />
+            <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.6));display:flex;align-items:flex-end;padding:20px;">
+              <div style="width:44px;height:44px;background:var(--accent);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.2rem;"><i class="bi bi-pencil-square"></i></div>
+            </div>
+          </div>
+          <div style="padding:32px;">
+            <div class="service-title">Design Management Services</div>
+            <div class="service-desc">We lead and advise the design process to ensure every discipline remains aligned with the client's objectives — technically sound, commercially viable, and strategically planned.</div>
+            <ul style="list-style:none;padding:0;margin:0 0 20px;font-size:.87rem;color:var(--text-muted);">
+              <li class="d-flex gap-2 mb-2"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:2px;"></i> Design Coordination &amp; Advisory</li>
+              <li class="d-flex gap-2 mb-2"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:2px;"></i> Client-Side Design Leadership</li>
+              <li class="d-flex gap-2 mb-2"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:2px;"></i> Technical Review &amp; Risk Identification</li>
+              <li class="d-flex gap-2 mb-2"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:2px;"></i> Design Program Management</li>
+              <li class="d-flex gap-2"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:2px;"></i> Value-Driven Design &amp; Cost Alignment</li>
+            </ul>
+            <a href="contact.html" class="service-link">Enquire Now <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── SERVICE 4: COST CONSULTANCY ─── -->
+      <!-- Link to this card from other pages: href="services.html#cost" -->
+      <div class="col-lg-6 fade-up" id="cost">
+        <div style="background:#fff;border:1px solid var(--border,#E8E8E4);border-radius:16px;overflow:hidden;height:100%;transition:all .35s ease;" onmouseover="this.style.boxShadow='0 8px 32px rgba(0,0,0,.08)';this.style.transform='translateY(-3px)'" onmouseout="this.style.boxShadow='';this.style.transform=''">
+          <!-- Service image — replace images/9.jpg to change -->
+          <div style="height:200px;overflow:hidden;position:relative;">
+            <img src="images/9.jpg" alt="Cost Consultancy" loading="lazy" style="width:100%;height:100%;object-fit:cover;" />
+            <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.6));display:flex;align-items:flex-end;padding:20px;">
+              <div style="width:44px;height:44px;background:var(--accent);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.2rem;"><i class="bi bi-calculator"></i></div>
+            </div>
+          </div>
+          <div style="padding:32px;">
+            <div class="service-title">Cost Consultancy Services</div>
+            <div class="service-desc">Accurate budgeting, cost evaluation, value engineering, and commercial assurance that protects your financial investment throughout the project lifecycle.</div>
+            <ul style="list-style:none;padding:0;margin:0 0 20px;font-size:.87rem;color:var(--text-muted);">
+              <li class="d-flex gap-2 mb-2"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:2px;"></i> Cost Planning &amp; Budget Development</li>
+              <li class="d-flex gap-2 mb-2"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:2px;"></i> Value Engineering &amp; Cost Optimization</li>
+              <li class="d-flex gap-2 mb-2"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:2px;"></i> Commercial &amp; Cost Risk Advisory</li>
+              <li class="d-flex gap-2 mb-2"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:2px;"></i> Claims Review &amp; Payment Verification</li>
+              <li class="d-flex gap-2"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:2px;"></i> Estimate Reviews &amp; Benchmarking</li>
+            </ul>
+            <a href="contact.html" class="service-link">Enquire Now <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     HOW WE WORK SECTION (6-step numbered cards)
+     - To change the section heading: edit <h2 class="section-title">
+     - To change the subtitle: edit <p class="section-subtitle mx-auto">
+     Each step card has:
+     - Step number: edit the large number (01, 02, 03...)
+     - Title: edit <div class="strength-title">
+     - Description: edit <div class="strength-text">
+     - To add a step: copy a <div class="col-lg-4 col-md-6 fade-up"> block
+     - To remove a step: delete that block
+═══════════════════════════════════════════════════════════ -->
+<section class="section-pad" style="background:var(--off-white,#F7F6F3);">
+  <div class="container">
+    <div class="text-center mb-5 fade-up">
+      <span class="section-label">Our Approach</span>
+      <h2 class="section-title">How We Work</h2>
+      <div class="divider-accent center"></div>
+      <p class="section-subtitle mx-auto">Strategic. Transparent. Disciplined. Our approach blends advisory intelligence with structured delivery methods.</p>
+    </div>
+    <div class="row g-4 stagger-parent">
+      <div class="col-lg-4 col-md-6 fade-up"><div class="strength-card h-100"><div style="font-family:var(--font-h);font-size:2.4rem;font-weight:800;color:var(--border,#E8E8E4);line-height:1;margin-bottom:16px;">01</div><div class="strength-title">Understand the Vision</div><div class="strength-text">We begin by understanding the objectives, constraints, risks, and expectations.</div></div></div>
+      <div class="col-lg-4 col-md-6 fade-up"><div class="strength-card h-100"><div style="font-family:var(--font-h);font-size:2.4rem;font-weight:800;color:var(--border,#E8E8E4);line-height:1;margin-bottom:16px;">02</div><div class="strength-title">Inform &amp; Advise</div><div class="strength-text">We provide strategic recommendations backed by technical and commercial insight.</div></div></div>
+      <div class="col-lg-4 col-md-6 fade-up"><div class="strength-card h-100"><div style="font-family:var(--font-h);font-size:2.4rem;font-weight:800;color:var(--border,#E8E8E4);line-height:1;margin-bottom:16px;">03</div><div class="strength-title">Plan &amp; Structure</div><div class="strength-text">We define governance frameworks, communication pathways, schedules, and cost parameters.</div></div></div>
+      <div class="col-lg-4 col-md-6 fade-up"><div class="strength-card h-100"><div style="font-family:var(--font-h);font-size:2.4rem;font-weight:800;color:var(--border,#E8E8E4);line-height:1;margin-bottom:16px;">04</div><div class="strength-title">Coordinate &amp; Execute</div><div class="strength-text">We align consultants, manage contractors, and maintain progress with discipline.</div></div></div>
+      <div class="col-lg-4 col-md-6 fade-up"><div class="strength-card h-100"><div style="font-family:var(--font-h);font-size:2.4rem;font-weight:800;color:var(--border,#E8E8E4);line-height:1;margin-bottom:16px;">05</div><div class="strength-title">Monitor &amp; Control</div><div class="strength-text">Through continuous oversight, we ensure the project stays on track — commercially and operationally.</div></div></div>
+      <div class="col-lg-4 col-md-6 fade-up"><div class="strength-card h-100"><div style="font-family:var(--font-h);font-size:2.4rem;font-weight:800;color:var(--border,#E8E8E4);line-height:1;margin-bottom:16px;">06</div><div class="strength-title">Deliver &amp; Protect Value</div><div class="strength-text">Every decision and action is made to protect your interests and maximise long-term value.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     CALL TO ACTION (CTA) SECTION (dark banner at bottom)
+     - To change the heading: edit <h2 class="cta-title">
+     - To change the subtitle: edit <p class="cta-subtitle">
+     - Button 1 links to contact.html
+     - Button 2 links to about.html
+     - To change button text or link: edit the <a> tags
+═══════════════════════════════════════════════════════════ -->
+<section class="cta-section section-pad">
+  <div class="container">
+    <div class="cta-section-inner fade-up">
+      <span class="section-label" style="color:rgba(255,255,255,.4);">Start a Conversation</span>
+      <h2 class="cta-title">Ready to Discuss Your Project?</h2>
+      <p class="cta-subtitle">Let us provide the clarity and commercially intelligent advisory your project deserves.</p>
+      <div class="d-flex gap-3 flex-wrap justify-content-center">
+        <a href="contact.html" class="btn-pb"><i class="bi bi-envelope-fill"></i> Contact Us Today</a>
+        <a href="about.html" class="btn-ob"><i class="bi bi-info-circle"></i> About Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FOOTER
+     - To change email: replace "info@projectexcellence.lk"
+     - To change phone: replace "+94 XX XXX XXXX"
+     - To change copyright text: edit <span class="footer-bottom-txt">
+     - The footer is the same on all pages — update all pages if changed
+═══════════════════════════════════════════════════════════ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-4"><div class="footer-brand mb-3"><img src="images/logo-white.png" alt="Project Excellence" style="height:40px;width:auto;display:block;" /></div><p class="footer-desc">Independent client advisory, project management, and cost consultancy — protecting your commercial interests from concept to completion.</p><div class="d-flex flex-wrap gap-1"><span class="footer-pillar">Excellence</span><span class="footer-pillar">Execution</span><span class="footer-pillar">Expertise</span></div></div>
+      <div class="col-lg-2 col-6"><div class="footer-heading">Navigation</div><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="projects.html">Projects</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="col-lg-3 col-6"><div class="footer-heading">Services</div><ul class="footer-links"><li><a href="#advisory">Client Advisory</a></li><li><a href="#pm">Project Management</a></li><li><a href="#dm">Design Management</a></li><li><a href="#cost">Cost Consultancy</a></li></ul></div>
+      <!-- Footer contact details — update email and phone here -->
+      <div class="col-lg-3"><div class="footer-heading">Contact</div><div class="footer-ci"><span class="footer-ci-icon"><i class="bi bi-envelope-fill"></i></span><span>info@projectexcellence.lk</span></div><div class="footer-ci"><span class="footer-ci-icon"><i class="bi bi-telephone-fill"></i></span><span>+94 XX XXX XXXX</span></div></div>
+    </div>
+  </div>
+  <div class="footer-bottom mt-5"><div class="container"><div class="d-flex flex-wrap justify-content-between align-items-center gap-3"><span class="footer-bottom-txt">&copy; 2025 Project Excellence Pvt Ltd. All rights reserved.</span><span class="footer-bottom-txt">Independent Advisory &bull; Intelligent Cost Insight &bull; Structured Project Delivery</span></div></div></div>
+</footer>
+<button id="scrollTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/site.js"></script>
+<script src="js/animations.js"></script>
+</body>
+</html>
