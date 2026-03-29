@@ -786,6 +786,10 @@ h1, h2, h3, h4, h5, h6 {
     border-bottom: 1px solid rgba(255,255,255,.08) !important;
   }
 
+  /* Keep logo WHITE on mobile — navbar is always dark */
+  #mainNav .nav-logo,
+  #mainNav.scrolled .nav-logo { filter: none !important; }
+
   /* Make hamburger button clearly visible */
   .nav-hamburger span {
     background: #fff !important;
@@ -835,6 +839,32 @@ h1, h2, h3, h4, h5, h6 {
   }
   .page-hero-mm-sub {
     font-size: .9rem !important;
+  }
+
+  /* Stat cards — 2 per row, compact */
+  .hero-right {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: .75rem !important;
+  }
+
+  .stat-card {
+    padding: 16px 14px !important;
+    flex: unset !important;
+  }
+
+  .stat-num {
+    font-size: 1.8rem !important;
+    line-height: 1.1 !important;
+  }
+
+  .stat-lbl {
+    font-size: .72rem !important;
+    margin-bottom: 2px !important;
+  }
+
+  .stat-sub {
+    font-size: .65rem !important;
   }
 
   /* Counter section */
