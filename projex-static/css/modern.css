@@ -841,6 +841,20 @@ h1, h2, h3, h4, h5, h6 {
     font-size: .9rem !important;
   }
 
+  /* Reduce line height for body text */
+  p { line-height: 1.65 !important; }
+
+  /* Reduce mb-5 spacing between section header and cards */
+  .mb-5 { margin-bottom: 1.5rem !important; }
+
+  /* Value cards compact */
+  .value-card {
+    padding: 16px 14px !important;
+  }
+  .value-title { font-size: 1.1rem !important; }
+  .value-desc  { font-size: .82rem !important; line-height: 1.55 !important; }
+  .value-label { font-size: .6rem !important; margin-bottom: 4px !important; }
+
   /* Stat cards — 2 per row, compact */
   .hero-right {
     display: grid !important;

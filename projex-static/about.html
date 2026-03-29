@@ -108,7 +108,7 @@
       </div>
       <!-- Dark promise card (right column) -->
       <div class="col-lg-6 fade-in">
-        <div style="background:#111111;border-radius:16px;padding:48px 44px;border:1px solid #222;">
+        <div style="background:#111111;border-radius:16px;padding:clamp(24px,5vw,48px) clamp(20px,5vw,44px);border:1px solid #222;">
           <div style="display:inline-flex;align-items:center;gap:8px;font-family:'Inter',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#2389CA;margin-bottom:28px;">
             <span style="width:20px;height:1px;background:#2389CA;display:inline-block;"></span>Our Promise
           </div>
@@ -143,7 +143,7 @@
      - To change overlay darkness: edit rgba(0,0,0,.45), higher value = darker
      - The image height is fixed at 420px, change style="height:420px" to adjust
 ═══════════════════════════════════════════════════════════ -->
-<div style="height:420px;overflow:hidden;position:relative;">
+<div style="height:clamp(180px,45vw,420px);overflow:hidden;position:relative;">
   <img src="images/12.webp" alt="Construction site team" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 60%;" />
   <div style="position:absolute;inset:0;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;">
     <p style="font-family:var(--font-h);font-size:clamp(1.4rem,3vw,2.4rem);font-weight:800;color:#fff;text-align:center;max-width:720px;line-height:1.3;letter-spacing:-.03em;padding:0 24px;">
@@ -171,7 +171,7 @@
     <div class="row g-4">
       <!-- Vision card (white background, blue top border) -->
       <div class="col-lg-6 fade-up">
-        <div style="background:#fff;border:1px solid var(--border,#E8E8E4);border-top:3px solid var(--accent);border-radius:14px;padding:44px 40px;height:100%;">
+        <div style="background:#fff;border:1px solid var(--border,#E8E8E4);border-top:3px solid var(--accent);border-radius:14px;padding:clamp(20px,4vw,44px) clamp(18px,4vw,40px);height:100%;">
           <div style="font-family:var(--font-h);font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;">Vision</div>
           <h3 style="font-size:1.35rem;font-weight:800;color:var(--primary);margin-bottom:16px;letter-spacing:-.02em;">Setting a New Benchmark</h3>
           <p style="color:var(--text-muted);line-height:1.85;font-size:.96rem;">To set a new benchmark in client-side project advisory, empowering owners and investors with clarity, confidence, and commercially intelligent guidance that transforms how projects are planned, governed, and delivered.</p>
@@ -179,7 +179,7 @@
       </div>
       <!-- Mission card (dark background) -->
       <div class="col-lg-6 fade-up">
-        <div style="background:#111;border-radius:14px;padding:44px 40px;height:100%;">
+        <div style="background:#111;border-radius:14px;padding:clamp(20px,4vw,44px) clamp(18px,4vw,40px);height:100%;">
           <div style="font-family:var(--font-h);font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:14px;">Mission</div>
           <h3 style="font-size:1.35rem;font-weight:800;color:#fff;margin-bottom:16px;letter-spacing:-.02em;">Delivering Purposeful Outcomes</h3>
           <p style="color:rgba(255,255,255,.6);line-height:1.85;font-size:.96rem;">We strive to deliver informed decisions, proactive risk control, and transparent communication, ensuring every project moves forward with purpose, precision, and measurable value.</p>
@@ -207,9 +207,9 @@
       <div class="divider-accent center"></div>
     </div>
     <div class="row g-4 stagger-parent">
-      <div class="col-lg-4 fade-up"><div class="value-card h-100"><div class="value-label">Principle 01</div><div class="value-title">Excellence</div><div class="value-desc">In advisory quality, communication, and decision support. Every engagement is approached with the highest standards of technical insight and client service, no exceptions.</div></div></div>
-      <div class="col-lg-4 fade-up"><div class="value-card h-100"><div class="value-label">Principle 02</div><div class="value-title">Execution</div><div class="value-desc">Delivering consistent, structured, and proactive management across every stage. We follow through on every commitment, keeping your project on track and your team aligned.</div></div></div>
-      <div class="col-lg-4 fade-up"><div class="value-card h-100"><div class="value-label">Principle 03</div><div class="value-title">Expertise</div><div class="value-desc">Applying technical, commercial, and strategic insight to add real value. Our team's international exposure and multi-disciplinary knowledge sets us apart from the competition.</div></div></div>
+      <div class="col-6 col-lg-4 fade-up"><div class="value-card h-100"><div class="value-label">Principle 01</div><div class="value-title">Excellence</div><div class="value-desc">In advisory quality, communication, and decision support. Every engagement is approached with the highest standards of technical insight and client service, no exceptions.</div></div></div>
+      <div class="col-6 col-lg-4 fade-up"><div class="value-card h-100"><div class="value-label">Principle 02</div><div class="value-title">Execution</div><div class="value-desc">Delivering consistent, structured, and proactive management across every stage. We follow through on every commitment, keeping your project on track and your team aligned.</div></div></div>
+      <div class="col-6 col-lg-4 fade-up"><div class="value-card h-100"><div class="value-label">Principle 03</div><div class="value-title">Expertise</div><div class="value-desc">Applying technical, commercial, and strategic insight to add real value. Our team's international exposure and multi-disciplinary knowledge sets us apart from the competition.</div></div></div>
     </div>
   </div>
 </section>
