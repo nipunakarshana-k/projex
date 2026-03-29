@@ -108,7 +108,12 @@
           <span class="section-label">Send a Message</span>
           <h2 class="section-title" style="font-size:1.7rem;margin:8px 0 4px;">Tell Us About Your Project</h2>
           <div class="divider-accent"></div>
-          <form id="contactForm" onsubmit="handleSubmit(event)">
+          <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+            <!-- Web3Forms config — replace YOUR_ACCESS_KEY with key from web3forms.com -->
+            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+            <input type="hidden" name="subject" value="New Enquiry – PROJEX Advisory & Management">
+            <input type="hidden" name="from_name" value="PROJEX Website">
+            <input type="hidden" name="redirect" value="false">
             <div class="row g-3">
               <!-- Full Name field -->
               <div class="col-md-6">
@@ -193,7 +198,7 @@
              Replace with your actual office locations
 
            ★ TO CHANGE EMAIL ADDRESS:
-             Find: <div class="ci-val">info@projectexcellence.lk</div>
+             Find: <div class="ci-val">nipun.akarshana.k@gmail.com</div>
              Replace with your real email address
              (also update it in the footer of ALL pages)
 
@@ -226,7 +231,7 @@
         <!-- Email Address — EDIT THIS to change the company email -->
         <div class="contact-info-item">
           <div class="contact-info-icon"><i class="bi bi-envelope-fill"></i></div>
-          <div><div class="ci-label">Email Address</div><div class="ci-val">info@projectexcellence.lk</div></div>
+          <div><div class="ci-label">Email Address</div><div class="ci-val">nipun.akarshana.k@gmail.com</div></div>
         </div>
 
         <!-- Phone Number — EDIT THIS to change the phone number -->
@@ -262,7 +267,7 @@
 
 <!-- ═══════════════════════════════════════════════════════════
      FOOTER
-     ★ TO CHANGE EMAIL: replace "info@projectexcellence.lk" below
+     ★ TO CHANGE EMAIL: replace "nipun.akarshana.k@gmail.com" below
      ★ TO CHANGE PHONE: replace "+94 XX XXX XXXX" below
      - Also update these in the contact info section above and in all other pages
      - To change copyright text: edit <span class="footer-bottom-txt">
@@ -270,7 +275,7 @@
 <footer class="site-footer">
   <div class="container"><div class="row g-5"><div class="col-lg-4"><div class="footer-brand mb-3"><img src="images/logo-white.png" alt="Project Excellence" style="height:40px;width:auto;display:block;" /></div><p class="footer-desc">Independent client advisory, project management, and cost consultancy — protecting your commercial interests from concept to completion.</p><div class="d-flex flex-wrap gap-1"><span class="footer-pillar">Excellence</span><span class="footer-pillar">Execution</span><span class="footer-pillar">Expertise</span></div></div><div class="col-lg-2 col-6"><div class="footer-heading">Navigation</div><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="projects.html">Projects</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="col-lg-3 col-6"><div class="footer-heading">Services</div><ul class="footer-links"><li><a href="services.html#advisory">Client Advisory</a></li><li><a href="services.html#pm">Project Management</a></li><li><a href="services.html#dm">Design Management</a></li><li><a href="services.html#cost">Cost Consultancy</a></li></ul></div>
   <!-- Footer contact details — update email and phone here -->
-  <div class="col-lg-3"><div class="footer-heading">Contact</div><div class="footer-ci"><span class="footer-ci-icon"><i class="bi bi-envelope-fill"></i></span><span>info@projectexcellence.lk</span></div><div class="footer-ci"><span class="footer-ci-icon"><i class="bi bi-telephone-fill"></i></span><span>+94 XX XXX XXXX</span></div></div></div></div>
+  <div class="col-lg-3"><div class="footer-heading">Contact</div><div class="footer-ci"><span class="footer-ci-icon"><i class="bi bi-envelope-fill"></i></span><span>nipun.akarshana.k@gmail.com</span></div><div class="footer-ci"><span class="footer-ci-icon"><i class="bi bi-telephone-fill"></i></span><span>+94 XX XXX XXXX</span></div></div></div></div>
   <div class="footer-bottom mt-5"><div class="container"><div class="d-flex flex-wrap justify-content-between align-items-center gap-3"><span class="footer-bottom-txt">&copy; 2025 Project Excellence Pvt Ltd. All rights reserved.</span><span class="footer-bottom-txt">Independent Advisory &bull; Intelligent Cost Insight &bull; Structured Project Delivery</span></div></div></div>
 </footer>
 <button id="scrollTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
@@ -288,12 +293,27 @@
      integrate a service like Formspree or EmailJS.
 ═══════════════════════════════════════════════════════════ -->
 <script>
-function handleSubmit(e) {
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
   e.preventDefault();
-  document.getElementById('successMsg').style.display = 'flex';
-  document.getElementById('contactForm').reset();
-  window.scrollTo({top: document.getElementById('successMsg').offsetTop - 100, behavior: 'smooth'});
-}
+  const btn = this.querySelector('button[type="submit"]');
+  btn.disabled = true;
+  btn.innerHTML = '<i class="bi bi-hourglass-split"></i> Sending...';
+
+  const data = new FormData(this);
+  const res = await fetch('https://api.web3forms.com/submit', { method:'POST', body:data });
+  const json = await res.json();
+
+  if (json.success) {
+    document.getElementById('successMsg').style.display = 'flex';
+    this.reset();
+    this.style.display = 'none';
+    document.getElementById('successMsg').scrollIntoView({behavior:'smooth', block:'center'});
+  } else {
+    btn.disabled = false;
+    btn.innerHTML = '<i class="bi bi-send-fill"></i> Send Message';
+    alert('Something went wrong. Please email us directly at nipun.akarshana.k@gmail.com');
+  }
+});
 </script>
 </body>
 </html>
