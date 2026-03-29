@@ -175,54 +175,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ────────────────────────────────────────────
-   STATS BAR — New component
-──────────────────────────────────────────── */
-.stats-bar {
-  background: var(--charcoal);
-  padding: 56px 0;
-}
-
-.stats-bar-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-}
-
-.stats-bar-item {
-  padding: 0 40px;
-  border-right: 1px solid rgba(255,255,255,.1);
-  text-align: center;
-}
-
-.stats-bar-item:first-child { border-left: 1px solid rgba(255,255,255,.1); }
-
-.stats-bar-num {
-  font-family: var(--font-h);
-  font-size: clamp(2.4rem, 4vw, 3.6rem);
-  font-weight: 800;
-  color: #fff;
-  line-height: 1;
-  margin-bottom: 8px;
-  letter-spacing: -.04em;
-}
-
-.stats-bar-num span { color: var(--accent); font-size: .7em; }
-
-.stats-bar-lbl {
-  font-size: .78rem;
-  color: rgba(255,255,255,.5);
-  font-weight: 500;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-}
-
-@media (max-width: 767px) {
-  .stats-bar-grid { grid-template-columns: repeat(2, 1fr); row-gap: 32px; }
-  .stats-bar-item { border-left: none !important; border-right: none !important; }
-  .stats-bar-item:nth-child(odd) { border-right: 1px solid rgba(255,255,255,.1) !important; }
-}
-
-/* ────────────────────────────────────────────
    WHO WE ARE — Split with image
 ──────────────────────────────────────────── */
 .split-image-block {
@@ -819,3 +771,81 @@ h1, h2, h3, h4, h5, h6 {
 ──────────────────────────────────────────── */
 .text-serif { font-family: var(--font-serif) !important; }
 .border-thin { border: 1px solid var(--border); }
+
+/* ────────────────────────────────────────────
+   MOBILE OPTIMISATIONS
+──────────────────────────────────────────── */
+@media (max-width: 991px) {
+  /* Hide Services dropdown caret on mobile (link navigates directly) */
+  #mainNav .nav-item.dropdown .dropdown-toggle::after { display: none !important; }
+  #mainNav .nav-item.dropdown .nav-dropdown { display: none !important; }
+
+  /* Always show solid navbar on mobile */
+  #mainNav {
+    background: rgba(14,26,48,1) !important;
+    border-bottom: 1px solid rgba(255,255,255,.08) !important;
+  }
+
+  /* Make hamburger button clearly visible */
+  .nav-hamburger span {
+    background: #fff !important;
+    width: 26px;
+    height: 2.5px;
+  }
+
+  /* Tighter section padding on tablet */
+  .section-pad {
+    padding-top: 52px !important;
+    padding-bottom: 52px !important;
+  }
+
+  /* Shorter inner page heroes */
+  .page-hero-mm {
+    min-height: 280px !important;
+  }
+  .page-hero-mm-inner {
+    padding-top: 36px !important;
+    padding-bottom: 36px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Tighter section padding on mobile */
+  .section-pad {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+
+  /* Tighter heading margins */
+  .section-title { margin-bottom: 12px !important; }
+  .divider-accent { margin: 10px 0 20px !important; }
+
+  /* Tighter card rows */
+  .row.g-4 { --bs-gutter-y: 1rem !important; }
+
+  /* Shorter page hero */
+  .page-hero-mm {
+    min-height: 240px !important;
+  }
+
+  /* Smaller hero text on mobile */
+  .page-hero-mm-title {
+    font-size: clamp(1.6rem, 7vw, 2.4rem) !important;
+    margin: 10px 0 10px !important;
+  }
+  .page-hero-mm-sub {
+    font-size: .9rem !important;
+  }
+
+  /* Counter section */
+  .counter-section {
+    padding: 40px 0 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-pad {
+    padding-top: 32px !important;
+    padding-bottom: 32px !important;
+  }
+}

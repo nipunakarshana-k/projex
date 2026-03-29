@@ -65,6 +65,22 @@
   }
 
   /* ─────────────────────────────────────────────
+     MOBILE: fix Services dropdown so tap navigates
+     On mobile (<992px) the dropdown toggle blocks
+     navigation — remove it so Services link works.
+  ───────────────────────────────────────────── */
+  function initMobileServicesLink() {
+    if (window.innerWidth >= 992) return;
+    var servicesToggle = document.getElementById('servicesDropdown');
+    if (!servicesToggle) return;
+    servicesToggle.removeAttribute('data-bs-toggle');
+    servicesToggle.removeAttribute('role');
+    servicesToggle.classList.remove('dropdown-toggle');
+    // Also hide the dropdown caret via style
+    servicesToggle.style.setProperty('--bs-caret-width', '0');
+  }
+
+  /* ─────────────────────────────────────────────
      MOBILE: close navbar on link click
   ───────────────────────────────────────────── */
   function initMobileNavClose() {
@@ -372,6 +388,7 @@
   ready(function () {
     initNavbarScroll();
     initActiveNavLinks();
+    initMobileServicesLink();
     initMobileNavClose();
     initLogoFallback();
     initScrollAnimations();
