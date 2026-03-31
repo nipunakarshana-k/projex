@@ -996,6 +996,52 @@ h1, h2, h3, h4, h5, h6 {
   font-style: italic;
 }
 
+/* Tooltip on hover */
+.hstat-num-tip {
+  position: relative;
+  cursor: default;
+}
+
+.hstat-tooltip {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  background: var(--primary);
+  color: #fff;
+  font-family: var(--font-b);
+  font-size: .78rem;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5;
+  padding: 10px 14px;
+  border-radius: 8px;
+  white-space: normal;
+  width: 200px;
+  text-align: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .22s ease, transform .22s ease;
+  z-index: 10;
+  box-shadow: 0 8px 24px rgba(0,0,0,.18);
+}
+
+/* Arrow pointing down */
+.hstat-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: var(--primary);
+}
+
+.hstat-num-tip:hover .hstat-tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
 @media (max-width: 767px) {
   .hstats-inner {
     display: grid;
