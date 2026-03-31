@@ -926,6 +926,99 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ────────────────────────────────────────────
+   PROJECT DETAIL PAGE
+──────────────────────────────────────────── */
+.proj-facts-card {
+  background: var(--off-white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 32px 28px;
+  position: sticky;
+  top: 90px;
+}
+
+.proj-facts-title {
+  font-family: var(--font-h);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+
+.proj-fact-row {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.proj-fact-row:last-of-type { border-bottom: none; }
+
+.proj-fact-label {
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.proj-fact-val {
+  font-size: .95rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.proj-detail-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 18px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  height: 100%;
+  transition: box-shadow .3s ease, transform .3s ease;
+}
+
+.proj-detail-item:hover {
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-2px);
+}
+
+.proj-detail-icon {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  background: #F0F7FF;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  font-size: 1rem;
+}
+
+.proj-detail-title {
+  font-family: var(--font-h);
+  font-size: .88rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+
+.proj-detail-desc {
+  font-size: .82rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ────────────────────────────────────────────
    TEAM CARDS
 ──────────────────────────────────────────── */
 .team-card {
