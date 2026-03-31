@@ -58,18 +58,19 @@ export default function Projects() {
       <section className="section-pad off-white-bg">
         <div className="container">
           <div className="text-center mb-5 fade-up">
-            <span className="section-label">What We Deliver</span>
+            <span className="section-label">DELIVERS</span>
             <h2 className="section-title">Our Commitment on Every Project</h2>
             <div className="divider-accent center"></div>
           </div>
-          <div style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:'24px'}}>
+          <div style={{display:'flex',flexWrap:'wrap',justifyContent:'center',gap:'24px'}}>
             {[
-              {icon:'bi-bullseye',title:'Strategic Clarity',text:'Defined objectives, structured planning, and clear decision pathways from day one.'},
-              {icon:'bi-search',title:'Early Risk Identification',text:'Reducing uncertainty, avoiding surprises, and improving alignment across the team.'},
-              {icon:'bi-shield-fill-check',title:'Strong Governance',text:'Disciplined progress, transparent reporting, and predictable outcomes at every stage.'},
-              {icon:'bi-cash-coin',title:'Commercial Protection',text:'Safeguarding investment value through continuous cost monitoring and evaluation.'},
+              {icon:'bi-check2-circle',title:'Strategic Clarity From Day One',text:'We ensure the project starts with defined objectives, structured planning, and clear decision pathways.'},
+              {icon:'bi-search',title:'Early Identification of Risks and Opportunities',text:'Reducing uncertainty, avoiding surprises, and improving alignment across the team.'},
+              {icon:'bi-shield-check',title:'Strong Governance and Controlled Execution',text:'Ensuring disciplined progress, transparent reporting, and predictable outcomes.'},
+              {icon:'bi-cash-stack',title:'Commercial Protection Through Cost Intelligence',text:'Safeguarding investment value through continuous cost monitoring and evaluation.'},
+              {icon:'bi-diagram-3',title:'Seamless Coordination Across Consultants and Contractors',text:'Promoting cooperation, accountability, and timely resolution of issues.'},
             ].map((s,i) => (
-              <div key={i} className="strength-card fade-up" style={{textAlign:'center'}}>
+              <div key={i} className="strength-card fade-up" style={{textAlign:'center',flex:'1 1 300px',maxWidth:'360px'}}>
                 <div className="strength-icon" style={{margin:'0 auto 16px'}}><i className={`bi ${s.icon}`} style={{color:'var(--accent)'}}></i></div>
                 <div className="strength-title">{s.title}</div>
                 <div className="strength-text">{s.text}</div>
