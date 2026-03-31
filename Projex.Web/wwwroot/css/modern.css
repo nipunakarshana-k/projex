@@ -175,54 +175,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ────────────────────────────────────────────
-   STATS BAR — New component
-──────────────────────────────────────────── */
-.stats-bar {
-  background: var(--charcoal);
-  padding: 56px 0;
-}
-
-.stats-bar-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-}
-
-.stats-bar-item {
-  padding: 0 40px;
-  border-right: 1px solid rgba(255,255,255,.1);
-  text-align: center;
-}
-
-.stats-bar-item:first-child { border-left: 1px solid rgba(255,255,255,.1); }
-
-.stats-bar-num {
-  font-family: var(--font-h);
-  font-size: clamp(2.4rem, 4vw, 3.6rem);
-  font-weight: 800;
-  color: #fff;
-  line-height: 1;
-  margin-bottom: 8px;
-  letter-spacing: -.04em;
-}
-
-.stats-bar-num span { color: var(--accent); font-size: .7em; }
-
-.stats-bar-lbl {
-  font-size: .78rem;
-  color: rgba(255,255,255,.5);
-  font-weight: 500;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-}
-
-@media (max-width: 767px) {
-  .stats-bar-grid { grid-template-columns: repeat(2, 1fr); row-gap: 32px; }
-  .stats-bar-item { border-left: none !important; border-right: none !important; }
-  .stats-bar-item:nth-child(odd) { border-right: 1px solid rgba(255,255,255,.1) !important; }
-}
-
-/* ────────────────────────────────────────────
    WHO WE ARE — Split with image
 ──────────────────────────────────────────── */
 .split-image-block {
