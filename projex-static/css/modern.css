@@ -930,11 +930,19 @@ h1, h2, h3, h4, h5, h6 {
 ──────────────────────────────────────────── */
 .whoweare-section {
   position: relative;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
   padding: clamp(80px, 12vw, 140px) 0;
   overflow: hidden;
+}
+
+.whoweare-bg {
+  position: absolute;
+  inset: -14% 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: translate3d(0, 0, 0) scale(1.16);
+  will-change: transform;
+  z-index: 0;
 }
 
 .whoweare-overlay {
@@ -1392,6 +1400,92 @@ h1, h2, h3, h4, h5, h6 {
   .team-card-placeholder { padding: 24px; }
 }
 
+/* About leadership cards: compact profile style */
+.team-grid-card {
+  padding: 30px 28px;
+  border-radius: 16px;
+  border: 1px solid #dfe4ec;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.team-grid-avatar {
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  background: #274f8f;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-h);
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: .01em;
+  margin-bottom: 6px;
+}
+
+.team-grid-name {
+  font-family: var(--font-h);
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1.15;
+  margin-top: 2px;
+}
+
+.team-grid-role {
+  color: #244f97;
+  font-size: 1.12rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.team-grid-summary {
+  color: #4f617d;
+  font-size: 1.02rem;
+  line-height: 1.65;
+  margin: 0;
+  max-width: 36ch;
+}
+
+.team-grid-link {
+  margin-top: 6px;
+  color: #244f97;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.team-grid-link i {
+  margin-left: 6px;
+  font-size: 1.05em;
+}
+
+.team-grid-link:hover {
+  color: #1e4079;
+}
+
+.team-grid-link.disabled {
+  opacity: .45;
+  pointer-events: none;
+}
+
+.team-grid-card-muted {
+  background: #f9fbff;
+}
+
+@media (max-width: 991px) {
+  .team-grid-name { font-size: 1.45rem; }
+  .team-grid-role { font-size: 1rem; }
+  .team-grid-summary { font-size: .96rem; }
+  .team-grid-link { font-size: 1.08rem; }
+}
+
 /* ────────────────────────────────────────────
    ENHANCED ANIMATIONS
 ──────────────────────────────────────────── */
@@ -1414,6 +1508,36 @@ h1, h2, h3, h4, h5, h6 {
 .stat-card:nth-child(2) { animation: floatY 5s ease-in-out 1.5s infinite; }
 .stat-card:nth-child(3) { animation: floatY 5s ease-in-out 3s infinite; }
 
+/* Vision/Mission image animation (About page) */
+@keyframes vmFloatImage {
+  0% { transform: scale(1.12) translate3d(0, 0, 0); }
+  50% { transform: scale(1.14) translate3d(0, -8px, 0); }
+  100% { transform: scale(1.12) translate3d(0, 0, 0); }
+}
+
+.vm-image {
+  animation: vmFloatImage 7s ease-in-out infinite;
+  transition: transform .45s ease;
+}
+
+.vm-image-vision {
+  animation-delay: .2s;
+}
+
+.vm-image-mission {
+  animation-delay: 1.1s;
+}
+
+.parallax-media:hover .vm-image {
+  transform: scale(1.16) translate3d(0, -4px, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vm-image {
+    animation: none;
+  }
+}
+
 /* Smooth underline reveal on section labels */
 .section-label {
   position: relative;
@@ -1431,6 +1555,28 @@ h1, h2, h3, h4, h5, h6 {
 ──────────────────────────────────────────── */
 .text-serif { font-family: var(--font-serif) !important; }
 .border-thin { border: 1px solid var(--border); }
+
+/* Scroll parallax image blocks */
+.parallax-media {
+  position: relative;
+  overflow: hidden;
+}
+
+.parallax-bg {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: scroll !important;
+  will-change: background-position;
+}
+
+.parallax-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform: translate3d(0, 0, 0) scale(1.12);
+  will-change: transform;
+}
 
 /* ────────────────────────────────────────────
    MOBILE OPTIMISATIONS
@@ -1573,4 +1719,147 @@ h1, h2, h3, h4, h5, h6 {
     padding-top: 32px !important;
     padding-bottom: 32px !important;
   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .parallax-img {
+    transform: none !important;
+    will-change: auto;
+  }
+
+  .parallax-bg {
+    background-position: center center !important;
+    will-change: auto;
+  }
+}
+
+/* ────────────────────────────────────────────
+   GLOBAL UX + MOTION ENHANCEMENTS
+──────────────────────────────────────────── */
+:root {
+  --ux-ring: #6fb6ea;
+  --ux-ring-shadow: rgba(111, 182, 234, .32);
+}
+
+html {
+  scroll-padding-top: calc(var(--nav-h, 72px) + 10px);
+}
+
+a,
+button,
+.btn-pb,
+.btn-ob,
+.btn-od,
+.project-card,
+.service-img-card,
+.strength-card,
+.process-step,
+.team-card,
+.industry-tag,
+.service-feature-item,
+.whoweare-card {
+  transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease, background-color .28s ease, color .28s ease;
+}
+
+a:focus-visible,
+button:focus-visible,
+.btn-pb:focus-visible,
+.btn-ob:focus-visible,
+.btn-od:focus-visible,
+.nav-link-custom:focus-visible,
+.service-link:focus-visible {
+  outline: 2px solid var(--ux-ring);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 4px var(--ux-ring-shadow);
+  border-radius: 8px;
+}
+
+@media (hover: hover) {
+  .project-card:hover,
+  .strength-card:hover,
+  .process-step:hover,
+  .team-card:hover,
+  .service-feature-item:hover,
+  .whoweare-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .industry-tag:hover {
+    transform: translateY(-2px);
+  }
+}
+
+@media (max-width: 767px) {
+  .btn-pb,
+  .btn-ob,
+  .btn-od,
+  .service-link,
+  .nav-cta-btn {
+    min-height: 44px;
+    align-items: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  a,
+  button,
+  .btn-pb,
+  .btn-ob,
+  .btn-od,
+  .project-card,
+  .service-img-card,
+  .strength-card,
+  .process-step,
+  .team-card,
+  .industry-tag,
+  .service-feature-item,
+  .whoweare-card {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+/* Premium-smooth timing profile */
+:root {
+  --motion-fast: .26s;
+  --motion-mid: .36s;
+  --motion-slow: .56s;
+  --motion-ease: cubic-bezier(.22, .61, .36, 1);
+}
+
+.fade-up,
+.fade-in {
+  transition-duration: var(--motion-slow) !important;
+  transition-timing-function: var(--motion-ease) !important;
+}
+
+.project-card,
+.service-img-card,
+.strength-card,
+.process-step,
+.team-card,
+.industry-tag,
+.service-feature-item,
+.whoweare-card,
+.btn-pb,
+.btn-ob,
+.btn-od {
+  transition-duration: var(--motion-mid) !important;
+  transition-timing-function: var(--motion-ease) !important;
+}
+
+.service-img-card:hover img {
+  transform: scale(1.04);
+}
+
+.stat-card {
+  transition-duration: var(--motion-mid) !important;
+}
+
+.stat-card:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,.18);
+}
+
+.marquee-track {
+  animation-duration: 32s;
 }

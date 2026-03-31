@@ -102,6 +102,25 @@
         }
       });
     });
+
+    // Allow closing the open mobile menu with Escape key.
+    document.addEventListener('keydown', function (e) {
+      if (e.key !== 'Escape') return;
+
+      var collapse = document.getElementById('navbarNav');
+      if (!collapse || !collapse.classList.contains('show')) return;
+
+      if (typeof bootstrap !== 'undefined' && bootstrap.Collapse) {
+        var bsCollapse = bootstrap.Collapse.getInstance(collapse);
+        if (bsCollapse) {
+          bsCollapse.hide();
+        } else {
+          new bootstrap.Collapse(collapse, { toggle: false }).hide();
+        }
+      } else {
+        collapse.classList.remove('show');
+      }
+    });
   }
 
   /* ─────────────────────────────────────────────
@@ -136,8 +155,8 @@
         }
       });
     }, {
-      threshold: 0.12,
-      rootMargin: '0px 0px -48px 0px'
+      threshold: 0.1,
+      rootMargin: '0px 0px -32px 0px'
     });
 
     document.querySelectorAll('.fade-up, .fade-in').forEach(function (el) {
@@ -145,6 +164,32 @@
       if (!el.closest('.stagger-parent')) {
         fadeObserver.observe(el);
       }
+    });
+  }
+
+  /* ─────────────────────────────────────────────
+     AUTO-REVEAL: apply fade-in to top-level sections
+     for consistent motion across all pages
+  ───────────────────────────────────────────── */
+  function initAutoRevealSections() {
+    var main = document.querySelector('main');
+    if (!main) return;
+
+    Array.prototype.forEach.call(main.children, function (node, idx) {
+      if (!node || !node.classList) return;
+
+      var isSection = node.tagName === 'SECTION' || node.classList.contains('trust-strip');
+      var alreadyAnimated = node.classList.contains('fade-up') || node.classList.contains('fade-in');
+
+      if (!isSection || alreadyAnimated) return;
+
+      // Keep first/top hero section instantly visible.
+      if (idx === 0 || node.classList.contains('hero-section')) {
+        node.classList.add('visible');
+        return;
+      }
+
+      node.classList.add('fade-in');
     });
   }
 
@@ -166,7 +211,7 @@
           children.forEach(function (child, i) {
             setTimeout(function () {
               child.classList.add('visible');
-            }, i * 110);
+            }, i * 120);
           });
           staggerObserver.unobserve(entry.target);
         }
@@ -277,7 +322,7 @@
     // Instead we do a simple fade-in-up on the whole title
     heroTitle.style.opacity = '0';
     heroTitle.style.transform = 'translateY(20px)';
-    heroTitle.style.transition = 'opacity .7s ease .2s, transform .7s ease .2s';
+    heroTitle.style.transition = 'opacity .68s cubic-bezier(.22,.61,.36,1) .18s, transform .68s cubic-bezier(.22,.61,.36,1) .18s';
 
     // Small delay to let page render
     requestAnimationFrame(function () {
@@ -299,7 +344,7 @@
       if (!el) return;
       el.style.opacity = '0';
       el.style.transform = 'translateY(16px)';
-      el.style.transition = 'opacity .65s ease ' + item.delay + 's, transform .65s ease ' + item.delay + 's';
+      el.style.transition = 'opacity .62s cubic-bezier(.22,.61,.36,1) ' + item.delay + 's, transform .62s cubic-bezier(.22,.61,.36,1) ' + item.delay + 's';
 
       requestAnimationFrame(function () {
         requestAnimationFrame(function () {
@@ -313,7 +358,7 @@
     document.querySelectorAll('.hero-right .stat-card').forEach(function (card, i) {
       card.style.opacity = '0';
       card.style.transform = 'translateX(20px)';
-      card.style.transition = 'opacity .6s ease ' + (0.5 + i * 0.15) + 's, transform .6s ease ' + (0.5 + i * 0.15) + 's';
+      card.style.transition = 'opacity .6s cubic-bezier(.22,.61,.36,1) ' + (0.45 + i * 0.16) + 's, transform .6s cubic-bezier(.22,.61,.36,1) ' + (0.45 + i * 0.16) + 's';
 
       requestAnimationFrame(function () {
         requestAnimationFrame(function () {
@@ -322,6 +367,197 @@
         });
       });
     });
+  }
+
+  /* ─────────────────────────────────────────────
+     PREMIUM MOTION: hero parallax + magnetic buttons
+  ───────────────────────────────────────────── */
+  function initPremiumMotion() {
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return;
+    }
+
+    var hero = document.querySelector('.hero-section');
+    if (hero) {
+      var heroContent = hero.querySelector('.hero-content');
+      var heroStats = hero.querySelector('.hero-right');
+      var heroWatermark = hero.querySelector('.hero-watermark');
+      var rafId = null;
+      var targetX = 0;
+      var targetY = 0;
+
+      function applyHeroTilt() {
+        if (heroContent) {
+          heroContent.style.transform = 'translate3d(' + (targetX * -8) + 'px,' + (targetY * -7) + 'px,0)';
+        }
+        if (heroStats) {
+          heroStats.style.transform = 'translate3d(' + (targetX * 9) + 'px,' + (targetY * 8) + 'px,0)';
+        }
+        if (heroWatermark) {
+          heroWatermark.style.transform = 'translate3d(' + (targetX * 18) + 'px,' + (targetY * 12) + 'px,0)';
+        }
+        rafId = null;
+      }
+
+      hero.addEventListener('mousemove', function (e) {
+        var rect = hero.getBoundingClientRect();
+        var x = (e.clientX - rect.left) / rect.width;
+        var y = (e.clientY - rect.top) / rect.height;
+
+        targetX = (x - 0.5) * 2;
+        targetY = (y - 0.5) * 2;
+
+        if (!rafId) {
+          rafId = requestAnimationFrame(applyHeroTilt);
+        }
+      });
+
+      hero.addEventListener('mouseleave', function () {
+        targetX = 0;
+        targetY = 0;
+        if (!rafId) {
+          rafId = requestAnimationFrame(applyHeroTilt);
+        }
+      });
+
+      function parallaxOnScroll() {
+        var rect = hero.getBoundingClientRect();
+        if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+
+        var progress = Math.max(0, Math.min(1, (window.innerHeight - rect.top) / (window.innerHeight + rect.height)));
+        var yPos = 44 + (progress * 12);
+        hero.style.backgroundPosition = '50% ' + yPos + '%';
+      }
+
+      window.addEventListener('scroll', parallaxOnScroll, { passive: true });
+      parallaxOnScroll();
+    }
+
+    document.querySelectorAll('.btn-pb, .btn-ob, .btn-od').forEach(function (btn) {
+      var rafBtn = null;
+      var bx = 0;
+      var by = 0;
+
+      function applyBtnDrift() {
+        btn.style.transform = 'translate3d(' + bx + 'px,' + by + 'px,0)';
+        rafBtn = null;
+      }
+
+      btn.addEventListener('mousemove', function (e) {
+        var rect = btn.getBoundingClientRect();
+        var x = (e.clientX - rect.left) / rect.width;
+        var y = (e.clientY - rect.top) / rect.height;
+        bx = (x - 0.5) * 6;
+        by = (y - 0.5) * 5;
+
+        if (!rafBtn) {
+          rafBtn = requestAnimationFrame(applyBtnDrift);
+        }
+      });
+
+      btn.addEventListener('mouseleave', function () {
+        bx = 0;
+        by = 0;
+        if (!rafBtn) {
+          rafBtn = requestAnimationFrame(applyBtnDrift);
+        }
+      });
+    });
+  }
+
+  /* ─────────────────────────────────────────────
+     IMAGE PARALLAX: scroll-driven media movement (STRONG)
+  ───────────────────────────────────────────── */
+  function initImageParallax() {
+    var items = Array.prototype.slice.call(document.querySelectorAll('.parallax-img[data-parallax-speed]'));
+    if (!items.length) return;
+
+    var ticking = false;
+
+    function updateParallax() {
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+
+      items.forEach(function (img) {
+        var rect = img.getBoundingClientRect();
+        if (rect.bottom < -80 || rect.top > vh + 80) return;
+
+        var speed = parseFloat(img.getAttribute('data-parallax-speed'));
+        if (isNaN(speed)) speed = 0.18;
+
+        var progress = (vh - rect.top) / (vh + rect.height);
+        var centered = (progress - 0.5) * 2;
+        var shift = centered * (300 * speed); // Strong: 300px multiplier
+
+        img.style.transform = 'translate3d(0,' + shift.toFixed(2) + 'px,0) scale(1.12)';
+      });
+
+      ticking = false;
+    }
+
+    function requestTick() {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(updateParallax);
+    }
+
+    window.addEventListener('scroll', requestTick, { passive: true });
+    window.addEventListener('resize', requestTick);
+    requestTick();
+  }
+
+  /* ─────────────────────────────────────────────
+     BACKGROUND PARALLAX: sections with background images (STRONG)
+  ───────────────────────────────────────────── */
+  function initBackgroundParallax() {
+    var sections = Array.prototype.slice.call(document.querySelectorAll('.parallax-bg[data-parallax-speed]'));
+    var layers = Array.prototype.slice.call(document.querySelectorAll('.parallax-layer[data-parallax-speed]'));
+    if (!sections.length && !layers.length) return;
+
+    var ticking = false;
+
+    function updateBackgroundParallax() {
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+
+      sections.forEach(function (section) {
+        var rect = section.getBoundingClientRect();
+        if (rect.bottom < -80 || rect.top > vh + 80) return;
+
+        var speed = parseFloat(section.getAttribute('data-parallax-speed'));
+        if (isNaN(speed)) speed = 0.18;
+
+        var progress = (vh - rect.top) / (vh + rect.height);
+        var centered = (progress - 0.5) * 2;
+        var yShift = centered * (350 * speed); // Strong: 350px multiplier
+
+        section.style.backgroundPosition = '50% calc(50% + ' + yShift.toFixed(1) + 'px)';
+      });
+
+      layers.forEach(function (layer) {
+        var rect = layer.getBoundingClientRect();
+        if (rect.bottom < -120 || rect.top > vh + 120) return;
+
+        var speed = parseFloat(layer.getAttribute('data-parallax-speed'));
+        if (isNaN(speed)) speed = 0.3;
+
+        var progress = (vh - rect.top) / (vh + rect.height);
+        var centered = (progress - 0.5) * 2;
+        var yShift = centered * (320 * speed); // Strong: 320px multiplier
+
+        layer.style.transform = 'translate3d(0,' + yShift.toFixed(1) + 'px,0) scale(1.15)'; // Moderate scale
+      });
+
+      ticking = false;
+    }
+
+    function requestTick() {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(updateBackgroundParallax);
+    }
+
+    window.addEventListener('scroll', requestTick, { passive: true });
+    window.addEventListener('resize', requestTick);
+    requestTick();
   }
 
   /* ─────────────────────────────────────────────
@@ -386,16 +622,21 @@
      INIT ALL
   ───────────────────────────────────────────── */
   ready(function () {
+    document.documentElement.classList.add('js-enhanced');
     initNavbarScroll();
     initActiveNavLinks();
     initMobileServicesLink();
     initMobileNavClose();
+    initAutoRevealSections();
     initLogoFallback();
     initScrollAnimations();
     initStaggerAnimations();
     initCountUp();
     initScrollTop();
     initHeroTitleReveal();
+    initPremiumMotion();
+    initImageParallax();
+    initBackgroundParallax();
     initFormValidation();
     initTooltips();
     initAlertDismiss();
