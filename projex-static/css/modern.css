@@ -926,6 +926,93 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ────────────────────────────────────────────
+   HORIZONTAL STATS BAR
+──────────────────────────────────────────── */
+.hstats-bar {
+  background: #fff;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 48px 0;
+}
+
+.hstats-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+}
+
+.hstat-item {
+  flex: 1;
+  text-align: center;
+  padding: 8px 24px;
+}
+
+.hstat-divider {
+  width: 1px;
+  height: 80px;
+  background: var(--border);
+  flex-shrink: 0;
+}
+
+.hstat-icon {
+  font-size: 1.4rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+  opacity: .8;
+}
+
+.hstat-num {
+  font-family: var(--font-h);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1;
+  letter-spacing: -.03em;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 2px;
+}
+
+.hstat-plus {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.hstat-label {
+  font-family: var(--font-h);
+  font-size: .82rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+
+.hstat-sub {
+  font-size: .74rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+@media (max-width: 767px) {
+  .hstats-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+  .hstat-divider { display: none; }
+  .hstat-item {
+    padding: 20px 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .hstat-item:nth-child(odd) { border-right: 1px solid var(--border); }
+  .hstat-item:nth-last-child(-n+2) { border-bottom: none; }
+  .hstat-num { font-size: 1.9rem; }
+}
+
+/* ────────────────────────────────────────────
    PROJECT DETAIL PAGE
 ──────────────────────────────────────────── */
 .proj-facts-card {
