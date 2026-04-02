@@ -87,22 +87,38 @@
      - To change the label under each number: edit <div class="stat-lbl">
      - To change the small subtitle: edit <div class="stat-sub">
 ═══════════════════════════════════════════════════════════ -->
-<section class="hero-section" style="background-image:url('images/11.webp');background-size:cover;background-position:center;">
+<section class="hero-section hero-slider" data-hero-interval="8500">
+  <div class="hero-rotator" aria-hidden="true">
+    <div class="hero-slide is-active" data-hero-title="Independent Advisory" data-hero-subtitle="Trusted independent advisory that empowers owners and investors to make confident decisions, manage risk, and protect project outcomes." style="background-image:url('images/hero1.webp');"></div>
+    <div class="hero-slide" data-hero-title="Intelligent Cost Insight" data-hero-subtitle="Advanced cost intelligence and commercial oversight that drive informed decisions, budget certainty, and long-term project value." style="background-image:url('images/hero2.webp');"></div>
+    <div class="hero-slide" data-hero-title="Structured Delivery" data-hero-subtitle="A disciplined project delivery framework that ensures clarity, accountability, and successful execution from planning to completion." style="background-image:url('images/hero3.webp');"></div>
+  </div>
+  <button class="hero-slider-btn hero-slider-prev" type="button" aria-label="Previous slide" data-hero-slide="prev">
+    <i class="bi bi-chevron-left"></i>
+  </button>
+  <button class="hero-slider-btn hero-slider-next" type="button" aria-label="Next slide" data-hero-slide="next">
+    <i class="bi bi-chevron-right"></i>
+  </button>
   <div class="hero-bg-pattern"></div>
   <div class="hero-container">
     <div class="hero-inner">
       <div class="hero-left hero-content">
-        <h1 class="hero-title">
-          Independent Advisory<br>
-          <span class="accent-text">Intelligent Cost Insight</span><br>
-          Structured Delivery
+        <h1 class="hero-title hero-title-animated">
+          <span class="hero-title-text is-visible">Independent Advisory</span>
         </h1>
-        <p class="hero-subtitle">We help owners and investors make confident decisions, control commercial risk, and deliver successful projects with clarity, discipline, and trusted client-side leadership.</p>
+        <p class="hero-subtitle hero-subtitle-animated">
+          <span class="hero-subtitle-text is-visible">Trusted independent advisory that empowers owners and investors to make confident decisions, manage risk, and protect project outcomes.</span>
+        </p>
         <div class="hero-actions">
           <a href="services.html" class="btn-pb"><i class="bi bi-grid-3x3-gap-fill"></i> Our Services</a>
         </div>
       </div>
     </div>
+  </div>
+  <div class="hero-slide-counter" aria-hidden="true">
+    <span class="hero-slide-current">01</span>
+    <span class="hero-slide-divider">/</span>
+    <span class="hero-slide-total">03</span>
   </div>
 </section>
 

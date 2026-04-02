@@ -307,6 +307,120 @@
   }
 
   /* ─────────────────────────────────────────────
+     HERO SLIDESHOW: crossfade hero backgrounds
+  ───────────────────────────────────────────── */
+  function initHeroSlideshow() {
+    var hero = document.querySelector('.hero-section.hero-slider');
+    if (!hero) return;
+
+    var slides = hero.querySelectorAll('.hero-slide');
+    if (slides.length < 2) return;
+
+    var currentLabel = hero.querySelector('.hero-slide-current');
+    var totalLabel = hero.querySelector('.hero-slide-total');
+    var titleText = hero.querySelector('.hero-title-text');
+    var subtitleText = hero.querySelector('.hero-subtitle-text');
+    var prevButton = hero.querySelector('[data-hero-slide="prev"]');
+    var nextButton = hero.querySelector('[data-hero-slide="next"]');
+    var activeIndex = 0;
+    var interval = parseInt(hero.getAttribute('data-hero-interval'), 10) || 5600;
+    var timer = null;
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function updateCounter(index) {
+      if (currentLabel) {
+        currentLabel.textContent = String(index + 1).padStart(2, '0');
+      }
+
+      if (totalLabel) {
+        totalLabel.textContent = String(slides.length).padStart(2, '0');
+      }
+    }
+
+    function updateTitle(index) {
+      if (!titleText) return;
+
+      var nextTitle = slides[index].getAttribute('data-hero-title') || '';
+      titleText.classList.remove('is-visible');
+
+      window.setTimeout(function () {
+        titleText.textContent = nextTitle;
+        titleText.classList.add('is-visible');
+      }, 120);
+    }
+
+    function updateSubtitle(index) {
+      if (!subtitleText) return;
+
+      var nextSubtitle = slides[index].getAttribute('data-hero-subtitle') || '';
+      subtitleText.classList.remove('is-visible');
+
+      window.setTimeout(function () {
+        subtitleText.textContent = nextSubtitle;
+        subtitleText.classList.add('is-visible');
+      }, 200);
+    }
+
+    function showSlide(index) {
+      slides[activeIndex].classList.remove('is-active');
+      slides[index].classList.add('is-active');
+      activeIndex = index;
+      updateCounter(activeIndex);
+      updateTitle(activeIndex);
+      updateSubtitle(activeIndex);
+    }
+
+    function nextSlide() {
+      showSlide((activeIndex + 1) % slides.length);
+    }
+
+    function previousSlide() {
+      showSlide((activeIndex - 1 + slides.length) % slides.length);
+    }
+
+    function restartTimer() {
+      if (reduceMotion) return;
+      if (timer) {
+        window.clearInterval(timer);
+      }
+      timer = window.setInterval(nextSlide, interval);
+    }
+
+    updateCounter(activeIndex);
+    updateTitle(activeIndex);
+    updateSubtitle(activeIndex);
+
+    if (prevButton) {
+      prevButton.addEventListener('click', function () {
+        previousSlide();
+        restartTimer();
+      });
+    }
+
+    if (nextButton) {
+      nextButton.addEventListener('click', function () {
+        nextSlide();
+        restartTimer();
+      });
+    }
+
+    if (reduceMotion) return;
+
+    timer = window.setInterval(nextSlide, interval);
+
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) {
+        if (timer) {
+          window.clearInterval(timer);
+        }
+        timer = null;
+      } else if (!timer) {
+        timer = window.setInterval(nextSlide, interval);
+      }
+    });
+  }
+
+  /* ─────────────────────────────────────────────
      HERO TITLE: word-by-word reveal (optional)
      Wraps each word in .hero-title in a span
      and reveals them sequentially
@@ -633,6 +747,7 @@
     initStaggerAnimations();
     initCountUp();
     initScrollTop();
+    initHeroSlideshow();
     initHeroTitleReveal();
     initPremiumMotion();
     initImageParallax();
