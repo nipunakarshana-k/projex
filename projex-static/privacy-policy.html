@@ -10,10 +10,7 @@
   <link rel="stylesheet" href="css/site.css" />
   <link rel="stylesheet" href="css/modern.css" />
   <style>
-    .legal-wrap {
-      background: var(--off-white, #f7f6f3);
-    }
-
+    .legal-wrap { background: var(--off-white, #f7f6f3); }
     .legal-shell {
       background: #fff;
       border: 1px solid var(--border, #e8e8e4);
@@ -21,7 +18,6 @@
       padding: clamp(22px, 3.2vw, 38px);
       box-shadow: var(--shadow-sm);
     }
-
     .legal-kicker {
       display: inline-flex;
       align-items: center;
@@ -33,7 +29,6 @@
       font-weight: 700;
       margin-bottom: 14px;
     }
-
     .legal-updated {
       display: inline-flex;
       align-items: center;
@@ -47,83 +42,11 @@
       padding: 6px 12px;
       margin-bottom: 16px;
     }
-
-    .legal-lead {
-      color: var(--text-muted);
-      line-height: 1.8;
-      margin-bottom: 0;
-      max-width: 72ch;
-    }
-
-    .legal-toc {
-      position: sticky;
-      top: calc(var(--nav-h, 72px) + 18px);
-      background: #fff;
-      border: 1px solid var(--border, #e8e8e4);
-      border-radius: 14px;
-      padding: 16px;
-    }
-
-    .legal-toc h3 {
-      font-size: .84rem;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      margin: 0 0 12px;
-      color: var(--primary);
-    }
-
-    .legal-toc a {
-      display: block;
-      padding: 7px 8px;
-      border-radius: 8px;
-      color: #415066;
-      font-size: .9rem;
-    }
-
-    .legal-toc a:hover {
-      background: #f4f8fc;
-      color: var(--primary);
-    }
-
-    .legal-section {
-      margin-bottom: 24px;
-      scroll-margin-top: calc(var(--nav-h, 72px) + 18px);
-    }
-
-    .legal-section h2 {
-      font-size: clamp(1.05rem, 2.4vw, 1.34rem);
-      margin-bottom: 10px;
-      color: var(--primary);
-    }
-
-    .legal-section p,
-    .legal-section li {
-      color: var(--text-body);
-      line-height: 1.8;
-      font-size: .98rem;
-    }
-
-    .legal-section ul {
-      margin: 0;
-      padding-left: 1.1rem;
-    }
-
-    .legal-note {
-      border-left: 3px solid var(--accent);
-      background: #f8fbff;
-      border-radius: 0 10px 10px 0;
-      padding: 12px 14px;
-      color: #3d4d65;
-      font-size: .9rem;
-      margin-top: 10px;
-    }
-
-    @media (max-width: 991px) {
-      .legal-toc {
-        position: static;
-        margin-bottom: 16px;
-      }
-    }
+    .legal-lead { color: var(--text-muted); line-height: 1.8; margin-bottom: 0; max-width: 72ch; }
+    .legal-section { margin-bottom: 24px; }
+    .legal-section h2 { font-size: clamp(1.05rem, 2.4vw, 1.34rem); margin-bottom: 10px; color: var(--primary); }
+    .legal-section p, .legal-section li { color: var(--text-body); line-height: 1.8; font-size: .98rem; }
+    .legal-section ul { margin: 0; padding-left: 1.1rem; }
   </style>
 </head>
 <body>
@@ -181,105 +104,48 @@
       <p class="legal-lead">Project Excellence Pvt Ltd is committed to handling personal information responsibly and transparently. This page outlines what we collect, why we collect it, and the choices available to you.</p>
     </div>
 
-    <div class="row g-4 mt-1">
-      <div class="col-lg-4 fade-up">
-        <aside class="legal-toc">
-          <h3>On This Page</h3>
-          <a href="#intro">1. Introduction</a>
-          <a href="#collect">2. Information We Collect</a>
-          <a href="#use">3. How We Use Information</a>
-          <a href="#share">4. Information Sharing</a>
-          <a href="#security">5. Data Security</a>
-          <a href="#rights">6. Your Rights</a>
-          <a href="#cookies">7. Cookies</a>
-          <a href="#links">8. Third-Party Links</a>
-          <a href="#changes">9. Policy Updates</a>
-          <a href="#contact">10. Contact Us</a>
-        </aside>
-      </div>
+    <article class="legal-shell fade-up mt-4">
+      <section class="legal-section">
+        <h2>1. Information We Collect</h2>
+        <p>Depending on your interaction with us, we may collect:</p>
+        <ul>
+          <li>Identity and contact details such as name, email address, and phone number.</li>
+          <li>Business information such as company name, role, and project context.</li>
+          <li>Technical data such as browser type, device type, pages visited, and general location indicators.</li>
+          <li>Information submitted through enquiry forms, calls, and project correspondence.</li>
+        </ul>
+      </section>
 
-      <div class="col-lg-8 fade-up">
-        <article class="legal-shell">
-          <section id="intro" class="legal-section">
-            <h2>1. Introduction</h2>
-            <p>This Privacy Policy explains how Project Excellence Pvt Ltd ("we", "us", "our") collects, stores, uses, and protects personal information provided through our website and professional services.</p>
-          </section>
+      <section class="legal-section">
+        <h2>2. How We Use Information</h2>
+        <ul>
+          <li>To respond to enquiries and deliver requested advisory services.</li>
+          <li>To manage engagements, proposals, and project communications.</li>
+          <li>To improve website content, usability, and service quality.</li>
+          <li>To meet legal, regulatory, and contractual obligations.</li>
+        </ul>
+      </section>
 
-          <section id="collect" class="legal-section">
-            <h2>2. Information We Collect</h2>
-            <p>Depending on your interaction with us, we may collect:</p>
-            <ul>
-              <li>Identity and contact details such as name, email address, and phone number.</li>
-              <li>Business information such as company name, role, and project context.</li>
-              <li>Technical data such as browser type, device type, pages visited, and general location indicators.</li>
-              <li>Information submitted through enquiry forms, calls, and project correspondence.</li>
-            </ul>
-          </section>
+      <section class="legal-section">
+        <h2>3. Information Sharing</h2>
+        <p>We do not sell personal data. Information may be shared only when required for lawful service delivery or legal compliance.</p>
+      </section>
 
-          <section id="use" class="legal-section">
-            <h2>3. How We Use Information</h2>
-            <ul>
-              <li>To respond to enquiries and deliver requested advisory services.</li>
-              <li>To manage engagements, proposals, and project communications.</li>
-              <li>To improve website content, usability, and service quality.</li>
-              <li>To meet legal, regulatory, and contractual obligations.</li>
-            </ul>
-          </section>
+      <section class="legal-section">
+        <h2>4. Data Security</h2>
+        <p>We apply reasonable technical and organisational measures to reduce risks of unauthorised access, misuse, alteration, or disclosure.</p>
+      </section>
 
-          <section id="share" class="legal-section">
-            <h2>4. Information Sharing</h2>
-            <p>We do not sell personal data. Information may only be shared when required to:</p>
-            <ul>
-              <li>Support operational services through trusted partners under confidentiality obligations.</li>
-              <li>Comply with legal processes or enforce legitimate rights.</li>
-              <li>Protect individuals, clients, or our business from unlawful or harmful activity.</li>
-            </ul>
-          </section>
+      <section class="legal-section">
+        <h2>5. Cookies</h2>
+        <p>Our website may use cookies and similar technologies to support core site functionality, user experience, and analytics. You can manage cookie settings via your browser.</p>
+      </section>
 
-          <section id="security" class="legal-section">
-            <h2>5. Data Security</h2>
-            <p>We apply reasonable technical and organisational measures to reduce risks of unauthorised access, misuse, alteration, or disclosure.</p>
-            <div class="legal-note">No internet-based method of transmission or storage is completely secure. While we take strong precautions, absolute security cannot be guaranteed.</div>
-          </section>
-
-          <section id="rights" class="legal-section">
-            <h2>6. Your Rights</h2>
-            <p>Subject to applicable law, you may request to:</p>
-            <ul>
-              <li>Access information we hold about you.</li>
-              <li>Correct inaccurate or incomplete information.</li>
-              <li>Request deletion where retention is no longer required.</li>
-              <li>Withdraw consent for non-essential communications.</li>
-            </ul>
-          </section>
-
-          <section id="cookies" class="legal-section">
-            <h2>7. Cookies</h2>
-            <p>Our website may use cookies and similar technologies to support core site functionality, user experience, and analytics. You can manage cookie settings via your browser.</p>
-          </section>
-
-          <section id="links" class="legal-section">
-            <h2>8. Third-Party Links</h2>
-            <p>Our site may contain links to external websites. We are not responsible for content, privacy practices, or policies of external services.</p>
-          </section>
-
-          <section id="changes" class="legal-section">
-            <h2>9. Policy Updates</h2>
-            <p>We may revise this policy from time to time. Any updates will be published on this page with the revised date shown above.</p>
-          </section>
-
-          <section id="contact" class="legal-section" style="margin-bottom:0;">
-            <h2>10. Contact Us</h2>
-            <p>For questions about this Privacy Policy or your personal data:</p>
-            <ul>
-              <li>Email: <a href="mailto:Info@projex.lk">Info@projex.lk</a></li>
-              <li>Phone: <a href="tel:+94773371909">+94 77 337 1909</a></li>
-              <li>Address: Project Excellence Pvt Ltd, Sri Lanka</li>
-            </ul>
-          </section>
-        </article>
-      </div>
-    </div>
+      <section class="legal-section" style="margin-bottom:0;">
+        <h2>6. Contact</h2>
+        <p>For questions about privacy matters, contact us at <a href="mailto:Info@projex.lk">Info@projex.lk</a>.</p>
+      </section>
+    </article>
   </div>
 </section>
 </main>
@@ -293,20 +159,7 @@
       <div class="col-lg-3"><div class="footer-heading">Contact</div><div class="footer-ci"><span class="footer-ci-icon"><i class="bi bi-envelope-fill"></i></span><span>Info@projex.lk</span></div><div class="footer-ci"><span class="footer-ci-icon"><i class="bi bi-telephone-fill"></i></span><span>+94 77 337 1909</span></div></div>
     </div>
   </div>
-  <!-- Copyright bar -->
-  <div class="footer-bottom mt-5">
-    <div class="container">
-      <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
-        <span class="footer-bottom-txt">&copy; 2025 Project Excellence Pvt Ltd. All rights reserved.</span>
-        <div class="d-flex gap-3 flex-wrap">
-          <span class="footer-bottom-txt"><a href="privacy-policy.html">Privacy Policy</a></span>
-          <span class="footer-bottom-txt">•</span>
-          <span class="footer-bottom-txt"><a href="terms-of-service.html">Terms of Service</a></span>
-          <span class="footer-bottom-txt">•</span>
-          <span class="footer-bottom-txt"><a href="cookie-policy.html">Cookie Policy</a></span>
-        </div>
-      </div>
-    </div>
+  <div class="footer-bottom mt-5"><div class="container"><div class="d-flex flex-wrap justify-content-between align-items-center gap-3"><span class="footer-bottom-txt">&copy; 2025 Project Excellence Pvt Ltd. All rights reserved.</span><div class="d-flex gap-3 flex-wrap"><span class="footer-bottom-txt"><a href="privacy-policy.html">Privacy Policy</a></span><span class="footer-bottom-txt">•</span><span class="footer-bottom-txt"><a href="terms-of-service.html">Terms of Service</a></span><span class="footer-bottom-txt">•</span><span class="footer-bottom-txt"><a href="cookie-policy.html">Cookie Policy</a></span></div></div></div></div>
 </footer>
 
 <button id="scrollTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
