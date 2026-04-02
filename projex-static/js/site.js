@@ -325,6 +325,8 @@
     var activeIndex = 0;
     var interval = parseInt(hero.getAttribute('data-hero-interval'), 10) || 5600;
     var timer = null;
+    var typingTimer = null;
+    var typingToken = 0;
     var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     function updateCounter(index) {
@@ -341,10 +343,45 @@
       if (!titleText) return;
 
       var nextTitle = slides[index].getAttribute('data-hero-title') || '';
+      if (typingTimer) {
+        window.clearTimeout(typingTimer);
+        typingTimer = null;
+      }
+
+      typingToken += 1;
+      var token = typingToken;
+
       titleText.classList.remove('is-visible');
+      titleText.classList.remove('is-typing');
 
       window.setTimeout(function () {
-        titleText.textContent = nextTitle;
+        if (token !== typingToken) return;
+
+        if (reduceMotion) {
+          titleText.textContent = nextTitle;
+          titleText.classList.add('is-visible');
+          return;
+        }
+
+        var i = 0;
+        titleText.textContent = '';
+        titleText.classList.add('is-visible');
+        titleText.classList.add('is-typing');
+
+        (function typeNext() {
+          if (token !== typingToken) return;
+
+          i += 1;
+          titleText.textContent = nextTitle.slice(0, i);
+
+          if (i < nextTitle.length) {
+            typingTimer = window.setTimeout(typeNext, 42);
+          } else {
+            titleText.classList.remove('is-typing');
+            typingTimer = null;
+          }
+        })();
+
         titleText.classList.add('is-visible');
       }, 120);
     }
@@ -354,9 +391,11 @@
 
       var nextSubtitle = slides[index].getAttribute('data-hero-subtitle') || '';
       subtitleText.classList.remove('is-visible');
+      subtitleText.classList.remove('is-rising');
 
       window.setTimeout(function () {
         subtitleText.textContent = nextSubtitle;
+        subtitleText.classList.add('is-rising');
         subtitleText.classList.add('is-visible');
       }, 200);
     }

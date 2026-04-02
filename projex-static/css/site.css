@@ -650,6 +650,12 @@
   transition: opacity .95s ease, transform .95s ease;
 }
 
+.hero-title-text.is-typing {
+  border-right: 2px solid rgba(255,255,255,.75);
+  padding-right: 3px;
+  animation: heroCaretBlink .85s steps(1, end) infinite;
+}
+
 .hero-title-text.is-visible {
   opacity: 1;
   transform: translateY(0);
@@ -669,6 +675,32 @@
 .hero-subtitle-text.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.hero-subtitle-text.is-rising {
+  animation: heroSubtitleRise .7s cubic-bezier(.22,.61,.36,1) both;
+}
+
+@keyframes heroCaretBlink {
+  0%, 49% {
+    border-right-color: rgba(255,255,255,.78);
+  }
+  50%, 100% {
+    border-right-color: transparent;
+  }
+}
+
+@keyframes heroSubtitleRise {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
 }
 
 .hero-title .accent-text {
