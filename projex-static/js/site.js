@@ -324,9 +324,11 @@
     var nextButton = hero.querySelector('[data-hero-slide="next"]');
     var activeIndex = 0;
     var interval = parseInt(hero.getAttribute('data-hero-interval'), 10) || 5600;
+    var hoverExtraDelay = 5000;
     var timer = null;
     var typingTimer = null;
     var typingToken = 0;
+    var isHovering = false;
     var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     function updateCounter(index) {
@@ -425,10 +427,19 @@
       timer = window.setInterval(nextSlide, interval);
     }
 
-    function pauseTimer() {
+    function restartTimerWithHoverDelay() {
+      if (reduceMotion) return;
       if (timer) {
         window.clearInterval(timer);
-        timer = null;
+      }
+      timer = window.setInterval(nextSlide, interval + hoverExtraDelay);
+    }
+
+    function syncTimerWithHoverState() {
+      if (isHovering) {
+        restartTimerWithHoverDelay();
+      } else {
+        restartTimer();
       }
     }
 
@@ -439,22 +450,24 @@
     if (prevButton) {
       prevButton.addEventListener('click', function () {
         previousSlide();
-        restartTimer();
+        syncTimerWithHoverState();
       });
     }
 
     if (nextButton) {
       nextButton.addEventListener('click', function () {
         nextSlide();
-        restartTimer();
+        syncTimerWithHoverState();
       });
     }
 
     hero.addEventListener('mouseenter', function () {
-      pauseTimer();
+      isHovering = true;
+      restartTimerWithHoverDelay();
     });
 
     hero.addEventListener('mouseleave', function () {
+      isHovering = false;
       restartTimer();
     });
 
@@ -469,7 +482,7 @@
         }
         timer = null;
       } else if (!timer) {
-        timer = window.setInterval(nextSlide, interval);
+        syncTimerWithHoverState();
       }
     });
   }
