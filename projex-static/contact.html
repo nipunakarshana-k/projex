@@ -63,6 +63,19 @@
 ═══════════════════════════════════════════════════════════ -->
 <section class="section-pad" style="background:#fff;">
   <div class="container">
+    <!-- Section headings aligned side-by-side -->
+    <div class="contact-heading-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-bottom:40px;">
+      <div>
+        <span class="section-label">Send a Message</span>
+        <h2 class="section-title" style="font-size:1.7rem;margin:8px 0 4px;">Tell Us About Your Project</h2>
+      </div>
+      <div>
+        <span class="section-label">Contact Information</span>
+        <h3 style="font-size:1.7rem;font-weight:800;color:var(--primary);margin:8px 0 4px;letter-spacing:-.02em;">We'd Love to Hear From You</h3>
+      </div>
+    </div>
+    <div class="divider-accent" style="margin-bottom:40px;"></div>
+
     <div class="row g-5">
 
       <!-- ─────────────────────────────────────────────────────────
@@ -100,14 +113,11 @@
              Formspree (https://formspree.io/) or EmailJS
            ─────────────────────────────────────────────────────────
            FORM SECTION HEADING:
-           - To change "Send a Message": edit <span class="section-label">
-           - To change "Tell Us About Your Project": edit <h2 class="section-title">
+           - To change "Send a Message": edit the grid section above
+           - To change "Tell Us About Your Project": edit the grid section above
       ───────────────────────────────────────────────────────── -->
       <div class="col-lg-7 fade-up">
         <div style="background:#fff;border:1px solid var(--border,#E8E8E4);border-radius:16px;padding:clamp(28px,4vw,48px);">
-          <span class="section-label">Send a Message</span>
-          <h2 class="section-title" style="font-size:1.7rem;margin:8px 0 4px;">Tell Us About Your Project</h2>
-          <div class="divider-accent"></div>
           <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
             <!-- Web3Forms config, replace YOUR_ACCESS_KEY with key from web3forms.com -->
             <input type="hidden" name="access_key" value="60746c90-e824-4c33-87ab-2f1511bee0db">
@@ -184,9 +194,6 @@
       <!-- ─────────────────────────────────────────────────────────
            CONTACT INFORMATION (right column, 5/12 width on desktop)
            ─────────────────────────────────────────────────────────
-           To change the section heading: edit <h3> text
-           To change the intro paragraph: edit the <p> below the heading
-
            CONTACT INFO ITEMS (4 items with icon, label, and value):
            Each item:
            - Icon: edit "bi bi-geo-alt-fill" → any Bootstrap Icon name
@@ -217,9 +224,6 @@
            - To remove an item: delete that block
       ───────────────────────────────────────────────────── -->
       <div class="col-lg-5 fade-in">
-        <span class="section-label">Contact Information</span>
-        <h3 style="font-size:1.4rem;font-weight:800;color:var(--primary);margin:8px 0 4px;letter-spacing:-.02em;">We'd Love to Hear From You</h3>
-        <div class="divider-accent"></div>
         <p style="color:var(--text-muted);line-height:1.8;margin-bottom:36px;">Reach out to discuss your project. We provide confidential, obligation-free initial consultations.</p>
 
         <!-- Office Locations, edit the value text to change -->

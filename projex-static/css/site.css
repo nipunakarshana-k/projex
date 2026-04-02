@@ -1937,6 +1937,13 @@ textarea.form-ctrl-b { min-height: 140px; resize: vertical; }
    RESPONSIVE
 ───────────────────────────────────────────────────────────── */
 
+/* Contact page heading grid - stack on mobile */
+@media (max-width: 768px) {
+  .contact-heading-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
 /* Large laptops / medium desktops — 1024–1366px */
 @media (min-width: 992px) and (max-width: 1366px) {
   .hero-inner {
