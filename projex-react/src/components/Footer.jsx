@@ -43,3 +43,13 @@ export default function Footer() {
     </footer>
   );
 }
+        <div className="footer-bottom">
+          <span>© {new Date().getFullYear()} Project Excellence Pvt Ltd. All rights reserved.</span>
+          <div style={{display:'flex',gap:'12px',flexWrap:'wrap',alignItems:'center'}}>
+            <a href="/privacy" style={{color:'inherit',textDecoration:'none',transition:'opacity .3s'}}>Privacy Policy</a>
+            <span>•</span>
+            <a href="#" style={{color:'inherit',textDecoration:'none',transition:'opacity .3s'}}>Terms of Service</a>
+            <span>•</span>
+            <a href="#" style={{color:'inherit',textDecoration:'none',transition:'opacity .3s'}}>Cookie Policy</a>
+          </div>
+        </div>
