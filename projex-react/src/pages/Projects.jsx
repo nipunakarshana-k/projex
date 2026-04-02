@@ -62,7 +62,7 @@ export default function Projects() {
             <h2 className="section-title">Our Commitment on Every Project</h2>
             <div className="divider-accent center"></div>
           </div>
-          <div style={{display:'flex',flexWrap:'wrap',justifyContent:'center',gap:'24px',maxWidth:'920px',margin:'32px auto 0'}}>
+          <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(300px,1fr))',gap:'24px',marginTop:'0'}}>
             {[
               {icon:'bi-check2-circle',title:'Strategic Clarity From Day One',text:'We ensure the project starts with defined objectives, structured planning, and clear decision pathways.'},
               {icon:'bi-search',title:'Early Identification of Risks and Opportunities',text:'Reducing uncertainty, avoiding surprises, and improving alignment across the team.'},
@@ -70,7 +70,7 @@ export default function Projects() {
               {icon:'bi-cash-stack',title:'Commercial Protection Through Cost Intelligence',text:'Safeguarding investment value through continuous cost monitoring and evaluation.'},
               {icon:'bi-diagram-3',title:'Seamless Coordination Across Consultants and Contractors',text:'Promoting cooperation, accountability, and timely resolution of issues.'},
             ].map((s,i) => (
-              <div key={i} className="strength-card fade-up" style={{textAlign:'center',flex:'1 1 280px',maxWidth:'320px'}}>
+              <div key={i} className="strength-card fade-up" style={{textAlign:'center'}}>
                 <div className="strength-icon" style={{margin:'0 auto 16px'}}><i className={`bi ${s.icon}`} style={{color:'var(--accent)'}}></i></div>
                 <div className="strength-title">{s.title}</div>
                 <div className="strength-text">{s.text}</div>
