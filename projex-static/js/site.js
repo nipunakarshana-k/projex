@@ -425,6 +425,13 @@
       timer = window.setInterval(nextSlide, interval);
     }
 
+    function pauseTimer() {
+      if (timer) {
+        window.clearInterval(timer);
+        timer = null;
+      }
+    }
+
     updateCounter(activeIndex);
     updateTitle(activeIndex);
     updateSubtitle(activeIndex);
@@ -442,6 +449,14 @@
         restartTimer();
       });
     }
+
+    hero.addEventListener('mouseenter', function () {
+      pauseTimer();
+    });
+
+    hero.addEventListener('mouseleave', function () {
+      restartTimer();
+    });
 
     if (reduceMotion) return;
 
