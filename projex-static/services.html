@@ -14,6 +14,65 @@
   <!-- Local stylesheets, found in the css/ folder -->
   <link rel="stylesheet" href="css/site.css" />
   <link rel="stylesheet" href="css/modern.css" />
+  <style>
+    .service-point-list .svc-point {
+      border-bottom: 1px solid var(--border, #E8E8E4);
+      padding-bottom: 10px;
+      margin-bottom: 10px !important;
+    }
+
+    .service-point-list .svc-point:last-child {
+      border-bottom: none;
+      margin-bottom: 0 !important;
+      padding-bottom: 0;
+    }
+
+    .svc-point-trigger {
+      width: 100%;
+      border: none;
+      background: transparent;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      color: var(--primary);
+      font-weight: 700;
+      text-align: left;
+      cursor: pointer;
+      transition: color .25s ease;
+    }
+
+    .svc-point-trigger:hover {
+      color: var(--accent);
+    }
+
+    .svc-point-trigger i {
+      color: var(--accent);
+      transition: transform .35s ease;
+      flex-shrink: 0;
+    }
+
+    .svc-point.is-open .svc-point-trigger i {
+      transform: rotate(180deg);
+    }
+
+    .svc-point-desc {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(-4px);
+      transition: max-height .5s cubic-bezier(.22,.61,.36,1), opacity .32s ease, transform .32s ease;
+      margin-top: 0;
+      line-height: 1.75;
+    }
+
+    .svc-point.is-open .svc-point-desc {
+      opacity: 1;
+      transform: translateY(0);
+      margin-top: 8px;
+    }
+  </style>
 </head>
 <body>
 
@@ -117,13 +176,14 @@
             <div class="service-title">Client-Side Advisory Services</div>
             <div class="service-desc">Strategic guidance that helps you make informed decisions, reduce risk, and align your project with your commercial goals. We are your independent voice in every project conversation.</div>
             <!-- Bullet point list, add/remove/edit items here -->
-            <ul style="list-style:none;padding:0;margin:0 0 20px;font-size:.87rem;color:var(--text-muted);">
-              <li class="d-flex gap-2 mb-2"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:2px;"></i> Strategic Advisory &amp; Project Guidance</li>
-              <li class="d-flex gap-2 mb-2"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:2px;"></i> Client Representation</li>
-              <li class="d-flex gap-2 mb-2"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:2px;"></i> Design Review &amp; Technical Advisory</li>
-              <li class="d-flex gap-2 mb-2"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:2px;"></i> Risk &amp; Opportunity Management</li>
-              <li class="d-flex gap-2"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:2px;"></i> Stakeholder Advisory &amp; Coordination</li>
+            <ul class="service-point-list" style="list-style:none;padding:0;margin:0 0 20px;font-size:.87rem;color:var(--text-muted);">
+              <li class="d-flex gap-2 mb-3"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:4px;"></i><div><div style="font-weight:700;color:var(--primary);">Strategic Advisory &amp; Project Guidance</div><div>We support clients from day one with structured advisory that helps shape the project's direction, commercial viability, and delivery strategy. We analyse your needs, assess risks, and guide you toward informed decisions that protect your investment.</div></div></li>
+              <li class="d-flex gap-2 mb-3"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:4px;"></i><div><div style="font-weight:700;color:var(--primary);">Client Representation</div><div>We act as your independent representative, ensuring your objectives are communicated, upheld, and executed by the entire project team.</div></div></li>
+              <li class="d-flex gap-2 mb-3"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:4px;"></i><div><div style="font-weight:700;color:var(--primary);">Design Review &amp; Technical Advisory</div><div>We evaluate design proposals, identify gaps, highlight risks, and recommend improvements to support cost efficiency, constructability, and long-term performance.</div></div></li>
+              <li class="d-flex gap-2 mb-3"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:4px;"></i><div><div style="font-weight:700;color:var(--primary);">Risk &amp; Opportunity Management</div><div>We identify risks early, assess impact, propose mitigation strategies, and ensure decisions are proactive rather than reactive.</div></div></li>
+              <li class="d-flex gap-2"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:4px;"></i><div><div style="font-weight:700;color:var(--primary);">Stakeholder Advisory &amp; Coordination</div><div>We simplify communication between consultants, contractors, authorities, and investors, keeping everyone aligned with your priorities.</div></div></li>
             </ul>
+            <div style="font-size:.86rem;line-height:1.7;color:var(--text-body);margin:0 0 20px;"><strong style="color:var(--primary);">Best for:</strong> Clients who need clarity, strategic direction, and a trusted advisor to protect their project.</div>
             <a href="contact.html" class="service-link">Enquire Now <i class="bi bi-arrow-right"></i></a>
           </div>
         </div>
@@ -143,13 +203,14 @@
           <div style="padding:32px;">
             <div class="service-title">Project Management Services</div>
             <div class="service-desc">Disciplined coordination, progress control, and structured execution that keeps your project delivered on time, on cost, and to the expected quality.</div>
-            <ul style="list-style:none;padding:0;margin:0 0 20px;font-size:.87rem;color:var(--text-muted);">
-              <li class="d-flex gap-2 mb-2"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:2px;"></i> End-to-End Project Delivery Management</li>
-              <li class="d-flex gap-2 mb-2"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:2px;"></i> Progress Monitoring &amp; Reporting</li>
-              <li class="d-flex gap-2 mb-2"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:2px;"></i> Construction Oversight &amp; Quality Monitoring</li>
-              <li class="d-flex gap-2 mb-2"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:2px;"></i> Procurement, Tender Support &amp; Contract Administration</li>
-              <li class="d-flex gap-2"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:2px;"></i> Program &amp; Schedule Control</li>
+            <ul class="service-point-list" style="list-style:none;padding:0;margin:0 0 20px;font-size:.87rem;color:var(--text-muted);">
+              <li class="d-flex gap-2 mb-3"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:4px;"></i><div><div style="font-weight:700;color:var(--primary);">End-to-End Project Delivery Management</div><div>We implement structured project management practices to ensure your project is delivered with precision while managing time, cost, quality, and scope effectively.</div></div></li>
+              <li class="d-flex gap-2 mb-3"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:4px;"></i><div><div style="font-weight:700;color:var(--primary);">Progress Monitoring &amp; Reporting</div><div>Clear, transparent reporting gives you full visibility over your project's status, risks, and key decisions.</div></div></li>
+              <li class="d-flex gap-2 mb-3"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:4px;"></i><div><div style="font-weight:700;color:var(--primary);">Construction Oversight &amp; Quality Monitoring</div><div>We provide site oversight, contractor coordination, and performance evaluation to ensure the construction process stays compliant and efficient.</div></div></li>
+              <li class="d-flex gap-2 mb-3"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:4px;"></i><div><div style="font-weight:700;color:var(--primary);">Procurement, Tender Support &amp; Contract Administration</div><div>We assist in contractor selection, tender evaluation, negotiations, and contract documentation, ensuring commercial fairness and value for money.</div></div></li>
+              <li class="d-flex gap-2"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:4px;"></i><div><div style="font-weight:700;color:var(--primary);">Program &amp; Schedule Control</div><div>We track milestones, manage critical paths, and ensure your project stays on schedule.</div></div></li>
             </ul>
+            <div style="font-size:.86rem;line-height:1.7;color:var(--text-body);margin:0 0 20px;"><strong style="color:var(--primary);">Best for:</strong> Clients who want structured execution and reliable delivery aligned with their commercial objectives.</div>
             <a href="contact.html" class="service-link">Enquire Now <i class="bi bi-arrow-right"></i></a>
           </div>
         </div>
@@ -169,13 +230,15 @@
           <div style="padding:32px;">
             <div class="service-title">Design Management Services</div>
             <div class="service-desc">We lead and advise the design process to ensure every discipline remains aligned with the client's objectives, technically sound, commercially viable, and strategically planned.</div>
-            <ul style="list-style:none;padding:0;margin:0 0 20px;font-size:.87rem;color:var(--text-muted);">
-              <li class="d-flex gap-2 mb-2"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:2px;"></i> Design Coordination &amp; Advisory</li>
-              <li class="d-flex gap-2 mb-2"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:2px;"></i> Client-Side Design Leadership</li>
-              <li class="d-flex gap-2 mb-2"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:2px;"></i> Technical Review &amp; Risk Identification</li>
-              <li class="d-flex gap-2 mb-2"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:2px;"></i> Design Program Management</li>
-              <li class="d-flex gap-2"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:2px;"></i> Value-Driven Design &amp; Cost Alignment</li>
+            <ul class="service-point-list" style="list-style:none;padding:0;margin:0 0 20px;font-size:.87rem;color:var(--text-muted);">
+              <li class="d-flex gap-2 mb-3"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:4px;"></i><div><div style="font-weight:700;color:var(--primary);">Design Coordination &amp; Advisory</div><div>We lead and advise the design process to ensure every discipline, architectural, structural, MEP, and specialist consultants, remains aligned with client objectives and delivery strategy.</div></div></li>
+              <li class="d-flex gap-2 mb-3"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:4px;"></i><div><div style="font-weight:700;color:var(--primary);">Client-Side Design Leadership</div><div>Acting as the client's representative, we ensure design development reflects your priorities, functional requirements, commercial expectations, and long-term asset goals.</div></div></li>
+              <li class="d-flex gap-2 mb-3"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:4px;"></i><div><div style="font-weight:700;color:var(--primary);">Technical Review &amp; Risk Identification</div><div>We conduct independent reviews of drawings, specifications, and design proposals to identify gaps, coordination issues, constructability challenges, and cost impacts early.</div></div></li>
+              <li class="d-flex gap-2 mb-3"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:4px;"></i><div><div style="font-weight:700;color:var(--primary);">Design Program Management</div><div>Our team oversees design timelines, milestones, deliverables, and interdependencies across disciplines to support procurement, approvals, and construction requirements.</div></div></li>
+              <li class="d-flex gap-2 mb-3"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:4px;"></i><div><div style="font-weight:700;color:var(--primary);">Value-Driven Design &amp; Cost Alignment</div><div>We work closely with designers and QS teams to ensure design choices reflect realistic budgets, efficient material usage, and value-engineered solutions.</div></div></li>
+              <li class="d-flex gap-2"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:4px;"></i><div><div style="font-weight:700;color:var(--primary);">Stakeholder Engagement &amp; Approvals Support</div><div>From internal teams to external consultants and statutory authorities, we coordinate all design-related communication for smooth progress and timely approvals.</div></div></li>
             </ul>
+            <div style="font-size:.86rem;line-height:1.7;color:var(--text-body);margin:0 0 20px;"><strong style="color:var(--primary);">Best for:</strong> Clients who want structured design coordination, clear advisory support, commercial alignment, and early risk control.</div>
             <a href="contact.html" class="service-link">Enquire Now <i class="bi bi-arrow-right"></i></a>
           </div>
         </div>
@@ -195,13 +258,14 @@
           <div style="padding:32px;">
             <div class="service-title">Cost Consultancy Services</div>
             <div class="service-desc">Accurate budgeting, cost evaluation, value engineering, and commercial assurance that protects your financial investment throughout the project lifecycle.</div>
-            <ul style="list-style:none;padding:0;margin:0 0 20px;font-size:.87rem;color:var(--text-muted);">
-              <li class="d-flex gap-2 mb-2"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:2px;"></i> Cost Planning &amp; Budget Development</li>
-              <li class="d-flex gap-2 mb-2"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:2px;"></i> Value Engineering &amp; Cost Optimization</li>
-              <li class="d-flex gap-2 mb-2"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:2px;"></i> Commercial &amp; Cost Risk Advisory</li>
-              <li class="d-flex gap-2 mb-2"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:2px;"></i> Claims Review &amp; Payment Verification</li>
-              <li class="d-flex gap-2"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:2px;"></i> Estimate Reviews &amp; Benchmarking</li>
+            <ul class="service-point-list" style="list-style:none;padding:0;margin:0 0 20px;font-size:.87rem;color:var(--text-muted);">
+              <li class="d-flex gap-2 mb-3"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:4px;"></i><div><div style="font-weight:700;color:var(--primary);">Cost Planning &amp; Budget Development</div><div>We help clients establish accurate, realistic budgets supported by value-driven cost strategies.</div></div></li>
+              <li class="d-flex gap-2 mb-3"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:4px;"></i><div><div style="font-weight:700;color:var(--primary);">Value Engineering &amp; Cost Optimization</div><div>We evaluate design alternatives, material choices, and construction methods to identify savings without compromising quality.</div></div></li>
+              <li class="d-flex gap-2 mb-3"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:4px;"></i><div><div style="font-weight:700;color:var(--primary);">Commercial &amp; Cost Risk Advisory</div><div>We assess financial exposure, evaluate cash flow, and advise on strategies to maintain commercial stability throughout the project.</div></div></li>
+              <li class="d-flex gap-2 mb-3"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:4px;"></i><div><div style="font-weight:700;color:var(--primary);">Claims Review &amp; Payment Verification</div><div>We review contractor claims, variations, and payment applications to ensure compliance, fairness, and accuracy.</div></div></li>
+              <li class="d-flex gap-2"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:4px;"></i><div><div style="font-weight:700;color:var(--primary);">Estimate Reviews &amp; Benchmarking</div><div>We validate consultant estimates and compare cost data to ensure your project remains commercially competitive.</div></div></li>
             </ul>
+            <div style="font-size:.86rem;line-height:1.7;color:var(--text-body);margin:0 0 20px;"><strong style="color:var(--primary);">Best for:</strong> Clients who want financial clarity, commercial protection, and cost certainty.</div>
             <a href="contact.html" class="service-link">Enquire Now <i class="bi bi-arrow-right"></i></a>
           </div>
         </div>
@@ -282,11 +346,69 @@
       <div class="col-lg-3"><div class="footer-heading">Contact</div><div class="footer-ci"><span class="footer-ci-icon"><i class="bi bi-envelope-fill"></i></span><span>Info@projex.lk</span></div><div class="footer-ci"><span class="footer-ci-icon"><i class="bi bi-telephone-fill"></i></span><span>+94 77 337 1909</span></div></div>
     </div>
   </div>
-  <div class="footer-bottom mt-5"><div class="container"><div class="d-flex flex-wrap justify-content-between align-items-center gap-3"><span class="footer-bottom-txt">&copy; 2025 Project Excellence Pvt Ltd. All rights reserved.</span><span class="footer-bottom-txt">Independent Advisory &bull; Intelligent Cost Insight &bull; Structured Project Delivery</span></div></div></div>
+  <div class="footer-bottom mt-5"><div class="container"><div class="d-flex flex-wrap justify-content-between align-items-center gap-3"><span class="footer-bottom-txt">&copy; 2025 Project Excellence Pvt Ltd. All rights reserved.</span><span class="footer-bottom-txt"><a href="privacy-policy.html">Privacy Policy</a></span></div></div></div>
 </footer>
 <button id="scrollTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/site.js"></script>
 <script src="js/animations.js"></script>
+<script>
+  (function () {
+    var lists = document.querySelectorAll('.service-point-list');
+
+    lists.forEach(function (list) {
+      var items = Array.prototype.slice.call(list.querySelectorAll('li'));
+
+      items.forEach(function (li, idx) {
+        var contentWrap = li.querySelector(':scope > div');
+        if (!contentWrap || contentWrap.children.length < 2) return;
+
+        var titleEl = contentWrap.children[0];
+        var descEl = contentWrap.children[1];
+
+        li.classList.add('svc-point');
+        descEl.classList.add('svc-point-desc');
+
+        var trigger = document.createElement('button');
+        trigger.type = 'button';
+        trigger.className = 'svc-point-trigger';
+        trigger.innerHTML = '<span>' + titleEl.textContent.trim() + '</span><i class="bi bi-chevron-down"></i>';
+        trigger.setAttribute('aria-expanded', 'false');
+
+        titleEl.replaceWith(trigger);
+
+        function setOpen(open) {
+          li.classList.toggle('is-open', open);
+          trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+          descEl.style.maxHeight = open ? descEl.scrollHeight + 'px' : '0px';
+        }
+
+        trigger.addEventListener('click', function () {
+          var willOpen = !li.classList.contains('is-open');
+
+          items.forEach(function (otherLi) {
+            if (otherLi === li) return;
+            if (!otherLi.classList.contains('svc-point')) return;
+            var otherDesc = otherLi.querySelector('.svc-point-desc');
+            var otherTrigger = otherLi.querySelector('.svc-point-trigger');
+            otherLi.classList.remove('is-open');
+            if (otherTrigger) otherTrigger.setAttribute('aria-expanded', 'false');
+            if (otherDesc) otherDesc.style.maxHeight = '0px';
+          });
+
+          setOpen(willOpen);
+        });
+
+        setOpen(idx === 0);
+      });
+    });
+
+    window.addEventListener('resize', function () {
+      document.querySelectorAll('.svc-point.is-open .svc-point-desc').forEach(function (descEl) {
+        descEl.style.maxHeight = descEl.scrollHeight + 'px';
+      });
+    });
+  })();
+</script>
 </body>
 </html>

@@ -19,7 +19,7 @@
         children.forEach(function (child, i) {
           setTimeout(function () {
             child.classList.add('visible');
-          }, i * 110);
+          }, i * 190);
         });
       }
     });

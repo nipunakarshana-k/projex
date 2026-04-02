@@ -132,8 +132,8 @@ main {
 /* ─────────────────────────────────────────────────────────────
    SECTION SCAFFOLDING
 ───────────────────────────────────────────────────────────── */
-.section-pad    { padding: 96px 0; }
-.section-pad-sm { padding: 64px 0; }
+.section-pad    { padding: 80px 0; }
+.section-pad-sm { padding: 52px 0; }
 
 .section-label {
   display: inline-block;
@@ -143,14 +143,14 @@ main {
   letter-spacing: .2em;
   text-transform: uppercase;
   color: var(--accent);
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .section-title {
   font-size: clamp(1.75rem, 3.5vw, 2.75rem);
   font-weight: 800;
   color: var(--primary);
-  margin-bottom: 20px;
+  margin-bottom: 14px;
   line-height: 1.2;
 }
 
@@ -168,7 +168,7 @@ main {
   height: 4px;
   background: var(--gradient);
   border-radius: 2px;
-  margin: 20px 0 32px;
+  margin: 16px 0 24px;
 }
 
 .divider-accent.center {
@@ -1651,7 +1651,7 @@ textarea.form-ctrl-b { min-height: 140px; resize: vertical; }
 .fade-up {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity .7s ease, transform .7s ease;
+  transition: opacity .95s cubic-bezier(.22,.61,.36,1), transform .95s cubic-bezier(.22,.61,.36,1);
 }
 
 .fade-up.visible {
@@ -1662,7 +1662,7 @@ textarea.form-ctrl-b { min-height: 140px; resize: vertical; }
 /* fade-in */
 .fade-in {
   opacity: 0;
-  transition: opacity .7s ease;
+  transition: opacity .95s cubic-bezier(.22,.61,.36,1);
 }
 
 .fade-in.visible { opacity: 1; }
@@ -1793,13 +1793,13 @@ textarea.form-ctrl-b { min-height: 140px; resize: vertical; }
 
 /* Fluid section rhythm on all screens */
 .section-pad {
-  padding-top: clamp(52px, 8vw, 96px);
-  padding-bottom: clamp(52px, 8vw, 96px);
+  padding-top: clamp(34px, 5.4vw, 62px);
+  padding-bottom: clamp(34px, 5.4vw, 62px);
 }
 
 .section-pad-sm {
-  padding-top: clamp(36px, 6vw, 64px);
-  padding-bottom: clamp(36px, 6vw, 64px);
+  padding-top: clamp(24px, 4.5vw, 44px);
+  padding-bottom: clamp(24px, 4.5vw, 44px);
 }
 
 /* Keep body copy and headings balanced on wide and narrow screens */

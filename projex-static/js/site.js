@@ -211,7 +211,7 @@
           children.forEach(function (child, i) {
             setTimeout(function () {
               child.classList.add('visible');
-            }, i * 120);
+            }, i * 190);
           });
           staggerObserver.unobserve(entry.target);
         }
