@@ -324,7 +324,7 @@
     var nextButton = hero.querySelector('[data-hero-slide="next"]');
     var activeIndex = 0;
     var interval = parseInt(hero.getAttribute('data-hero-interval'), 10) || 5600;
-    var hoverExtraDelay = 5000;
+    var hoverExtraDelay = 3000;
     var timer = null;
     var typingTimer = null;
     var typingToken = 0;
