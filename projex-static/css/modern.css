@@ -2046,7 +2046,6 @@ button:focus-visible,
   }
 
   main,
-  #mainNav,
   .hero-section,
   .trust-strip,
   .hstats-bar,
@@ -2067,5 +2066,28 @@ button:focus-visible,
   .hstat-label,
   .hstat-sub {
     overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 991px) {
+  #mainNav {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    overflow: visible !important;
+  }
+
+  .nav-inner {
+    display: flex !important;
+    visibility: visible !important;
+  }
+
+  .nav-hamburger {
+    display: flex !important;
+    visibility: visible !important;
+  }
+
+  #navbarNav {
+    z-index: 1200;
   }
 }
