@@ -1926,3 +1926,146 @@ button:focus-visible,
 .marquee-track {
   animation-duration: 32s;
 }
+
+/* ────────────────────────────────────────────
+   MOBILE POLISH PASS
+   Final readability + touch improvements
+──────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .hero-title {
+    font-size: clamp(2rem, 10.5vw, 2.8rem);
+    line-height: 1.08;
+  }
+
+  .hero-subtitle {
+    font-size: .95rem;
+    line-height: 1.65;
+    max-width: 100%;
+  }
+
+  .hero-actions,
+  .hero-actions .btn-pb {
+    width: 100%;
+  }
+
+  .hero-actions .btn-pb {
+    justify-content: center;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .trust-strip {
+    padding: 14px 0;
+  }
+
+  .marquee-track {
+    gap: 38px;
+    animation-duration: 24s;
+  }
+
+  .marquee-item {
+    font-size: .66rem;
+    letter-spacing: .12em;
+    gap: 10px;
+  }
+
+  .hstats-bar {
+    padding: 30px 0;
+  }
+
+  .hstat-label {
+    font-size: .76rem;
+  }
+
+  .hstat-sub {
+    font-size: .7rem;
+  }
+
+  .hstat-tooltip {
+    display: none;
+  }
+
+  .whoweare-inner {
+    gap: 28px;
+  }
+
+  .whoweare-title {
+    font-size: clamp(1.55rem, 7vw, 2.1rem);
+  }
+
+  .whoweare-card {
+    border-radius: 14px;
+  }
+
+  .approach-feature-item {
+    align-items: flex-start;
+  }
+
+  .approach-feature-desc {
+    line-height: 1.5;
+  }
+
+  .site-footer .row {
+    row-gap: 1.35rem !important;
+  }
+
+  .footer-bottom .d-flex {
+    justify-content: center !important;
+    text-align: center;
+  }
+}
+
+@media (max-width: 575px) {
+  .hstats-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .hstat-item {
+    border-right: none !important;
+    border-bottom: 1px solid var(--border);
+    padding: 18px 10px;
+  }
+
+  .hstat-item:last-child {
+    border-bottom: none;
+  }
+
+  .hero-title {
+    font-size: clamp(1.8rem, 11vw, 2.2rem);
+  }
+}
+
+@media (max-width: 767px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-x: clip;
+    position: relative;
+  }
+
+  main,
+  #mainNav,
+  .hero-section,
+  .trust-strip,
+  .hstats-bar,
+  .site-footer {
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-x: clip;
+  }
+
+  .nav-inner,
+  .hero-container,
+  .hstats-inner,
+  .hstat-item {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .hstat-label,
+  .hstat-sub {
+    overflow-wrap: anywhere;
+  }
+}
