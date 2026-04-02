@@ -470,10 +470,10 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--accent);
 }
 
-/* Center 4th and 5th cards on desktop */
-@media (min-width: 992px) {
-  .stagger-parent .col-lg-4:nth-child(4) {
-    margin-left: auto;
+/* Remove offset on tablet/mobile */
+@media (max-width: 991px) {
+  .offset-lg-2 {
+    margin-left: 0 !important;
   }
 }
 

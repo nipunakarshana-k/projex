@@ -70,7 +70,7 @@ export default function Projects() {
               {icon:'bi-cash-stack',title:'Commercial Protection Through Cost Intelligence',text:'Safeguarding investment value through continuous cost monitoring and evaluation.'},
               {icon:'bi-diagram-3',title:'Seamless Coordination Across Consultants and Contractors',text:'Promoting cooperation, accountability, and timely resolution of issues.'},
             ].map((s,i) => (
-              <div key={i} className="strength-card fade-up" style={{textAlign:'center'}}>
+              <div key={i} className="strength-card fade-up" style={{textAlign:'center',...(i === 3 && window.innerWidth >= 768 ? {marginLeft:'auto'} : {})}}>
                 <div className="strength-icon" style={{margin:'0 auto 16px'}}><i className={`bi ${s.icon}`} style={{color:'var(--accent)'}}></i></div>
                 <div className="strength-title">{s.title}</div>
                 <div className="strength-text">{s.text}</div>
