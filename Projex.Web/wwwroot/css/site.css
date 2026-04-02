@@ -1538,6 +1538,15 @@ textarea.form-ctrl-b { min-height: 140px; resize: vertical; }
   color: rgba(255,255,255,.35);
 }
 
+.footer-bottom-txt a {
+  color: rgba(255,255,255,.55);
+  text-decoration: none;
+}
+
+.footer-bottom-txt a:hover {
+  color: var(--white);
+}
+
 .footer-pillar {
   font-family: var(--font-h);
   font-size: .65rem;

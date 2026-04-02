@@ -441,6 +441,8 @@ a { text-decoration: none; color: inherit; }
 .footer-links a { font-size: .87rem; color: rgba(255,255,255,.5); transition: color .2s; }
 .footer-links a:hover { color: #fff; }
 .footer-bottom { border-top: 1px solid #222; padding-top: 28px; display: flex; justify-content: space-between; align-items: center; font-size: .78rem; flex-wrap: wrap; gap: 12px; }
+.footer-bottom a { color: rgba(255,255,255,.55); text-decoration: none; transition: color .2s; }
+.footer-bottom a:hover { color: #fff; }
 
 /* ── SERVICE FEATURES ── */
 .service-feature-item { display: flex; align-items: flex-start; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--border); }
