@@ -62,7 +62,7 @@ export default function Projects() {
             <h2 className="section-title">Our Commitment on Every Project</h2>
             <div className="divider-accent center"></div>
           </div>
-          <div style={{display:'flex',flexWrap:'wrap',justifyContent:'center',gap:'24px',maxWidth:'1000px',margin:'0 auto'}}>
+          <div style={{display:'flex',flexWrap:'wrap',justifyContent:'center',gap:'24px',maxWidth:'920px',margin:'32px auto 0'}}>
             {[
               {icon:'bi-check2-circle',title:'Strategic Clarity From Day One',text:'We ensure the project starts with defined objectives, structured planning, and clear decision pathways.'},
               {icon:'bi-search',title:'Early Identification of Risks and Opportunities',text:'Reducing uncertainty, avoiding surprises, and improving alignment across the team.'},
