@@ -3,13 +3,13 @@
    Layered on top of site.css for a clean, editorial aesthetic.
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
 
 /* ── Override font variables ── */
 :root {
-  --font-h:       'Inter', 'Montserrat', sans-serif;
-  --font-b:       'Inter', 'DM Sans', sans-serif;
-  --font-serif:   'Playfair Display', Georgia, serif;
+  --font-h:       'Gotham', 'Dm Sans', sans-serif;
+  --font-b:       'Dm Sans', 'Gotham', sans-serif;
+  --font-serif:   'Gotham', 'Dm Sans', sans-serif;
 
   /* Minimal palette */
   --off-white:    #F7F6F3;

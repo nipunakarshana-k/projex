@@ -2,10 +2,10 @@
    PROJEX — Project Excellence Advisory & Management
    Brand Stylesheet — Production Quality
    Colors : Primary #142A4F | Accent #2389CA | Light #B0D2ED | White #FFFFFF
-   Fonts  : Montserrat (headings) | DM Sans (body)
+  Fonts  : Gotham (headings) | Dm Sans (body)
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
 
 /* ─────────────────────────────────────────────────────────────
    CSS CUSTOM PROPERTIES
@@ -54,8 +54,8 @@
   --transition-slow: all .5s cubic-bezier(.4,0,.2,1);
 
   /* Typography */
-  --font-h:         'Montserrat', sans-serif;
-  --font-b:         'DM Sans', sans-serif;
+  --font-h:         'Gotham', 'Dm Sans', sans-serif;
+  --font-b:         'Dm Sans', 'Gotham', sans-serif;
 }
 
 /* ─────────────────────────────────────────────────────────────
@@ -1312,7 +1312,7 @@
 .process-card-trigger[aria-expanded="true"] .process-card-toggle {
   background: var(--accent);
   color: var(--white);
-  transform: rotate(45deg);
+  transform: rotate(90deg);
 }
 
 .process-card-trigger[aria-expanded="true"] .process-card-hint {
@@ -1321,6 +1321,10 @@
 
 .process-card-trigger:hover .process-card-toggle {
   transform: scale(1.05);
+}
+
+.process-card-trigger[aria-expanded="true"]:hover .process-card-toggle {
+  transform: rotate(90deg) scale(1.05);
 }
 
 .process-card-trigger:focus-visible {
