@@ -7,9 +7,9 @@
 
 /* ── Override font variables ── */
 :root {
-  --font-h:       'Gotham', 'Dm Sans', sans-serif;
-  --font-b:       'Dm Sans', 'Gotham', sans-serif;
-  --font-serif:   'Gotham', 'Dm Sans', sans-serif;
+  --font-h:       'Dm Sans', sans-serif;
+  --font-b:       'Dm Sans', sans-serif;
+  --font-serif:   'Dm Sans', sans-serif;
 
   /* Minimal palette */
   --off-white:    #F7F6F3;
@@ -40,7 +40,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-h);
-  letter-spacing: -.02em;
+  letter-spacing: .01em;
 }
 
 /* ────────────────────────────────────────────
@@ -59,9 +59,9 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 1px 24px rgba(0,0,0,.06) !important;
 }
 
-/* Logo: invert to dark when navbar is white */
+/* Keep brand colors visible when navbar turns white */
 #mainNav.scrolled .nav-logo {
-  filter: brightness(0);
+  filter: none;
 }
 
 /* Nav links: become dark on white background */
@@ -73,11 +73,11 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--accent) !important;
 }
 
-/* Mobile nav stays dark */
+/* Mobile nav uses the light header style */
 @media (max-width: 991px) {
   #mainNav .nav-logo { filter: none; }
   #mainNav.scrolled .nav-logo { filter: none; }
-  #mainNav.scrolled .nav-link-custom { color: rgba(255,255,255,.88) !important; }
+  #mainNav.scrolled .nav-link-custom { color: var(--charcoal) !important; }
 }
 
 /* ────────────────────────────────────────────
@@ -97,7 +97,7 @@ h1, h2, h3, h4, h5, h6 {
 .section-title {
   font-size: clamp(2.05rem, 4vw, 3.3rem);
   font-weight: 800;
-  letter-spacing: -.03em;
+  letter-spacing: .012em;
   line-height: 1.12;
 }
 
@@ -175,7 +175,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: clamp(2.4rem, 5vw, 5rem);
   font-weight: 800;
   line-height: 1.04;
-  letter-spacing: -.04em;
+  letter-spacing: .014em;
 }
 
 .hero-title .accent-text {
@@ -714,7 +714,7 @@ h1, h2, h3, h4, h5, h6 {
 .cta-title {
   font-size: clamp(2rem, 4vw, 3.2rem);
   font-weight: 800;
-  letter-spacing: -.04em;
+  letter-spacing: .012em;
   line-height: 1.1;
   color: #fff;
   margin-bottom: 20px;
@@ -840,7 +840,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: clamp(2rem, 5vw, 3.6rem);
   font-weight: 800;
   color: #fff;
-  letter-spacing: -.04em;
+  letter-spacing: .012em;
   line-height: 1.08;
   margin: 16px 0 14px;
 }
@@ -1715,23 +1715,40 @@ h1, h2, h3, h4, h5, h6 {
   #mainNav .nav-item.dropdown .dropdown-toggle::after { display: none !important; }
   #mainNav .nav-item.dropdown .nav-dropdown { display: none !important; }
 
-  /* Always dark navbar on mobile — both default AND scrolled states */
-  #mainNav,
-  #mainNav.scrolled {
-    background: rgba(14,26,48,1) !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    border-bottom: 1px solid rgba(255,255,255,.08) !important;
-    box-shadow: none !important;
+  /* Ensure mobile menu links stay readable on the dark slide-down panel */
+  #navbarNav .nav-link-custom,
+  #mainNav #navbarNav .nav-link-custom,
+  #mainNav.scrolled #navbarNav .nav-link-custom {
+    color: rgba(255,255,255,.9) !important;
+    border-bottom-color: rgba(255,255,255,.14) !important;
   }
 
-  /* Keep logo WHITE on mobile — navbar is always dark */
+  #navbarNav .nav-link-custom:hover,
+  #navbarNav .nav-link-custom.active,
+  #mainNav #navbarNav .nav-link-custom:hover,
+  #mainNav #navbarNav .nav-link-custom.active,
+  #mainNav.scrolled #navbarNav .nav-link-custom:hover,
+  #mainNav.scrolled #navbarNav .nav-link-custom.active {
+    color: #fff !important;
+  }
+
+  /* Keep navbar white on mobile — both default and scrolled states */
+  #mainNav,
+  #mainNav.scrolled {
+    background: rgba(255,255,255,.97) !important;
+    backdrop-filter: blur(18px) !important;
+    -webkit-backdrop-filter: blur(18px) !important;
+    border-bottom: 1px solid rgba(20,42,79,.1) !important;
+    box-shadow: 0 1px 24px rgba(0,0,0,.06) !important;
+  }
+
+  /* Keep logo in original colors on white mobile navbar */
   #mainNav .nav-logo,
   #mainNav.scrolled .nav-logo { filter: none !important; }
 
-  /* Make hamburger button clearly visible */
+  /* Make hamburger button clearly visible on white background */
   .nav-hamburger span {
-    background: #fff !important;
+    background: rgba(20,42,79,.9) !important;
     width: 26px;
     height: 2.5px;
   }
@@ -2185,5 +2202,43 @@ button:focus-visible,
 
   #navbarNav {
     z-index: 1200;
+  }
+}
+
+/* ────────────────────────────────────────────
+   HEADING SPACING CONSISTENCY
+──────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6,
+.section-title,
+.hero-title,
+.cta-title,
+.page-hero-mm-title,
+.whoweare-title,
+.service-img-title,
+.approach-feature-title,
+.proj-facts-title,
+.proj-detail-title,
+.value-title,
+.strength-title,
+.team-name,
+.hstat-label {
+  letter-spacing: .015em !important;
+}
+
+@media (max-width: 767px) {
+  .section-title,
+  .hero-title,
+  .cta-title,
+  .page-hero-mm-title,
+  .whoweare-title,
+  .service-img-title,
+  .approach-feature-title,
+  .proj-facts-title,
+  .proj-detail-title,
+  .value-title,
+  .strength-title,
+  .team-name,
+  .hstat-label {
+    letter-spacing: .012em !important;
   }
 }

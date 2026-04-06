@@ -26,15 +26,35 @@
     var nav = document.getElementById('mainNav');
     if (!nav) return;
 
+    var heroLogo = nav.querySelector('.nav-logo[data-logo-hero][data-logo-scrolled]');
+
+    function syncHeroLogo() {
+      if (!heroLogo) return;
+
+      var isMobile = window.innerWidth <= 991;
+      var isScrolled = nav.classList.contains('scrolled');
+      var heroSrc = heroLogo.getAttribute('data-logo-hero');
+      var scrolledSrc = heroLogo.getAttribute('data-logo-scrolled');
+      var mobileSrc = heroLogo.getAttribute('data-logo-mobile') || scrolledSrc;
+
+      var nextSrc = (isMobile || isScrolled) ? mobileSrc : heroSrc;
+      if (nextSrc && heroLogo.getAttribute('src') !== nextSrc) {
+        heroLogo.setAttribute('src', nextSrc);
+      }
+    }
+
     function onScroll() {
       if (window.scrollY > 50) {
         nav.classList.add('scrolled');
       } else {
         nav.classList.remove('scrolled');
       }
+
+      syncHeroLogo();
     }
 
     window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', syncHeroLogo);
     onScroll(); // run on init
   }
 

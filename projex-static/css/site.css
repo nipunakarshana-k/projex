@@ -186,11 +186,12 @@
 
 /* Always solid on mobile */
 @media (max-width: 991px) {
-  #mainNav {
-    background: rgba(14,26,48,.97);
+  #mainNav,
+  #mainNav.scrolled {
+    background: rgba(255,255,255,.97);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
-    border-bottom-color: rgba(255,255,255,.06);
+    border-bottom-color: rgba(20,42,79,.1);
   }
 }
 
@@ -205,9 +206,13 @@
 }
 
 /* Logo */
-.nav-brand { flex-shrink: 0; line-height: 1; display: flex; }
-.nav-logo   { height: 40px; width: auto; display: block; transition: height .3s ease; }
-#mainNav.scrolled .nav-logo { height: 36px; }
+.nav-brand {
+  flex-shrink: 0;
+  line-height: 1;
+  display: flex;
+}
+.nav-logo   { height: 40px; width: auto; display: block; filter: none; transition: height .3s ease, filter .3s ease; }
+#mainNav.scrolled .nav-logo { height: 36px; filter: none; }
 
 /* Collapse area takes remaining space */
 #navbarNav {
@@ -332,6 +337,10 @@
 /* ── MOBILE (≤991px) ── */
 @media (max-width: 991px) {
   :root { --nav-h: 64px; }
+
+  .nav-hamburger span {
+    background: rgba(20,42,79,.9);
+  }
 
   .nav-hamburger { display: flex; }
 
