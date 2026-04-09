@@ -26,15 +26,15 @@
     var nav = document.getElementById('mainNav');
     if (!nav) return;
 
-    var heroLogo = nav.querySelector('.nav-logo[data-logo-hero][data-logo-scrolled]');
+    var heroLogo = nav.querySelector('.nav-logo');
 
     function syncHeroLogo() {
       if (!heroLogo) return;
 
       var isMobile = window.innerWidth <= 991;
       var isScrolled = nav.classList.contains('scrolled');
-      var heroSrc = heroLogo.getAttribute('data-logo-hero');
-      var scrolledSrc = heroLogo.getAttribute('data-logo-scrolled');
+      var heroSrc = heroLogo.getAttribute('data-logo-hero') || 'images/logo-white.png';
+      var scrolledSrc = heroLogo.getAttribute('data-logo-scrolled') || 'images/logo-primary.png';
       var mobileSrc = heroLogo.getAttribute('data-logo-mobile') || scrolledSrc;
 
       var nextSrc = (isMobile || isScrolled) ? mobileSrc : heroSrc;
@@ -571,6 +571,30 @@
   }
 
   /* ─────────────────────────────────────────────
+     INNER PAGE HERO: apply home-like header entrance
+     to .page-hero-mm banners across all pages
+  ───────────────────────────────────────────── */
+  function initInnerPageHeroAnimation() {
+    var pageHeroes = document.querySelectorAll('.page-hero-mm');
+    if (!pageHeroes.length) return;
+
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    pageHeroes.forEach(function (hero) {
+      hero.classList.add('page-hero-anim-ready');
+
+      if (reduceMotion) {
+        hero.classList.add('is-visible');
+        return;
+      }
+
+      window.setTimeout(function () {
+        hero.classList.add('is-visible');
+      }, 70);
+    });
+  }
+
+  /* ─────────────────────────────────────────────
      PREMIUM MOTION: hero parallax + magnetic buttons
   ───────────────────────────────────────────── */
   function initPremiumMotion() {
@@ -836,6 +860,7 @@
     initScrollTop();
     initHeroSlideshow();
     initHeroTitleReveal();
+    initInnerPageHeroAnimation();
     initPremiumMotion();
     initImageParallax();
     initBackgroundParallax();

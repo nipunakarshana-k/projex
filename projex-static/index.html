@@ -211,7 +211,6 @@
      - "Our Story" button links to about.html
 ═══════════════════════════════════════════════════════════ -->
 <section class="whoweare-section">
-      <div class="whoweare-bg parallax-layer" data-parallax-speed="1.6" style="background-image:url('images/2.webp');"></div>
   <div class="whoweare-overlay"></div>
   <div class="container whoweare-inner">
     <div class="whoweare-left fade-up">
@@ -252,7 +251,7 @@
        (anchors: #advisory, #pm, #dm, #cost)
      - "View All Services" button at bottom links to services.html
 ═══════════════════════════════════════════════════════════ -->
-<section class="section-pad" style="background:var(--off-white);">
+<section class="section-pad howwork-section">
   <div class="container">
     <div class="text-center mb-5 fade-up">
       <span class="section-label">What We Do</span>
@@ -392,17 +391,97 @@
         <span class="section-label">Why Choose Us</span>
         <h2 class="section-title">Why Clients Choose Project Excellence</h2>
       </div>
-      <div class="col-lg-5 offset-lg-1 fade-up">
-        <p class="section-subtitle" style="margin-bottom:0;">We stand firmly on the client's side, offering independent guidance that protects your commercial interests at every stage.</p>
-      </div>
     </div>
-    <div class="row g-4 stagger-parent">
-      <div class="col-12 col-sm-6 col-lg-4 fade-up"><div class="strength-card h-100"><div class="strength-icon"><i class="bi bi-person-check-fill" style="color:var(--accent);"></i></div><div class="strength-title">A Trusted Advisor on Your Side</div><div class="strength-text">We stand firmly on the client's side, offering independent guidance, transparent insights, and strategic direction that protects your commercial interests throughout the entire project lifecycle.</div></div></div>
-      <div class="col-12 col-sm-6 col-lg-4 fade-up"><div class="strength-card h-100"><div class="strength-icon"><i class="bi bi-lightbulb-fill" style="color:var(--accent);"></i></div><div class="strength-title">Strategic Advice for Confident Decisions</div><div class="strength-text">Our advisory-first approach gives clients clarity and confidence. We analyse risks, evaluate options, and provide the intelligence needed to make the right decisions at the right moments.</div></div></div>
-      <div class="col-12 col-sm-6 col-lg-4 fade-up"><div class="strength-card h-100"><div class="strength-icon"><i class="bi bi-currency-dollar" style="color:var(--accent);font-size:1.5rem;"></i></div><div class="strength-title">Commercial &amp; Cost Intelligence</div><div class="strength-text">With strong cost consultancy capabilities, we help clients control budgets, validate estimates, assess variations, and unlock value through careful financial and commercial analysis.</div></div></div>
-      <div class="col-12 col-sm-6 col-lg-4 fade-up"><div class="strength-card h-100"><div class="strength-icon"><i class="bi bi-kanban-fill" style="color:var(--accent);"></i></div><div class="strength-title">Structured Project Delivery</div><div class="strength-text">Our disciplined project management approach ensures progress is controlled, teams stay aligned, and the project maintains stability across time, cost, quality, and scope.</div></div></div>
-      <div class="col-12 col-sm-6 col-lg-4 fade-up"><div class="strength-card h-100"><div class="strength-icon"><i class="bi bi-bar-chart-line-fill" style="color:var(--accent);"></i></div><div class="strength-title">Clear Communication &amp; Governance</div><div class="strength-text">We simplify complexity through clear reporting, early warning indicators, and structured governance frameworks that keep clients informed, empowered, and in control.</div></div></div>
-      <div class="col-12 col-sm-6 col-lg-4 fade-up"><div class="strength-card h-100"><div class="strength-icon"><i class="bi bi-globe2" style="color:var(--accent);"></i></div><div class="strength-title">International Experience, Local Understanding</div><div class="strength-text">With project exposure across Sri Lanka, Singapore, and Australia, we blend global best practices with practical local insight, resulting in smarter decisions and smoother delivery.</div></div></div>
+    <div class="row g-4 stagger-parent" id="whyChooseAccordion">
+      <div class="col-12 fade-up">
+        <div class="strength-card strength-card-dd">
+          <button class="strength-card-trigger" type="button" data-bs-toggle="collapse" data-bs-target="#strengthCard1" aria-expanded="false" aria-controls="strengthCard1">
+            <span class="strength-card-head">
+              <span class="strength-icon"><i class="bi bi-person-check-fill" style="color:var(--accent);"></i></span>
+              <span class="strength-title">A Trusted Advisor on Your Side</span>
+            </span>
+            <span class="strength-card-toggle"><i class="bi bi-chevron-down"></i></span>
+          </button>
+          <div id="strengthCard1" class="collapse" data-bs-parent="#whyChooseAccordion">
+            <div class="strength-card-body strength-text">We stand firmly on the client's side, offering independent guidance, transparent insights, and strategic direction that protects your commercial interests throughout the entire project lifecycle.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 fade-up">
+        <div class="strength-card strength-card-dd">
+          <button class="strength-card-trigger" type="button" data-bs-toggle="collapse" data-bs-target="#strengthCard2" aria-expanded="false" aria-controls="strengthCard2">
+            <span class="strength-card-head">
+              <span class="strength-icon"><i class="bi bi-lightbulb-fill" style="color:var(--accent);"></i></span>
+              <span class="strength-title">Strategic Advice for Confident Decisions</span>
+            </span>
+            <span class="strength-card-toggle"><i class="bi bi-chevron-down"></i></span>
+          </button>
+          <div id="strengthCard2" class="collapse" data-bs-parent="#whyChooseAccordion">
+            <div class="strength-card-body strength-text">Our advisory-first approach gives clients clarity and confidence. We analyse risks, evaluate options, and provide the intelligence needed to make the right decisions at the right moments.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 fade-up">
+        <div class="strength-card strength-card-dd">
+          <button class="strength-card-trigger" type="button" data-bs-toggle="collapse" data-bs-target="#strengthCard3" aria-expanded="false" aria-controls="strengthCard3">
+            <span class="strength-card-head">
+              <span class="strength-icon"><i class="bi bi-currency-dollar" style="color:var(--accent);font-size:1.5rem;"></i></span>
+              <span class="strength-title">Commercial &amp; Cost Intelligence</span>
+            </span>
+            <span class="strength-card-toggle"><i class="bi bi-chevron-down"></i></span>
+          </button>
+          <div id="strengthCard3" class="collapse" data-bs-parent="#whyChooseAccordion">
+            <div class="strength-card-body strength-text">With strong cost consultancy capabilities, we help clients control budgets, validate estimates, assess variations, and unlock value through careful financial and commercial analysis.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 fade-up">
+        <div class="strength-card strength-card-dd">
+          <button class="strength-card-trigger" type="button" data-bs-toggle="collapse" data-bs-target="#strengthCard4" aria-expanded="false" aria-controls="strengthCard4">
+            <span class="strength-card-head">
+              <span class="strength-icon"><i class="bi bi-kanban-fill" style="color:var(--accent);"></i></span>
+              <span class="strength-title">Structured Project Delivery</span>
+            </span>
+            <span class="strength-card-toggle"><i class="bi bi-chevron-down"></i></span>
+          </button>
+          <div id="strengthCard4" class="collapse" data-bs-parent="#whyChooseAccordion">
+            <div class="strength-card-body strength-text">Our disciplined project management approach ensures progress is controlled, teams stay aligned, and the project maintains stability across time, cost, quality, and scope.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 fade-up">
+        <div class="strength-card strength-card-dd">
+          <button class="strength-card-trigger" type="button" data-bs-toggle="collapse" data-bs-target="#strengthCard5" aria-expanded="false" aria-controls="strengthCard5">
+            <span class="strength-card-head">
+              <span class="strength-icon"><i class="bi bi-bar-chart-line-fill" style="color:var(--accent);"></i></span>
+              <span class="strength-title">Clear Communication &amp; Governance</span>
+            </span>
+            <span class="strength-card-toggle"><i class="bi bi-chevron-down"></i></span>
+          </button>
+          <div id="strengthCard5" class="collapse" data-bs-parent="#whyChooseAccordion">
+            <div class="strength-card-body strength-text">We simplify complexity through clear reporting, early warning indicators, and structured governance frameworks that keep clients informed, empowered, and in control.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 fade-up">
+        <div class="strength-card strength-card-dd">
+          <button class="strength-card-trigger" type="button" data-bs-toggle="collapse" data-bs-target="#strengthCard6" aria-expanded="false" aria-controls="strengthCard6">
+            <span class="strength-card-head">
+              <span class="strength-icon"><i class="bi bi-globe2" style="color:var(--accent);"></i></span>
+              <span class="strength-title">International Experience, Local Understanding</span>
+            </span>
+            <span class="strength-card-toggle"><i class="bi bi-chevron-down"></i></span>
+          </button>
+          <div id="strengthCard6" class="collapse" data-bs-parent="#whyChooseAccordion">
+            <div class="strength-card-body strength-text">With project exposure across Sri Lanka, Singapore, and Australia, we blend global best practices with practical local insight, resulting in smarter decisions and smoother delivery.</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
