@@ -79,20 +79,18 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     OUR STORY SECTION (company founding story, left text, right dark card)
+    OUR STORY SECTION (company founding story, left text, right promise card)
      LEFT COLUMN (text):
      - To change the section heading: edit <h2 class="section-title">
      - To change the story paragraphs: edit the <p> tag contents
      - "Work With Us" button links to contact.html
      ─────────────────────────────────────────────────────────
-     RIGHT COLUMN (dark promise card):
-     - To change the quote text: edit the <p> inside the dark card
-     - STAT NUMBERS on the dark card (17+, 3, 100%):
-         - These are static (not animated), just edit the number text directly
-         - e.g. change "17" to "20" and update the label below
-     - To change a stat label: edit the small text below each number
-       (e.g. "Years Experience", "Countries", "Independent")
-     - To change the "Our Promise" label: edit the text in the top inline div
+     RIGHT COLUMN (animated promise card):
+     - To change the heading/subtext: edit <h3 class="about-promise-title"> and <p class="about-promise-sub">
+     - STAT NUMBERS (17+, 3, 100%) use count-up animation:
+         - Edit the data-target value and fallback number text in each .count-up span
+     - To change a stat label: edit <div class="about-promise-label">
+     - To change the top chip text: edit <div class="about-promise-chip">
 ═══════════════════════════════════════════════════════════ -->
 <section class="section-pad" style="background:#fff;">
   <div class="container">
@@ -105,27 +103,26 @@
         <p style="color:var(--text-muted);line-height:1.85;margin-bottom:36px;">With professional experience across Sri Lanka, Singapore, and Australia, our team brings global insight into how successful projects are planned, evaluated, governed, and delivered.</p>
         <a href="contact.html" class="btn-pb"><i class="bi bi-arrow-right-circle-fill"></i> Work With Us</a>
       </div>
-      <!-- Dark promise card (right column) -->
+      <!-- Promise card (right column), now lighter and animated for better interaction -->
       <div class="col-lg-6 fade-in">
-        <div style="background:#111111;border-radius:16px;padding:clamp(24px,5vw,48px) clamp(20px,5vw,44px);border:1px solid #222;">
-          <div style="display:inline-flex;align-items:center;gap:8px;font-family:'Gotham','Dm Sans',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#2389CA;margin-bottom:28px;">
+        <div class="about-promise-card fade-up">
+          <div class="about-promise-head">
+            <div class="about-promise-chip">Our Promise</div>
+            <h3 class="about-promise-title">Clear advisory, strong cost intelligence, and reliable project execution.</h3>
+            <p class="about-promise-sub">A partner who stands firmly on your side from concept to completion.</p>
           </div>
-          <!-- Company quote/promise, edit the text between the quotes -->
-          <p style="font-family:'Gotham','Dm Sans',sans-serif;font-size:1.15rem;font-weight:600;line-height:1.65;color:#fff;margin:0 0 40px;letter-spacing:-.01em;">"Clear advisory. Strong cost intelligence. Reliable project execution. A partner who stands firmly on your side."</p>
-          <div style="height:1px;background:#222;margin-bottom:36px;"></div>
-          <!-- Three key stats inside the dark card, edit numbers and labels here -->
-          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;">
-            <div style="text-align:center;padding:0 16px;">
-              <div style="font-family:'Gotham','Dm Sans',sans-serif;font-size:2.4rem;font-weight:800;color:#fff;line-height:1;letter-spacing:-.04em;">17<span style="font-size:1.4rem;color:#2389CA;">+</span></div>
-              <div style="font-size:.72rem;color:rgba(255,255,255,.4);margin-top:8px;letter-spacing:.1em;text-transform:uppercase;">Years Experience</div>
+          <div class="about-promise-stats">
+            <div class="about-promise-stat">
+              <div class="about-promise-value"><span class="count-up" data-target="17" data-suffix="">17</span><span class="about-promise-suffix">+</span></div>
+              <div class="about-promise-label">Years Experience</div>
             </div>
-            <div style="text-align:center;padding:0 16px;border-left:1px solid #222;border-right:1px solid #222;">
-              <div style="font-family:'Gotham','Dm Sans',sans-serif;font-size:2.4rem;font-weight:800;color:#fff;line-height:1;letter-spacing:-.04em;">3</div>
-              <div style="font-size:.72rem;color:rgba(255,255,255,.4);margin-top:8px;letter-spacing:.1em;text-transform:uppercase;">Countries</div>
+            <div class="about-promise-stat">
+              <div class="about-promise-value"><span class="count-up" data-target="3" data-suffix="">3</span></div>
+              <div class="about-promise-label">Countries of Experience</div>
             </div>
-            <div style="text-align:center;padding:0 16px;">
-              <div style="font-family:'Gotham','Dm Sans',sans-serif;font-size:2.4rem;font-weight:800;color:#fff;line-height:1;letter-spacing:-.04em;">100<span style="font-size:1.4rem;color:#2389CA;">%</span></div>
-              <div style="font-size:.72rem;color:rgba(255,255,255,.4);margin-top:8px;letter-spacing:.1em;text-transform:uppercase;">Independent</div>
+            <div class="about-promise-stat">
+              <div class="about-promise-value"><span class="count-up" data-target="100" data-suffix="">100</span><span class="about-promise-suffix">%</span></div>
+              <div class="about-promise-label">Independent</div>
             </div>
           </div>
         </div>
